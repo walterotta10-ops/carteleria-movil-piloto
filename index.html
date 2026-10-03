@@ -1,17 +1,88 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#ef1d32">
-  <title>Nuevo C&D Cartelería</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carteles maestros</title>
+<style>
+@page{size:A4 portrait;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eee}
+.page{
+  width:210mm;height:297mm;background:#fff;margin:0 auto 8mm;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+  column-gap:4mm;row-gap:4mm;padding:4mm 5mm;
+  page-break-after:always;overflow:hidden;
+}
+.poster{position:relative;overflow:hidden}
+.poster .core{
+  position:absolute;left:7%;right:7%;top:38%;text-align:right;color:#000;
+}
+.price-row{display:flex;justify-content:flex-end;align-items:flex-end;line-height:.8}
+.currency{font-size:9mm;margin-right:1mm;margin-bottom:1.4mm}
+.price{font-size:18mm;font-weight:400;letter-spacing:-1.1mm}
+.promo{font-size:15mm;line-height:.9;letter-spacing:-1mm}
+.pay{font-size:2.8mm;margin-top:1mm}
+.strip{
+  margin-top:1.4mm;background:#000;color:#fff;height:6.2mm;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 1.3mm;font-size:4mm;font-weight:700;text-align:left;
+}
+.desc{font-size:4.2mm;font-weight:700;margin-top:4mm;text-align:right}
+.brand{font-size:4mm;margin-top:1.6mm}
+.unit{font-size:4mm;margin-top:.4mm}
+.meta{position:absolute;left:7%;right:7%;top:78%;height:14mm}
+.barcode{position:absolute;left:0;top:0;width:31mm;height:5.5mm;background:
+repeating-linear-gradient(90deg,#000 0 1px,transparent 1px 2px,#000 2px 4px,transparent 4px 5px,#000 5px 6px,transparent 6px 8px)}
+.valid{position:absolute;right:0;top:1.8mm;font-size:1.55mm;text-align:right}
+.micro{position:absolute;left:0;top:7mm;font-size:1.45mm;line-height:1.15;text-align:left}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none}}
+</style>
 </head>
 <body>
-  <main id="app"></main>
-  <div id="printRoot" aria-hidden="true"></div>
-  <script src="catalog.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<div class="page">
+  <div class="poster normal">
+    <div class="core">
+      <div class="price-row"><span class="currency">$</span><span class="price">3.290</span></div>
+      <div class="pay">pagando con todo medio de pago</div>
+      <div class="desc">TORTITA 6UNIDADES 300GR</div>
+      <div class="brand">CLARISA</div>
+      <div class="unit">$10.967 x KG</div>
+    </div>
+    <div class="meta"><div class="barcode"></div><div class="valid">Vigencia: del 25 de julio al 8 de octubre</div><div class="micro">Destacado: LISTA 3 SBA - AHORA MAS BARATO Item: 514559<br>Categoría: 13408 - HOJA DEL TE - GONDOLA</div></div>
+  </div>
+  <div class="poster nx">
+    <div class="core">
+      <div class="promo">3x$6.990</div>
+      <div class="pay">pagando con todo medio de pago</div>
+      <div class="strip"><span>P. unitario: $3.190</span><span>Ahorro: $2.580</span></div>
+      <div class="desc">VINO ME VARIETAL 13G 750CC</div>
+      <div class="brand">SOL DE CHILE</div>
+      <div class="unit">$3.107 x LT</div>
+    </div>
+    <div class="meta"><div class="barcode"></div><div class="valid">Vigencia: del 1 de enero al 31 de diciembre</div><div class="micro">Destacado: 3X VINOS - SBA Item: 278806<br>Categoría: 8475 - VINO</div></div>
+  </div>
+  <div class="poster ahorro">
+    <div class="core">
+      <div class="price-row"><span class="currency">$</span><span class="price">1.890</span></div>
+      <div class="pay">pagando con todo medio de pago</div>
+      <div class="strip"><span>Normal: $2.150</span><span>Ahorro: $260</span></div>
+      <div class="desc">AGUA BENE BIDON 6.5L 6500ML</div>
+      <div class="brand">BENEDICTINO</div>
+      <div class="unit">$291 x LT</div>
+    </div>
+    <div class="meta"><div class="barcode"></div><div class="valid">Vigencia: del 23 de julio al 8 de octubre</div><div class="micro">Destacado: LISTA 3 SBA - AHORA MAS BARATO Item: 673851<br>Categoría: 8417 - BEBIDAS - AGUA</div></div>
+  </div>
+  <div class="poster ahorro">
+    <div class="core">
+      <div class="price-row"><span class="currency">$</span><span class="price">4.350</span></div>
+      <div class="pay">pagando con todo medio de pago</div>
+      <div class="strip"><span>Normal: $4.990</span><span>Ahorro: $640</span></div>
+      <div class="desc">GATO SEL DULCE BL 8G 1500CC</div>
+      <div class="brand">GATO</div>
+      <div class="unit">$2.900 x LT</div>
+    </div>
+    <div class="meta"><div class="barcode"></div><div class="valid">Vigencia: del 23 de julio al 8 de octubre</div><div class="micro">Destacado: LISTA 3 SBA - AHORA MAS BARATO Item: 856456<br>Categoría: 8475 - VINO</div></div>
+  </div>
+</div>
+</body></html>
