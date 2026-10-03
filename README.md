@@ -21,3 +21,7 @@ Nota: en Chrome, para que el navegador tampoco agregue fecha/URL/número de pág
 - Segunda fila subida 20 mm sin mover la primera.
 - Márgenes laterales protegidos para no salir del A4.
 - La cola admite más de 4 carteles: cada grupo de 4 genera una nueva hoja A4.
+
+
+## v10
+La impresión usa ahora la misma geometría interna de la miniatura/cola; solo escala y posiciona el cartel completo dentro del A4. No se modifica navegación ni catálogo.
