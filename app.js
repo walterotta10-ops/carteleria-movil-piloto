@@ -205,10 +205,14 @@
 
   function promoLine(p) {
     if (p.type === "offer") {
-      return `<div class="offer-strip"><span>Antes: ${esc(p.before || money(p.regular))}</span><span>${esc((p.saving || "").replace("Ahorro ", "Ahorro: "))}</span></div>`;
+      const normal = p.before || money(p.regular);
+      const ahorro = (p.saving || "").replace(/^Ahorro\s*:?[ ]*/i, "");
+      return `<div class="promo-strip offer-strip"><span>Normal: ${esc(normal)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
     }
     if (p.type === "nx") {
-      return `<div class="nx-strip"><span>${esc((p.unitLabel || "").replace("P. unitario ", "P. unitario: "))}</span><span>${esc((p.saving || "").replace("Ahorro ", "Ahorro: "))}</span></div>`;
+      const unitario = (p.unitLabel || "").replace(/^P\.\s*unitario\s*:?[ ]*/i, "");
+      const ahorro = (p.saving || "").replace(/^Ahorro\s*:?[ ]*/i, "");
+      return `<div class="promo-strip nx-strip"><span>P. unitario: ${esc(unitario)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
     }
     return "";
   }

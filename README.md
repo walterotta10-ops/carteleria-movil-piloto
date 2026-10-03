@@ -11,3 +11,13 @@ Cambios de esta versión:
 - Sin encabezados ni pies propios de la aplicación.
 
 Nota: en Chrome, para que el navegador tampoco agregue fecha/URL/número de página, desactivar “Encabezados y pies de página” en Más ajustes.
+
+
+## v8 — alineación con hojas maestras
+- Precio y bloque de producto alineados hacia la derecha del cuadrante.
+- Texto "pagando con todo medio de pago" y vigencia ampliados.
+- Mecánica Ahora Más Barato: franja negra `Normal / Ahorro`.
+- Mecánica Nx$: franja negra `P. unitario / Ahorro`.
+- Segunda fila subida 20 mm sin mover la primera.
+- Márgenes laterales protegidos para no salir del A4.
+- La cola admite más de 4 carteles: cada grupo de 4 genera una nueva hoja A4.

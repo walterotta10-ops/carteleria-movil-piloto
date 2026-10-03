@@ -38,43 +38,47 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
 .print{width:100%;margin-top:10px;background:var(--green);color:#fff}.print:disabled{background:#b7bbc0;cursor:not-allowed}
 #printRoot{display:none}
 @media (min-width:760px){.screen{padding-top:24px}.landing h1{font-size:50px}}
-/* v7 — cartel maestro C&D */
-.poster{background:#fff;color:#000}
-.poster-inner{position:relative;width:100%;height:100%;text-align:center;margin:0 auto}
-.poster.preview{height:360px;border:0;overflow:hidden;background:#fff}
-.poster.preview .poster-inner{max-width:420px;padding:18px 22px 14px;display:flex;flex-direction:column}
-.price-block{width:100%;text-align:center}
-.price{font-weight:900;font-size:56px;line-height:.88;letter-spacing:-2.4px;margin:0}
-.payment-line{font-size:8px;line-height:1;margin-top:1px;font-weight:400}
-.offer-strip{display:flex;justify-content:space-between;gap:12px;margin:9px auto 0;max-width:300px;font-size:10px;font-weight:800;color:#777}
-.nx-strip{display:flex;justify-content:space-between;gap:12px;margin:8px auto 0;max-width:310px;padding:5px 9px;background:#000;color:#fff;font-size:10px;font-weight:900}
-.product-block{margin-top:23px;text-align:center}
-.product-name{font-size:17px;line-height:1.05;font-weight:900;text-transform:uppercase}
-.product-brand{font-size:15px;line-height:1.05;margin-top:7px;font-weight:400}
-.unit-price{font-size:14px;line-height:1.05;margin-top:4px;font-weight:400}
-.poster-bottom{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:8px;text-align:left}
-.barcode-zone{min-width:0}
-.barcode{width:118px;height:33px;margin:0;fill:#000;display:block}
-.barcode-number{font-size:6px;letter-spacing:.6px;width:118px;text-align:center;margin-top:0}
-.footer-info{font-size:6px;line-height:1.08;max-width:185px;margin-top:1px}
-.local-line{font-weight:800;font-size:7px}
-.validity{font-size:6px;line-height:1.15;text-align:right;white-space:nowrap;padding-bottom:20px}
 
-/* miniatura limpia de la cola: mismo cartel maestro, solamente escalado */
+/* v9 — ajuste fino para acercarse a las hojas maestras C&D */
+.poster{background:#fff;color:#000}
+.poster-inner{position:relative;width:100%;height:100%;margin:0 auto}
+.price-block,.product-block{position:absolute}
+.poster-bottom{position:absolute}
+
+/* PREVISUALIZACIÓN: cartel sin aire de impresión, con carga visual a la derecha */
+.poster.preview{height:360px;border:0;overflow:hidden;background:#fff}
+.poster.preview .poster-inner{height:100%}
+.poster.preview .price-block{left:19%;right:5%;top:13%;text-align:right}
+.poster.preview .price{font-weight:900;font-size:62px;line-height:.86;letter-spacing:-2.5px;margin:0;text-align:right;white-space:nowrap}
+.poster.preview .payment-line{font-size:10px;line-height:1;margin-top:2px;font-weight:400;text-align:right;white-space:nowrap}
+.poster.preview .promo-strip{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:7px 0 0 auto;width:min(100%,315px);padding:5px 8px;background:#000;color:#fff;font-size:11px;line-height:1;font-weight:900;white-space:nowrap}
+.poster.preview .product-block{left:19%;right:5%;top:50%;text-align:right}
+.poster.preview .product-name{font-size:17px;line-height:1.04;font-weight:900;text-transform:uppercase}
+.poster.preview .product-brand{font-size:15px;line-height:1.04;margin-top:7px;font-weight:400}
+.poster.preview .unit-price{font-size:14px;line-height:1.04;margin-top:4px;font-weight:400}
+.poster.preview .poster-bottom{left:19%;right:5%;bottom:11%;display:grid;grid-template-columns:1.08fr .92fr;align-items:end;gap:10px;text-align:left}
+.poster.preview .barcode-zone{min-width:0}
+.poster.preview .barcode{width:118px;height:33px;margin:0;fill:#000;display:block}
+.poster.preview .barcode-number{font-size:6px;letter-spacing:.6px;width:118px;text-align:center;margin-top:0}
+.poster.preview .footer-info{font-size:6px;line-height:1.08;max-width:190px;margin-top:1px}
+.poster.preview .local-line{font-weight:800;font-size:7px}
+.poster.preview .validity{font-size:8px;line-height:1.12;text-align:right;white-space:nowrap;padding-bottom:18px}
+
+/* MINIATURA: misma maqueta, a escala, y sin centrar el diseño */
 .queue-mini{height:108px;overflow:hidden;border:1px solid #e8e8e8;background:#fff}
 .poster.mini{width:228px;height:216px;transform:scale(.5);transform-origin:top left;background:#fff}
-.poster.mini .poster-inner{padding:12px 14px 9px;display:flex;flex-direction:column}
-.poster.mini .price{font-size:34px;letter-spacing:-1.5px}
-.poster.mini .payment-line{font-size:5px}
-.poster.mini .offer-strip,.poster.mini .nx-strip{font-size:5.5px;margin-top:5px;padding:3px 5px;gap:5px}
-.poster.mini .product-block{margin-top:9px}
+.poster.mini .price-block{left:19%;right:5%;top:13%;text-align:right}
+.poster.mini .price{font-size:38px;letter-spacing:-1.5px;line-height:.86;white-space:nowrap}
+.poster.mini .payment-line{font-size:6px;white-space:nowrap}
+.poster.mini .promo-strip{display:flex;justify-content:space-between;align-items:center;font-size:5.6px;margin:4px 0 0 auto;padding:3px 4px;gap:5px;max-width:175px;background:#000;color:#fff;white-space:nowrap}
+.poster.mini .product-block{left:19%;right:5%;top:50%;text-align:right}
 .poster.mini .product-name{font-size:8px}
 .poster.mini .product-brand,.poster.mini .unit-price{font-size:6.5px;margin-top:3px}
-.poster.mini .poster-bottom{gap:4px}
+.poster.mini .poster-bottom{left:19%;right:5%;bottom:11%;display:grid;grid-template-columns:1.08fr .92fr;gap:4px;align-items:end}
 .poster.mini .barcode{width:62px;height:18px}
 .poster.mini .barcode-number{width:62px;font-size:3.6px}
-.poster.mini .footer-info,.poster.mini .validity{font-size:3.4px}
-.poster.mini .validity{padding-bottom:9px}
+.poster.mini .footer-info{font-size:3.4px}
+.poster.mini .validity{font-size:4px;padding-bottom:8px;white-space:nowrap;text-align:right}
 
 @page{size:A4 portrait;margin:0}
 @media print{
@@ -92,27 +96,39 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
   .print-page.page-break{page-break-after:always;break-after:page}
   .print-cell{width:105mm;height:148.5mm;position:relative;overflow:hidden;background:#fff;margin:0;padding:0}
   .poster.print{position:absolute;inset:0;width:105mm;height:148.5mm;background:#fff;overflow:hidden}
-  .poster.print .poster-inner{
-    position:absolute;
-    left:7mm;right:7mm;
-    top:60mm;
-    height:78mm;
-    display:flex;
-    flex-direction:column;
-    padding:0;
+  .poster.print .poster-inner{position:absolute;inset:0}
+
+  /* superior e inferior respetan aire, pero la fila de abajo sube un poco */
+  .print-cell .price-block{left:16mm;right:7mm;top:60mm;text-align:right}
+  .print-cell .product-block{left:16mm;right:7mm;top:77.5mm;text-align:right}
+  .print-cell .poster-bottom{left:16mm;right:7mm;bottom:22mm;display:grid;grid-template-columns:47mm 1fr;gap:2.6mm;align-items:end}
+  .print-cell:nth-child(3) .price-block,
+  .print-cell:nth-child(4) .price-block{top:47mm}
+  .print-cell:nth-child(3) .product-block,
+  .print-cell:nth-child(4) .product-block{top:64.5mm}
+  .print-cell:nth-child(3) .poster-bottom,
+  .print-cell:nth-child(4) .poster-bottom{bottom:29mm}
+
+  .poster.print .price{font-size:14.6mm;line-height:.84;letter-spacing:-.6mm;margin:0;font-weight:900;text-align:right;white-space:nowrap}
+  .poster.print .payment-line{font-size:2.25mm;line-height:1;margin-top:.5mm;text-align:right;white-space:nowrap}
+  .poster.print .promo-strip{
+    width:67mm;
+    margin:1.9mm 0 0 auto;
+    padding:1.15mm 1.8mm;
+    font-size:2.7mm;
+    line-height:1;
+    gap:2.2mm;
+    background:#000!important;
+    color:#fff!important;
+    display:flex;justify-content:space-between;align-items:center;white-space:nowrap;
   }
-  .poster.print .price{font-size:13.7mm;line-height:.86;letter-spacing:-.55mm;margin:0;font-weight:900}
-  .poster.print .payment-line{font-size:1.75mm;line-height:1;margin-top:.4mm}
-  .poster.print .offer-strip{max-width:72mm;margin-top:2.4mm;font-size:2.25mm;gap:3mm;color:#555}
-  .poster.print .nx-strip{max-width:75mm;margin-top:2.2mm;padding:1.35mm 2mm;font-size:2.25mm;gap:3mm}
-  .poster.print .product-block{margin-top:6.7mm}
-  .poster.print .product-name{font-size:3.65mm;line-height:1.03}
-  .poster.print .product-brand{font-size:3.45mm;line-height:1;margin-top:2.7mm}
-  .poster.print .unit-price{font-size:3.15mm;line-height:1;margin-top:1.5mm}
-  .poster.print .poster-bottom{margin-top:auto;grid-template-columns:54mm 1fr;gap:2mm;align-items:end}
-  .poster.print .barcode{width:26mm;height:8mm;margin:0}
-  .poster.print .barcode-number{width:26mm;font-size:1.35mm;letter-spacing:.18mm}
-  .poster.print .footer-info{font-size:1.3mm;line-height:1.08;max-width:52mm;margin-top:.3mm}
-  .poster.print .local-line{font-size:1.45mm;font-weight:800}
-  .poster.print .validity{font-size:1.25mm;line-height:1.05;white-space:nowrap;text-align:right;padding-bottom:11mm}
+  .poster.print .product-name{font-size:3.78mm;line-height:1.02;text-align:right;font-weight:900;text-transform:uppercase}
+  .poster.print .product-brand{font-size:3.55mm;line-height:1;margin-top:2.2mm;text-align:right}
+  .poster.print .unit-price{font-size:3.2mm;line-height:1;margin-top:1.25mm;text-align:right}
+
+  .poster.print .barcode{width:23.5mm;height:7.8mm;margin:0;fill:#000;display:block}
+  .poster.print .barcode-number{width:23.5mm;font-size:1.18mm;letter-spacing:.12mm;text-align:center;margin-top:0}
+  .poster.print .footer-info{font-size:1.28mm;line-height:1.08;max-width:44mm;margin-top:.2mm}
+  .poster.print .local-line{font-size:1.35mm;font-weight:800}
+  .poster.print .validity{font-size:1.55mm;line-height:1.05;white-space:nowrap;text-align:right;padding-bottom:9mm}
 }
