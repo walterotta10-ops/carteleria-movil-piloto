@@ -1,0 +1,8 @@
+{
+  "name": "carteleria-movil-piloto-sync",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Piloto C&D Cartelería con cola sincronizada entre celular y escritorio",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" }
+}
