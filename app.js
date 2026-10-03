@@ -148,24 +148,98 @@
     renderPreview();
   }
 
-  function productCard(p, mode="preview") {
-    const extra = p.type === "nx"
-      ? `<div class="subline">${esc(p.unitLabel || "")}</div><div class="subline">${esc(p.saving || "")}</div>`
-      : p.type === "offer"
-        ? `<div class="subline">${esc(p.note || "")}</div>`
-        : `<div class="subline">${esc(p.note || "Precio normal")}</div>`;
+  function money(n) {
+    return "$" + Math.round(Number(n || 0)).toLocaleString("es-CL");
+  }
 
+  function posterProductName(p) {
+    const n = String(p.name || "").trim();
+    const z = String(p.size || "").trim();
+    if (!z || n.toUpperCase().includes(z.toUpperCase())) return n;
+    return `${n} ${z}`;
+  }
+
+  function unitPriceText(p) {
+    const price = Number(p.offer || String(p.price || "").replace(/[^0-9]/g, ""));
+    const size = String(p.size || "").toUpperCase().replace(/\s/g, "");
+    if (!price) return "";
+
+    if (p.type === "nx") {
+      const grams = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
+      const totalKg = (grams * Number(p.qty || 1)) / 1000;
+      return totalKg ? `${money(price / totalKg)} x KG` : "";
+    }
+    if (size.endsWith("GR")) {
+      const grams = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
+      return grams ? `${money(price / (grams / 1000))} x KG` : "";
+    }
+    if (size.endsWith("ML") || size.endsWith("CC")) {
+      const ml = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
+      if (!ml) return "";
+      if (p.brand === "NIVEA BODY") return `${money(price / (ml / 100))} x 100 ml`;
+      return `${money(price / (ml / 1000))} x LT`;
+    }
+    if (size.endsWith("LT")) {
+      const lt = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
+      return lt ? `${money(price / lt)} x LT` : "";
+    }
+    if (size.endsWith("UN")) {
+      const un = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
+      return un ? `${money(price / un)} x UN` : "";
+    }
+    return "";
+  }
+
+  function categoryText(p) {
+    if (p.type === "nx") return "8468 - BEBIDAS DILUIBLES";
+    if (String(p.name).includes("HUEVO")) return "8479 - HUEVOS";
+    if (p.brand === "NIVEA BODY") return "9267 - CUIDADO CORPORAL";
+    if (p.code === "673851") return "8471 - BEBIDAS - AGUA";
+    if (p.code === "309922") return "9369 - DESAYUNO-CEREAL-BARRA";
+    return "8475 - VINO";
+  }
+
+  function campaignText(p) {
+    return p.type === "normal" ? "LISTA 3 BARATO TODOS LOS DIAS" : "LISTA 3 SBA - AHORA MAS BARATO";
+  }
+
+  function promoLine(p) {
+    if (p.type === "offer") {
+      return `<div class="offer-strip"><span>Antes: ${esc(p.before || money(p.regular))}</span><span>${esc((p.saving || "").replace("Ahorro ", "Ahorro: "))}</span></div>`;
+    }
+    if (p.type === "nx") {
+      return `<div class="nx-strip"><span>${esc((p.unitLabel || "").replace("P. unitario ", "P. unitario: "))}</span><span>${esc((p.saving || "").replace("Ahorro ", "Ahorro: "))}</span></div>`;
+    }
+    return "";
+  }
+
+  function productCard(p, mode="preview") {
+    const unitText = unitPriceText(p);
     return `
       <article class="poster ${mode} ${p.type}">
         <div class="poster-inner">
-          <div class="mechanic">${esc(typeLabel(p.type))}</div>
-          <div class="price">${esc(p.price)}</div>
-          ${extra}
-          <div class="product-name">${esc(p.name)}</div>
-          <div class="product-detail">${esc(p.brand || "")}${p.size ? " · " + esc(p.size) : ""}</div>
-          <div class="product-meta">Ítem ${esc(p.code)}</div>
-          ${ean13Svg(p.barcode || p.code)}
-          <div class="barcode-number">${esc(p.barcode || p.code)}</div>
+          <div class="price-block">
+            <div class="price">${esc(p.price)}</div>
+            <div class="payment-line">pagando con todo medio de pago</div>
+            ${promoLine(p)}
+          </div>
+
+          <div class="product-block">
+            <div class="product-name">${esc(posterProductName(p))}</div>
+            <div class="product-brand">${esc(p.brand || "")}</div>
+            ${unitText ? `<div class="unit-price">${esc(unitText)}</div>` : ""}
+          </div>
+
+          <div class="poster-bottom">
+            <div class="barcode-zone">
+              ${ean13Svg(p.barcode || p.code)}
+              <div class="barcode-number">${esc(p.barcode || p.code)}</div>
+              <div class="footer-info">Destacado: ${esc(campaignText(p))} &nbsp; Item: ${esc(p.code)}</div>
+              <div class="footer-info">Categoría: ${esc(categoryText(p))}</div>
+              <div class="footer-info local-line">Local: ${esc(state.local)}</div>
+            </div>
+            <div class="validity">Vigencia: del 23 de julio al 8 de octubre</div>
+          </div>
         </div>
       </article>
     `;

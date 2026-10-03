@@ -1,18 +1,13 @@
-# Nuevo C&D Cartelería — v6 estática
+# Nuevo C&D Cartelería — v7 cartel maestro
 
-Versión 100% estática: sin backend, sin PIN, sin usuario y sin segundo servicio de Render.
+Versión estática, sin backend, sin usuario/PIN y sin servicios pagados.
 
-## Cambios de esta versión
-- Entrada únicamente por Número de local.
-- Catálogo restaurado con los 30 ítems del piloto.
-- 10 ítems “Ahora más barato”.
-- 10 ítems “Lleva más, paga menos” (10x$1.790).
-- 10 ítems de precio normal.
-- Cada registro incluye código de ítem, código de barras EAN-13, descripción, marca, tamaño y precio/mecánica.
-- Vista previa compacta: el aire superior no se muestra en pantalla.
-- Cola de impresión con miniatura pequeña y limpia.
-- Impresión A4 en 4 posiciones (2×2), con el aire superior aplicado solo al imprimir.
-- La cola se guarda localmente en el mismo navegador/dispositivo.
+Cambios de esta versión:
+- Mantiene los 30 ítems del piloto.
+- Mantiene logo SuperBodega aCuenta en el inicio.
+- Previsualización de cada ítem reconstruida con la estructura del cartel maestro C&D: precio, medio de pago, antes/ahorro o barra Nx$, producto, marca, precio por unidad, código de barras, vigencia y datos inferiores.
+- La vista en pantalla no agrega el gran aire superior de impresión.
+- Impresión A4 2x2: cada cartel conserva el aire superior del maestro y el bloque de contenido queda desplazado hacia abajo, como en la referencia C&D.
+- Sin encabezados ni pies propios de la aplicación.
 
-## Despliegue
-Subir/reemplazar estos archivos en el repositorio actual. `render.yaml` mantiene un único sitio Static, sin servicio de pago.
+Nota: en Chrome, para que el navegador tampoco agregue fecha/URL/número de página, desactivar “Encabezados y pies de página” en Más ajustes.
