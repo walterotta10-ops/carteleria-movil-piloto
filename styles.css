@@ -80,9 +80,20 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
 .poster.mini .footer-info{font-size:3.4px}
 .poster.mini .validity{font-size:4px;padding-bottom:8px;white-space:nowrap;text-align:right}
 
+
+.promo-strip{position:relative;overflow:hidden}
+.promo-strip .promo-strip-bg{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.promo-strip span{position:relative;z-index:1;color:#fff}
+
 @page{size:A4 portrait;margin:0}
 @media print{
-  html,body{width:210mm;height:auto;background:#fff!important;margin:0!important;padding:0!important}
+  html,body{
+    width:210mm;
+    height:auto;
+    margin:0!important;
+    padding:0!important;
+    background:#fff!important;
+  }
   #app{display:none!important}
   #printRoot{display:block!important;margin:0!important;padding:0!important}
 
@@ -92,48 +103,59 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
     display:grid;
     grid-template-columns:105mm 105mm;
     grid-template-rows:148.5mm 148.5mm;
-    overflow:hidden;
     margin:0;
     padding:0;
+    overflow:hidden;
   }
   .print-page.page-break{page-break-after:always;break-after:page}
+
   .print-cell{
+    position:relative;
     width:105mm;
     height:148.5mm;
-    position:relative;
-    overflow:hidden;
-    background:#fff;
     margin:0;
     padding:0;
-  }
-  .poster.print{
-    position:absolute;
-    inset:0;
-    width:105mm;
-    height:148.5mm;
-    background:#fff;
     overflow:hidden;
+    background:#fff;
   }
 
   /*
-    CLAVE v10:
-    impresión NO vuelve a maquetar el cartel.
-    Usa el mismo lienzo/proporciones que la miniatura de la cola,
-    y solo mueve/escala el lienzo completo dentro de cada cuarto A4.
+    v11:
+    El cartel impreso usa literalmente el mismo lienzo maestro
+    de 228 x 216 px de la miniatura de la cola.
+    Solo se escala el lienzo completo: no se vuelve a maquetar.
   */
-  .poster.print .poster-inner{
+  .poster.print{
     position:absolute;
-    left:7.5mm;
-    width:90mm;
-    height:96mm;
-    top:45mm;
-  }
-  .print-cell:nth-child(3) .poster-inner,
-  .print-cell:nth-child(4) .poster-inner{
-    top:29mm;
+    width:228px;
+    height:216px;
+    background:#fff;
+    overflow:visible;
+    transform:scale(1.35);
+    transform-origin:top left;
   }
 
-  /* misma geometría interna de la cola: contenido cargado a la derecha */
+  /* Posición del lienzo completo dentro de cada cuarto A4 */
+  .print-cell:nth-child(1) .poster.print,
+  .print-cell:nth-child(2) .poster.print{
+    left:17.5mm;
+    top:54mm;
+  }
+  .print-cell:nth-child(3) .poster.print,
+  .print-cell:nth-child(4) .poster.print{
+    left:17.5mm;
+    top:31mm;
+  }
+
+  /* MISMA geometría interna que la cola */
+  .poster.print .poster-inner{
+    position:relative;
+    width:228px;
+    height:216px;
+    margin:0;
+    padding:0;
+  }
+
   .poster.print .price-block{
     position:absolute;
     left:19%;
@@ -141,6 +163,57 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
     top:13%;
     text-align:right;
   }
+  .poster.print .price{
+    font-size:38px;
+    font-weight:900;
+    letter-spacing:-1.5px;
+    line-height:.86;
+    margin:0;
+    white-space:nowrap;
+    text-align:right;
+  }
+  .poster.print .payment-line{
+    font-size:6px;
+    line-height:1;
+    margin-top:2px;
+    white-space:nowrap;
+    text-align:right;
+  }
+
+  .poster.print .promo-strip{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:auto;
+    max-width:175px;
+    margin:4px 0 0 auto;
+    padding:3px 4px;
+    gap:5px;
+    font-size:5.6px;
+    line-height:1;
+    font-weight:900;
+    white-space:nowrap;
+    color:#fff!important;
+    background:transparent!important;
+    overflow:hidden;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+  .poster.print .promo-strip-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:block;
+    z-index:0;
+  }
+  .poster.print .promo-strip span{
+    position:relative;
+    z-index:1;
+    color:#fff!important;
+  }
+
   .poster.print .product-block{
     position:absolute;
     left:19%;
@@ -148,6 +221,22 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
     top:50%;
     text-align:right;
   }
+  .poster.print .product-name{
+    font-size:8px;
+    line-height:1.04;
+    font-weight:900;
+    text-transform:uppercase;
+    text-align:right;
+  }
+  .poster.print .product-brand,
+  .poster.print .unit-price{
+    font-size:6.5px;
+    line-height:1.04;
+    margin-top:3px;
+    text-align:right;
+  }
+
+  /* Mantener la parte inferior que ya quedó bien */
   .poster.print .poster-bottom{
     position:absolute;
     left:19%;
@@ -155,95 +244,39 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
     bottom:11%;
     display:grid;
     grid-template-columns:1.08fr .92fr;
-    gap:2mm;
+    gap:4px;
     align-items:end;
     text-align:left;
   }
-
-  .poster.print .price{
-    font-size:14.2mm;
-    line-height:.86;
-    letter-spacing:-.55mm;
-    margin:0;
-    font-weight:900;
-    text-align:right;
-    white-space:nowrap;
-  }
-  .poster.print .payment-line{
-    font-size:2.15mm;
-    line-height:1;
-    margin-top:.55mm;
-    text-align:right;
-    white-space:nowrap;
-  }
-
-  /* franja negra exactamente dentro del bloque de precio, como en la cola */
-  .poster.print .promo-strip{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-    margin:1.7mm 0 0 auto;
-    padding:1.05mm 1.45mm;
-    gap:2mm;
-    background:#000!important;
-    color:#fff!important;
-    font-size:2.45mm;
-    line-height:1;
-    font-weight:900;
-    white-space:nowrap;
-  }
-
-  .poster.print .product-name{
-    font-size:3.65mm;
-    line-height:1.03;
-    font-weight:900;
-    text-transform:uppercase;
-    text-align:right;
-  }
-  .poster.print .product-brand{
-    font-size:3.35mm;
-    line-height:1;
-    margin-top:1.9mm;
-    text-align:right;
-  }
-  .poster.print .unit-price{
-    font-size:3.05mm;
-    line-height:1;
-    margin-top:1.1mm;
-    text-align:right;
-  }
-
   .poster.print .barcode-zone{min-width:0}
   .poster.print .barcode{
-    width:24mm;
-    height:7.4mm;
+    width:62px;
+    height:18px;
     margin:0;
     fill:#000;
     display:block;
   }
   .poster.print .barcode-number{
-    width:24mm;
-    font-size:1.15mm;
-    letter-spacing:.11mm;
+    width:62px;
+    font-size:3.6px;
+    letter-spacing:.1px;
     text-align:center;
     margin-top:0;
   }
   .poster.print .footer-info{
-    font-size:1.18mm;
+    font-size:3.4px;
     line-height:1.08;
-    max-width:43mm;
-    margin-top:.18mm;
+    margin-top:1px;
   }
   .poster.print .local-line{
-    font-size:1.28mm;
+    font-size:3.6px;
     font-weight:800;
   }
   .poster.print .validity{
-    font-size:1.48mm;
+    font-size:4px;
     line-height:1.05;
+    padding-bottom:8px;
     white-space:nowrap;
     text-align:right;
-    padding-bottom:7mm;
   }
 }

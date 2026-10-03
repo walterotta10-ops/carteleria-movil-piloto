@@ -207,12 +207,12 @@
     if (p.type === "offer") {
       const normal = p.before || money(p.regular);
       const ahorro = (p.saving || "").replace(/^Ahorro\s*:?[ ]*/i, "");
-      return `<div class="promo-strip offer-strip"><span>Normal: ${esc(normal)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
+      return `<div class="promo-strip offer-strip"><svg class="promo-strip-bg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100" height="20" fill="#000"/></svg><span>Normal: ${esc(normal)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
     }
     if (p.type === "nx") {
       const unitario = (p.unitLabel || "").replace(/^P\.\s*unitario\s*:?[ ]*/i, "");
       const ahorro = (p.saving || "").replace(/^Ahorro\s*:?[ ]*/i, "");
-      return `<div class="promo-strip nx-strip"><span>P. unitario: ${esc(unitario)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
+      return `<div class="promo-strip nx-strip"><svg class="promo-strip-bg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100" height="20" fill="#000"/></svg><span>P. unitario: ${esc(unitario)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
     }
     return "";
   }

@@ -25,3 +25,11 @@ Nota: en Chrome, para que el navegador tampoco agregue fecha/URL/número de pág
 
 ## v10
 La impresión usa ahora la misma geometría interna de la miniatura/cola; solo escala y posiciona el cartel completo dentro del A4. No se modifica navegación ni catálogo.
+
+
+## v11 — impresión = misma geometría que la cola
+- La impresión utiliza el mismo lienzo maestro 228×216 px de la miniatura de la cola.
+- No se vuelven a calcular posiciones internas al imprimir; se escala el cartel completo.
+- La franja negra promocional se dibuja con SVG real para que aparezca en la vista previa de impresión.
+- Se mantiene la posición inferior de código/barra/datos que ya había quedado correcta.
+- Se agregan parámetros `?v=11` a CSS/JS para evitar caché del navegador/Render.
