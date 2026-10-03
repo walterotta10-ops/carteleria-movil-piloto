@@ -1,0 +1,9 @@
+{
+  "name": "Nuevo CID cartelería",
+  "short_name": "CID Cartelería",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#de1f2d",
+  "lang": "es"
+}

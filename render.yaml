@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: carteleria-movil-piloto
+    runtime: static
+    buildCommand: echo "static ready"
+    staticPublishPath: .
