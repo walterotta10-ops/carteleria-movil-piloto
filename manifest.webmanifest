@@ -1,9 +1,9 @@
 {
-  "name": "Nuevo CID cartelería",
-  "short_name": "CID Cartelería",
+  "name": "Nuevo C&D Cartelería",
+  "short_name": "Cartelería",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#de1f2d",
+  "theme_color": "#ef1d32",
   "lang": "es"
 }

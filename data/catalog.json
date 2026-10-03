@@ -1,4 +1,4 @@
-window.CARTELERIA_CATALOG = [
+[
   {
     "code": "673851",
     "barcode": "7802820650013",
@@ -389,4 +389,4 @@ window.CARTELERIA_CATALOG = [
     "price": "$8.890",
     "note": "Precio normal"
   }
-];
+]

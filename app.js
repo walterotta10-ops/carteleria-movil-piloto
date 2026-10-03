@@ -17,7 +17,6 @@
   function queueKey() {
     return `carteleria.queue.${state.local || "sin-local"}`;
   }
-
   function loadQueue() {
     try {
       state.queue = JSON.parse(localStorage.getItem(queueKey()) || "[]");
@@ -26,14 +25,12 @@
       state.queue = [];
     }
   }
-
   function saveQueue() {
     localStorage.setItem(queueKey(), JSON.stringify(state.queue));
   }
-
   function typeLabel(type) {
     if (type === "nx") return "Lleva más, paga menos";
-    if (type === "offer") return "Precio oferta";
+    if (type === "offer") return "Ahora más barato";
     return "Precio normal";
   }
 
@@ -52,13 +49,9 @@
   function landing() {
     app.innerHTML = `
       <section class="landing">
-        <div class="store-icon" aria-hidden="true">
-          <div class="awning"><i></i><i></i><i></i><i></i></div>
-          <div class="shop-body"><span></span><b></b></div>
-        </div>
+        <img class="landing-logo" src="assets/acuenta-logo.png" alt="Super Bodega aCuenta">
         <h1>Nuevo C&amp;D<br><span>Cartelería</span></h1>
         <p class="landing-copy">Ingresa el número de local para comenzar.</p>
-
         <form class="local-card" id="localForm" autocomplete="off">
           <label for="localNumber">Número de local</label>
           <input id="localNumber" inputmode="numeric" pattern="[0-9]*" placeholder="Número de local" maxlength="6" autofocus>
@@ -85,7 +78,6 @@
   function renderMain() {
     if (!state.local) return landing();
     loadQueue();
-
     app.innerHTML = `
       ${header()}
       <section class="screen">
@@ -151,37 +143,77 @@
     if (!state.product) {
       status.innerHTML = `<div class="status error">Ítem no encontrado en el piloto.</div>`;
     } else {
-      const priceState = state.product.price ? "" : " · precio pendiente";
-      status.innerHTML = `<div class="status ok">✓ Producto encontrado <small>Ítem ${esc(state.product.code)}${priceState}</small></div>`;
+      status.innerHTML = `<div class="status ok">✓ Producto encontrado <small>Ítem ${esc(state.product.code)} · ${esc(state.product.brand || "")}</small></div>`;
     }
     renderPreview();
   }
 
   function productCard(p, mode="preview") {
-    const hasPrice = Boolean(p.price);
-    const price = hasPrice ? esc(p.price) : "—";
     const extra = p.type === "nx"
-      ? `<div class="subline">${esc(p.unit || "Mecánica promocional")}</div><div class="subline">${esc(p.saving || "")}</div>`
-      : `<div class="subline">${esc(p.note || typeLabel(p.type))}</div>`;
+      ? `<div class="subline">${esc(p.unitLabel || "")}</div><div class="subline">${esc(p.saving || "")}</div>`
+      : p.type === "offer"
+        ? `<div class="subline">${esc(p.note || "")}</div>`
+        : `<div class="subline">${esc(p.note || "Precio normal")}</div>`;
 
     return `
       <article class="poster ${mode} ${p.type}">
         <div class="poster-inner">
           <div class="mechanic">${esc(typeLabel(p.type))}</div>
-          <div class="price ${hasPrice ? "" : "pending"}">${price}</div>
+          <div class="price">${esc(p.price)}</div>
           ${extra}
           <div class="product-name">${esc(p.name)}</div>
+          <div class="product-detail">${esc(p.brand || "")}${p.size ? " · " + esc(p.size) : ""}</div>
           <div class="product-meta">Ítem ${esc(p.code)}</div>
-          ${barcodeSvg(p.code)}
-          <div class="barcode-number">${esc(p.code)}</div>
-          ${hasPrice ? "" : `<div class="price-warning">Precio no confirmado</div>`}
+          ${ean13Svg(p.barcode || p.code)}
+          <div class="barcode-number">${esc(p.barcode || p.code)}</div>
         </div>
       </article>
     `;
   }
 
-  function barcodeSvg(code) {
-    const digits = String(code).replace(/\D/g, "");
+  function ean13Svg(value) {
+    const code = String(value || "").replace(/\D/g, "");
+    if (code.length !== 13) return fallbackBars(code);
+
+    const L = {
+      0:"0001101",1:"0011001",2:"0010011",3:"0111101",4:"0100011",
+      5:"0110001",6:"0101111",7:"0111011",8:"0110111",9:"0001011"
+    };
+    const G = {
+      0:"0100111",1:"0110011",2:"0011011",3:"0100001",4:"0011101",
+      5:"0111001",6:"0000101",7:"0010001",8:"0001001",9:"0010111"
+    };
+    const R = {
+      0:"1110010",1:"1100110",2:"1101100",3:"1000010",4:"1011100",
+      5:"1001110",6:"1010000",7:"1000100",8:"1001000",9:"1110100"
+    };
+    const parity = {
+      0:"LLLLLL",1:"LLGLGG",2:"LLGGLG",3:"LLGGGL",4:"LGLLGG",
+      5:"LGGLLG",6:"LGGGLL",7:"LGLGLG",8:"LGLGGL",9:"LGGLGL"
+    };
+    const first = Number(code[0]);
+    let bits = "101";
+    for (let i=1; i<=6; i++) {
+      const n = Number(code[i]);
+      bits += parity[first][i-1] === "L" ? L[n] : G[n];
+    }
+    bits += "01010";
+    for (let i=7; i<=12; i++) bits += R[Number(code[i])];
+    bits += "101";
+
+    const module = 1.05;
+    let bars = "";
+    for (let i=0; i<bits.length; i++) {
+      if (bits[i] === "1") {
+        const guard = i < 3 || (i >= 45 && i < 50) || i >= 92;
+        bars += `<rect x="${(i*module).toFixed(2)}" y="0" width="${module.toFixed(2)}" height="${guard ? 28 : 24}"/>`;
+      }
+    }
+    return `<svg class="barcode" viewBox="0 0 100 28" role="img" aria-label="Código de barras ${esc(code)}">${bars}</svg>`;
+  }
+
+  function fallbackBars(code) {
+    const digits = String(code || "").replace(/\D/g, "");
     let bars = "";
     let x = 3;
     for (let i=0; i<digits.length*3+12; i++) {
@@ -191,7 +223,7 @@
       x += w + 1;
       if (x > 94) break;
     }
-    return `<svg class="barcode" viewBox="0 0 100 24" role="img" aria-label="Código de barras ${esc(code)}">${bars}</svg>`;
+    return `<svg class="barcode" viewBox="0 0 100 24">${bars}</svg>`;
   }
 
   function renderPreview() {
@@ -206,20 +238,17 @@
     area.innerHTML = `
       <div class="preview-block">
         ${productCard(state.product, "preview")}
-        <button class="btn add" id="addQueue" type="button" ${state.product.price ? "" : "disabled"}>
-          Agregar a cola
-        </button>
-        ${state.product.price ? "" : `<p class="data-note">Este ítem conserva el código y nombre del catálogo, pero su precio no está confirmado en la información disponible. No se habilita impresión para evitar imprimir un precio inventado.</p>`}
+        <button class="btn add" id="addQueue" type="button">Agregar a cola</button>
         <button class="btn ghost" id="clearSearch" type="button">Buscar otro ítem</button>
       </div>
     `;
 
-    const add = document.getElementById("addQueue");
-    if (add && !add.disabled) add.addEventListener("click", () => {
+    document.getElementById("addQueue").addEventListener("click", () => {
       state.queue.push({...state.product, qid: Date.now() + Math.random()});
       saveQueue();
       renderQueue();
     });
+
     document.getElementById("clearSearch").addEventListener("click", () => {
       state.product = null;
       state.itemCode = "";
@@ -251,7 +280,7 @@
         <div class="queue-mini">${productCard(p, "mini")}</div>
         <div class="queue-copy">
           <strong>${esc(p.price)}</strong>
-          <span>${esc(p.code)}</span>
+          <span>Ítem ${esc(p.code)}</span>
           <small>${esc(p.name)}</small>
         </div>
         <button class="remove" data-index="${i}" type="button" aria-label="Eliminar de la cola">×</button>

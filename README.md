@@ -1,29 +1,18 @@
-# Nuevo C&D Cartelería — versión estática
+# Nuevo C&D Cartelería — v6 estática
 
-Versión sin backend, sin usuario, sin PIN y sin servicio de sincronización.
+Versión 100% estática: sin backend, sin PIN, sin usuario y sin segundo servicio de Render.
 
-## Flujo
-1. Ingresar únicamente el número de local.
-2. Buscar un ítem por código.
-3. Previsualizar el cartel sin el espacio superior de impresión.
-4. Agregar a la cola.
-5. Imprimir en A4, 4 posiciones (2×2).
+## Cambios de esta versión
+- Entrada únicamente por Número de local.
+- Catálogo restaurado con los 30 ítems del piloto.
+- 10 ítems “Ahora más barato”.
+- 10 ítems “Lleva más, paga menos” (10x$1.790).
+- 10 ítems de precio normal.
+- Cada registro incluye código de ítem, código de barras EAN-13, descripción, marca, tamaño y precio/mecánica.
+- Vista previa compacta: el aire superior no se muestra en pantalla.
+- Cola de impresión con miniatura pequeña y limpia.
+- Impresión A4 en 4 posiciones (2×2), con el aire superior aplicado solo al imprimir.
+- La cola se guarda localmente en el mismo navegador/dispositivo.
 
-## Importante
-- La cola se guarda solo en el mismo navegador/dispositivo mediante localStorage.
-- No existe sincronización entre celular y computador.
-- El `render.yaml` define solamente un sitio estático.
-- La aplicación no necesita Node, servidor ni base de datos.
-
-## Catálogo
-Se mantienen los 30 códigos y nombres definidos para el piloto.
-Como en la información disponible no están confirmados los precios de todos los productos, la app evita inventarlos:
-- 646205: 10x$1.790
-- 711195: $6.350
-- 673851: $7.390
-Los demás ítems aparecen como encontrados pero con precio pendiente y no se habilita su impresión hasta completar el dato real.
-
-## Impresión
-La vista de pantalla es compacta. El "aire" superior se aplica únicamente al momento de imprimir.
-La hoja utiliza A4 vertical con cuatro cuadrantes de 105 × 148,5 mm.
-Para una salida totalmente limpia, si Chrome agrega fecha/URL/página, desactivar "Encabezados y pies de página" en el diálogo de impresión.
+## Despliegue
+Subir/reemplazar estos archivos en el repositorio actual. `render.yaml` mantiene un único sitio Static, sin servicio de pago.
