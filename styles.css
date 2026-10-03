@@ -85,198 +85,46 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
 .promo-strip .promo-strip-bg{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
 .promo-strip span{position:relative;z-index:1;color:#fff}
 
+
+.standard-main-price{display:flex;justify-content:flex-end;align-items:flex-end;gap:2px}
+.standard-main-price .currency{font-size:.58em;line-height:1;margin-bottom:.12em;font-weight:700}
+.standard-main-price .price-amount{line-height:.86}
 @page{size:A4 portrait;margin:0}
 @media print{
-  html,body{
-    width:210mm;
-    height:auto;
-    margin:0!important;
-    padding:0!important;
-    background:#fff!important;
-  }
+  html,body{width:210mm;height:auto;margin:0!important;padding:0!important;background:#fff!important}
   #app{display:none!important}
   #printRoot{display:block!important;margin:0!important;padding:0!important}
-
-  .print-page{
-    width:210mm;
-    height:297mm;
-    display:grid;
-    grid-template-columns:105mm 105mm;
-    grid-template-rows:148.5mm 148.5mm;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-  }
+  .print-page{width:210mm;height:297mm;display:grid;grid-template-columns:105mm 105mm;grid-template-rows:148.5mm 148.5mm;margin:0;padding:0;overflow:hidden}
   .print-page.page-break{page-break-after:always;break-after:page}
+  .print-cell{position:relative;width:105mm;height:148.5mm;overflow:hidden;background:#fff;margin:0;padding:0}
+  .poster.print{position:absolute;inset:0;width:105mm;height:148.5mm;background:#fff;overflow:hidden}
+  .poster.print .poster-inner{position:absolute;inset:0;width:105mm;height:148.5mm;margin:0;padding:0}
 
-  .print-cell{
-    position:relative;
-    width:105mm;
-    height:148.5mm;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    background:#fff;
-  }
+  .poster.print .price-block{position:absolute;left:8mm;right:11mm;top:64mm;text-align:right}
+  .print-cell:nth-child(3) .poster.print .price-block,.print-cell:nth-child(4) .poster.print .price-block{top:55mm}
+  .poster.print .price{margin:0;font-weight:500;line-height:.84;letter-spacing:-.55mm;text-align:right;white-space:nowrap}
+  .poster.print .standard-main-price{display:flex;justify-content:flex-end;align-items:flex-end;gap:1.1mm}
+  .poster.print .standard-main-price .currency{font-size:9mm;line-height:1;margin:0 0 1.5mm 0;font-weight:500;letter-spacing:0}
+  .poster.print .standard-main-price .price-amount{font-size:17mm;line-height:.84}
+  .poster.print .nx-main-price{font-size:15.8mm;line-height:.84;font-weight:500}
+  .poster.print .payment-line{font-size:2.5mm;line-height:1;margin-top:.4mm;text-align:right;white-space:nowrap;font-weight:400}
 
-  /*
-    v11:
-    El cartel impreso usa literalmente el mismo lienzo maestro
-    de 228 x 216 px de la miniatura de la cola.
-    Solo se escala el lienzo completo: no se vuelve a maquetar.
-  */
-  .poster.print{
-    position:absolute;
-    width:228px;
-    height:216px;
-    background:#fff;
-    overflow:visible;
-    transform:scale(1.35);
-    transform-origin:top left;
-  }
+  .poster.print .promo-strip{position:relative;display:flex;justify-content:space-between;align-items:center;width:86mm;max-width:86mm;height:6.4mm;margin:1.5mm 0 0 auto;padding:0 1.5mm;gap:2mm;font-size:3.55mm;line-height:1;font-weight:700;white-space:nowrap;color:#fff!important;background:transparent!important;overflow:hidden;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .poster.print .promo-strip-bg{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+  .poster.print .promo-strip span{position:relative;z-index:1;color:#fff!important}
 
-  /* Posición del lienzo completo dentro de cada cuarto A4 */
-  .print-cell:nth-child(1) .poster.print,
-  .print-cell:nth-child(2) .poster.print{
-    left:17.5mm;
-    top:54mm;
-  }
-  .print-cell:nth-child(3) .poster.print,
-  .print-cell:nth-child(4) .poster.print{
-    left:17.5mm;
-    top:31mm;
-  }
+  .poster.print .product-block{position:absolute;left:8mm;right:11mm;top:98mm;text-align:right}
+  .print-cell:nth-child(3) .poster.print .product-block,.print-cell:nth-child(4) .poster.print .product-block{top:89mm}
+  .poster.print .product-name{font-size:4.35mm;line-height:1.02;font-weight:700;text-transform:uppercase;text-align:right;white-space:nowrap}
+  .poster.print .product-brand{font-size:4.05mm;line-height:1;margin-top:2.1mm;text-align:right;font-weight:400}
+  .poster.print .unit-price{font-size:3.85mm;line-height:1;margin-top:1.1mm;text-align:right;font-weight:400}
 
-  /* MISMA geometría interna que la cola */
-  .poster.print .poster-inner{
-    position:relative;
-    width:228px;
-    height:216px;
-    margin:0;
-    padding:0;
-  }
-
-  .poster.print .price-block{
-    position:absolute;
-    left:19%;
-    right:5%;
-    top:13%;
-    text-align:right;
-  }
-  .poster.print .price{
-    font-size:38px;
-    font-weight:900;
-    letter-spacing:-1.5px;
-    line-height:.86;
-    margin:0;
-    white-space:nowrap;
-    text-align:right;
-  }
-  .poster.print .payment-line{
-    font-size:6px;
-    line-height:1;
-    margin-top:2px;
-    white-space:nowrap;
-    text-align:right;
-  }
-
-  .poster.print .promo-strip{
-    position:relative;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:auto;
-    max-width:175px;
-    margin:4px 0 0 auto;
-    padding:3px 4px;
-    gap:5px;
-    font-size:5.6px;
-    line-height:1;
-    font-weight:900;
-    white-space:nowrap;
-    color:#fff!important;
-    background:transparent!important;
-    overflow:hidden;
-    -webkit-print-color-adjust:exact!important;
-    print-color-adjust:exact!important;
-  }
-  .poster.print .promo-strip-bg{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    display:block;
-    z-index:0;
-  }
-  .poster.print .promo-strip span{
-    position:relative;
-    z-index:1;
-    color:#fff!important;
-  }
-
-  .poster.print .product-block{
-    position:absolute;
-    left:19%;
-    right:5%;
-    top:50%;
-    text-align:right;
-  }
-  .poster.print .product-name{
-    font-size:8px;
-    line-height:1.04;
-    font-weight:900;
-    text-transform:uppercase;
-    text-align:right;
-  }
-  .poster.print .product-brand,
-  .poster.print .unit-price{
-    font-size:6.5px;
-    line-height:1.04;
-    margin-top:3px;
-    text-align:right;
-  }
-
-  /* Mantener la parte inferior que ya quedó bien */
-  .poster.print .poster-bottom{
-    position:absolute;
-    left:19%;
-    right:5%;
-    bottom:11%;
-    display:grid;
-    grid-template-columns:1.08fr .92fr;
-    gap:4px;
-    align-items:end;
-    text-align:left;
-  }
+  .poster.print .poster-bottom{position:absolute;left:8mm;right:11mm;top:125mm;height:17mm;display:grid;grid-template-columns:48mm 1fr;gap:3mm;align-items:start;text-align:left}
+  .print-cell:nth-child(3) .poster.print .poster-bottom,.print-cell:nth-child(4) .poster.print .poster-bottom{top:116mm}
   .poster.print .barcode-zone{min-width:0}
-  .poster.print .barcode{
-    width:62px;
-    height:18px;
-    margin:0;
-    fill:#000;
-    display:block;
-  }
-  .poster.print .barcode-number{
-    width:62px;
-    font-size:3.6px;
-    letter-spacing:.1px;
-    text-align:center;
-    margin-top:0;
-  }
-  .poster.print .footer-info{
-    font-size:3.4px;
-    line-height:1.08;
-    margin-top:1px;
-  }
-  .poster.print .local-line{
-    font-size:3.6px;
-    font-weight:800;
-  }
-  .poster.print .validity{
-    font-size:4px;
-    line-height:1.05;
-    padding-bottom:8px;
-    white-space:nowrap;
-    text-align:right;
-  }
+  .poster.print .barcode{width:26mm;height:7.4mm;margin:0;fill:#000;display:block}
+  .poster.print .barcode-number{width:26mm;font-size:1.25mm;letter-spacing:.1mm;text-align:center;margin-top:0}
+  .poster.print .footer-info{font-size:1.45mm;line-height:1.08;max-width:47mm;margin-top:.35mm}
+  .poster.print .local-line{font-size:1.55mm;font-weight:700}
+  .poster.print .validity{font-size:1.65mm;line-height:1.05;white-space:nowrap;text-align:right;padding-top:3.2mm}
 }

@@ -33,3 +33,11 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - La franja negra promocional se dibuja con SVG real para que aparezca en la vista previa de impresión.
 - Se mantiene la posición inferior de código/barra/datos que ya había quedado correcta.
 - Se agregan parámetros `?v=11` a CSS/JS para evitar caché del navegador/Render.
+
+
+## v12 — impresión basada en hojas maestras
+- Se deja de escalar la miniatura para imprimir.
+- Plantilla física A4 en mm, basada en las tres hojas maestras.
+- Franja promocional ancha, producto/marca/unidad más grandes y bloque inferior extendido.
+- Signo $ más pequeño que el número en precio normal/oferta.
+- Segunda fila sube 9 mm respecto de la primera.

@@ -217,13 +217,20 @@
     return "";
   }
 
+  function priceMarkup(p) {
+    const txt = String(p.price || "");
+    if (p.type === "nx") return `<div class="price nx-main-price">${esc(txt)}</div>`;
+    const amount = txt.replace(/^\$/, "");
+    return `<div class="price standard-main-price"><span class="currency">$</span><span class="price-amount">${esc(amount)}</span></div>`;
+  }
+
   function productCard(p, mode="preview") {
     const unitText = unitPriceText(p);
     return `
       <article class="poster ${mode} ${p.type}">
         <div class="poster-inner">
           <div class="price-block">
-            <div class="price">${esc(p.price)}</div>
+            ${priceMarkup(p)}
             <div class="payment-line">pagando con todo medio de pago</div>
             ${promoLine(p)}
           </div>
