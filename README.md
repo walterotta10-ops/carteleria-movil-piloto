@@ -1,34 +1,20 @@
-# Cartelería móvil – Piloto v1
+# Cartelería móvil piloto v2
 
-Prototipo estático basado en el mockup maestro aprobado.
+Prototipo móvil de cartelería basado en el mockup maestro y en la base de 30 productos de prueba.
 
-## Incluye
-- Ingreso de número de local.
-- Búsqueda por número de ítem.
-- Base local con 30 productos de prueba.
-- Mecánica 1: Antes y Ahora.
-- Mecánica 2: Nx$.
-- Mecánica 4: Sin Mecánica.
-- Cartel con Local ingresado bajo el código de barras.
-- Cola de impresión.
-- Bloqueo de productos con estado Vencido.
-- Impresión de hasta 4 carteles por hoja Carta mediante el diálogo de impresión del navegador.
-- PWA básica instalable desde el navegador compatible.
+## Ajustes v2
 
-## Datos de prueba
-Los productos están en `data/products.json`. Para este piloto, la validación por fecha de campaña está desactivada en `app.js` (`enforceCampaignDates: false`) para que la muestra siga siendo utilizable. El estado `Vencido` sí bloquea la impresión.
+- Se puede cambiar de local desde búsqueda, vista de producto, cola o tocando `Local XXX` en el encabezado.
+- El cartel móvil usa la misma geometría relativa de la hoja de impresión para evitar diferencias entre previsualización y papel.
+- La impresión pasa de Carta a **A4** y queda dividida en cuatro posiciones exactas de **105 × 148,5 mm**, como la referencia de C&D.
+- Se eliminan márgenes propios de la aplicación en impresión.
+- La hoja no agrega títulos, fechas, URL ni numeración desde el contenido de la aplicación.
+- Se corrigió el desborde de los carteles con mecánica Nx$.
 
-## Despliegue recomendado: GitHub + Render Static Site
-1. Crear un repositorio nuevo en GitHub, sugerencia: `carteleria-movil-piloto`.
-2. Subir **el contenido de esta carpeta** a la raíz del repositorio.
-3. En Render: **New + → Static Site**.
-4. Conectar el repositorio.
-5. Nombre sugerido del servicio: `carteleria-movil-piloto`.
-6. Build Command: `echo "static ready"`
-7. Publish Directory: `.`
-8. Deploy.
+## Nota sobre Chrome
 
-Render entregará una URL pública para abrirla desde el celular.
+La fecha/hora, nombre de la página, URL y número de hoja que Chrome puede mostrar en el borde de la vista previa son **encabezados y pies del navegador**, no forman parte del cartel. La hoja ya solicita margen 0. Si Chrome los mantiene activos, en `Más ajustes` desactiva una sola vez `Encabezados y pies de página`. Esa preferencia normalmente queda recordada por el navegador.
 
-## Nota para la siguiente etapa
-Este piloto no se conecta a CID. La base real debe reemplazarse mediante un Excel/CSV autorizado. Antes de publicar una base completa con información operacional real, conviene definir si el acceso será público o autenticado.
+## Despliegue
+
+Sitio estático. Render puede usar el `render.yaml` incluido en la raíz.
