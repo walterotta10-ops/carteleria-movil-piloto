@@ -4,12 +4,3 @@ services:
     runtime: static
     buildCommand: echo "static ready"
     staticPublishPath: .
-
-  - type: web
-    name: carteleria-movil-piloto-sync
-    runtime: node
-    buildCommand: npm install
-    startCommand: npm start
-    envVars:
-      - key: SESSION_SECRET
-        generateValue: true

@@ -1,37 +1,29 @@
-# C&D Cartelería móvil — versión sincronizada
+# Nuevo C&D Cartelería — versión estática
 
-Esta versión incorpora las correcciones de visualización y el flujo celular → computador.
+Versión sin backend, sin usuario, sin PIN y sin servicio de sincronización.
 
-## Qué cambia
+## Flujo
+1. Ingresar únicamente el número de local.
+2. Buscar un ítem por código.
+3. Previsualizar el cartel sin el espacio superior de impresión.
+4. Agregar a la cola.
+5. Imprimir en A4, 4 posiciones (2×2).
 
-- Pantalla inicial sin datos precargados: Nombre, Número de local y PIN.
-- El mismo Nombre + Local + PIN recupera la misma cola desde celular o computador.
-- El campo de ítem parte vacío y muestra `Ingresar ítem`.
-- La previsualización móvil del cartel es compacta: el aire vertical se reserva solo para impresión.
-- La miniatura de la cola usa una composición propia y limpia.
-- La impresión se mantiene en A4 2×2 y se elevan código de barras, vigencia y metadata para evitar cortes en la segunda fila.
-- Se conserva la base de 30 productos.
+## Importante
+- La cola se guarda solo en el mismo navegador/dispositivo mediante localStorage.
+- No existe sincronización entre celular y computador.
+- El `render.yaml` define solamente un sitio estático.
+- La aplicación no necesita Node, servidor ni base de datos.
 
-## Sincronización piloto
+## Catálogo
+Se mantienen los 30 códigos y nombres definidos para el piloto.
+Como en la información disponible no están confirmados los precios de todos los productos, la app evita inventarlos:
+- 646205: 10x$1.790
+- 711195: $6.350
+- 673851: $7.390
+Los demás ítems aparecen como encontrados pero con precio pendiente y no se habilita su impresión hasta completar el dato real.
 
-El repositorio crea un segundo servicio Render llamado `carteleria-movil-piloto-sync`.
-El sitio existente `carteleria-movil-piloto` consulta ese servicio para guardar la cola.
-
-### Importante
-
-En esta etapa la sincronización del servidor usa almacenamiento de archivo temporal de Render. Sirve para validar el flujo entre celular y computador, pero Render puede borrar esa información si el servicio se reinicia o se vuelve a desplegar. Antes de uso operativo permanente hay que conectar una base persistente (PostgreSQL/Supabase/Render Postgres).
-
-## Render
-
-El `render.yaml` conserva el sitio estático actual y agrega el servicio Node de sincronización.
-Al subir los archivos al mismo repositorio, el Blueprint debería detectar el nuevo servicio y pedir crear `carteleria-movil-piloto-sync`.
-
-## Prueba recomendada
-
-1. Abrir el sitio desde el celular.
-2. Ingresar Nombre, Número de local y PIN.
-3. Agregar 2 o 3 carteles.
-4. Abrir el mismo sitio desde un computador.
-5. Ingresar exactamente las mismas credenciales.
-6. Verificar que aparezca la misma cola.
-7. Imprimir desde el computador.
+## Impresión
+La vista de pantalla es compacta. El "aire" superior se aplica únicamente al momento de imprimir.
+La hoja utiliza A4 vertical con cuatro cuadrantes de 105 × 148,5 mm.
+Para una salida totalmente limpia, si Chrome agrega fecha/URL/página, desactivar "Encabezados y pies de página" en el diálogo de impresión.
