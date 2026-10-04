@@ -41,3 +41,14 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Franja promocional ancha, producto/marca/unidad más grandes y bloque inferior extendido.
 - Signo $ más pequeño que el número en precio normal/oferta.
 - Segunda fila sube 9 mm respecto de la primera.
+
+
+## v13 — cambios solicitados
+- Ajuste fino de las tipografías secundarias de impresión; números grandes sin cambios.
+- “Volver a inicio” pasa a la misma línea de “Ingresar ítem”.
+- Vista PC más compacta.
+- Botón verde “Imprimir cola” al lado de “Cola de impresión”.
+- La cola permite seguir agregando carteles; la impresión se pagina automáticamente de 4 en 4.
+- “Borrar toda la cola” reemplaza a “Buscar otro ítem” y pide confirmación.
+- Al agregar un cartel, el campo de ítem, el resultado y la previsualización se limpian automáticamente y el cursor vuelve al campo de ingreso.
+- Recursos cacheados con versión v13.

@@ -82,26 +82,30 @@
       ${header()}
       <section class="screen">
         <div class="search-card">
-          <h2>Ingresar ítem</h2>
+          <div class="search-head">
+            <h2>Ingresar ítem</h2>
+            <button class="btn back-home" id="backHome" type="button">Volver a inicio</button>
+          </div>
           <form id="searchForm" class="search-row" autocomplete="off">
             <input id="itemInput" inputmode="numeric" pattern="[0-9]*" placeholder="Ingresar ítem" value="${esc(state.itemCode)}">
             <button class="btn search" type="submit">Buscar</button>
           </form>
           <div id="searchStatus"></div>
-          <button class="btn ghost" id="changeLocal" type="button">Cambiar local</button>
         </div>
 
         <section id="previewArea"></section>
 
         <section class="queue-section">
           <div class="section-title">
-            <h2>Cola de impresión</h2>
-            <span class="count">${state.queue.length}</span>
+            <div class="queue-title-group">
+              <h2>Cola de impresión</h2>
+              <span class="count">${state.queue.length}</span>
+            </div>
+            <button class="btn print print-inline" id="printBtn" type="button" ${state.queue.length ? "" : "disabled"}>
+              Imprimir cola
+            </button>
           </div>
           <div id="queueList"></div>
-          <button class="btn print" id="printBtn" type="button" ${state.queue.length ? "" : "disabled"}>
-            Imprimir cola (${state.queue.length})
-          </button>
         </section>
       </section>
     `;
@@ -110,7 +114,7 @@
       e.preventDefault();
       searchItem();
     });
-    document.getElementById("changeLocal").addEventListener("click", changeLocal);
+    document.getElementById("backHome").addEventListener("click", changeLocal);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     document.getElementById("printBtn").addEventListener("click", printQueue);
 
@@ -324,23 +328,41 @@
       <div class="preview-block">
         ${productCard(state.product, "preview")}
         <button class="btn add" id="addQueue" type="button">Agregar a cola</button>
-        <button class="btn ghost" id="clearSearch" type="button">Buscar otro ítem</button>
+        <button class="btn clear-queue" id="clearQueue" type="button" ${state.queue.length ? "" : "disabled"}>Borrar toda la cola</button>
       </div>
     `;
 
     document.getElementById("addQueue").addEventListener("click", () => {
       state.queue.push({...state.product, qid: Date.now() + Math.random()});
       saveQueue();
+
+      // Flujo continuo: agrega el cartel y deja el campo listo para el próximo.
+      state.product = null;
+      state.itemCode = "";
+
+      const input = document.getElementById("itemInput");
+      if (input) {
+        input.value = "";
+        input.focus();
+      }
+      const status = document.getElementById("searchStatus");
+      if (status) status.innerHTML = "";
+
+      renderPreview();
       renderQueue();
     });
 
-    document.getElementById("clearSearch").addEventListener("click", () => {
-      state.product = null;
-      state.itemCode = "";
-      document.getElementById("itemInput").value = "";
-      document.getElementById("searchStatus").innerHTML = "";
-      renderPreview();
-    });
+    const clearQueueBtn = document.getElementById("clearQueue");
+    if (clearQueueBtn) {
+      clearQueueBtn.addEventListener("click", () => {
+        if (!state.queue.length) return;
+        if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
+        state.queue = [];
+        saveQueue();
+        renderQueue();
+        renderPreview();
+      });
+    }
   }
 
   function renderQueue() {
@@ -352,7 +374,7 @@
     if (count) count.textContent = state.queue.length;
     if (printBtn) {
       printBtn.disabled = !state.queue.length;
-      printBtn.textContent = `Imprimir cola (${state.queue.length})`;
+      printBtn.textContent = "Imprimir cola";
     }
 
     if (!state.queue.length) {

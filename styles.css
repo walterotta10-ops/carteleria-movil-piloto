@@ -128,3 +128,86 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
   .poster.print .local-line{font-size:1.55mm;font-weight:700}
   .poster.print .validity{font-size:1.65mm;line-height:1.05;white-space:nowrap;text-align:right;padding-top:3.2mm}
 }
+
+
+/* v13 — interfaz compacta y flujo de trabajo continuo */
+.search-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.search-head h2{margin:0}
+.back-home{
+  min-height:38px;
+  padding:0 14px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:#333;
+  border-radius:10px;
+  font-size:14px;
+  white-space:nowrap;
+}
+.clear-queue{
+  width:100%;
+  margin-top:8px;
+  background:#fff;
+  border:1px solid #d7dbe0;
+  color:#9d1421;
+}
+.clear-queue:disabled{
+  color:#9aa0a6;
+  background:#f7f7f7;
+  cursor:not-allowed;
+}
+.queue-title-group{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.print-inline{
+  width:auto!important;
+  min-height:40px;
+  margin:0!important;
+  padding:0 16px;
+  flex:0 0 auto;
+  border-radius:10px;
+}
+.section-title{gap:12px}
+
+@media (min-width:760px){
+  .screen{
+    width:min(100%,860px);
+    padding:10px 14px 24px;
+  }
+  .topbar{height:58px}
+  .search-card{padding:10px 14px}
+  .search-row input{height:44px}
+  .search{min-height:44px}
+  .status{padding:7px 11px;margin-top:7px}
+  .preview-block{margin-top:9px;padding:9px 12px}
+  .poster.preview{height:292px}
+  .poster.preview .price-block{top:8%}
+  .poster.preview .product-block{top:44%}
+  .poster.preview .poster-bottom{bottom:7%}
+  .add{min-height:42px;margin-top:6px}
+  .clear-queue{min-height:40px;margin-top:6px}
+  .queue-section{margin-top:10px;padding:11px 13px}
+}
+
+/* Ajuste fino: mantener los números grandes y acercar el resto a la hoja maestra. */
+@media print{
+  .poster.print .payment-line{font-size:2.9mm!important}
+  .poster.print .promo-strip{
+    height:6.8mm!important;
+    font-size:3.95mm!important;
+  }
+  .poster.print .product-name{font-size:4.8mm!important}
+  .poster.print .product-brand{font-size:4.45mm!important}
+  .poster.print .unit-price{font-size:4.15mm!important}
+  .poster.print .footer-info{font-size:1.7mm!important}
+  .poster.print .local-line{font-size:1.85mm!important}
+  .poster.print .validity{font-size:1.95mm!important}
+}
