@@ -211,3 +211,31 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
   .poster.print .local-line{font-size:1.85mm!important}
   .poster.print .validity{font-size:1.95mm!important}
 }
+
+
+/* v14 — borrar cola al final de todos los carteles */
+.clear-queue-bottom{
+  width:100%;
+  min-height:48px;
+  margin-top:12px;
+  background:var(--red);
+  color:#fff;
+  border:0;
+  border-radius:12px;
+  font-weight:900;
+  font-size:17px;
+}
+.clear-queue-bottom:hover{
+  background:var(--red-dark);
+}
+.clear-queue-bottom:disabled{
+  background:#c8ccd1;
+  color:#fff;
+  cursor:not-allowed;
+}
+@media (min-width:760px){
+  .clear-queue-bottom{
+    min-height:44px;
+    margin-top:10px;
+  }
+}

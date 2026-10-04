@@ -106,6 +106,9 @@
             </button>
           </div>
           <div id="queueList"></div>
+          <button class="btn clear-queue-bottom" id="clearQueue" type="button" ${state.queue.length ? "" : "disabled"}>
+            Borrar toda la cola
+          </button>
         </section>
       </section>
     `;
@@ -117,6 +120,15 @@
     document.getElementById("backHome").addEventListener("click", changeLocal);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     document.getElementById("printBtn").addEventListener("click", printQueue);
+    document.getElementById("clearQueue").addEventListener("click", () => {
+      if (!state.queue.length) return;
+      if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
+
+      state.queue = [];
+      saveQueue();
+      renderQueue();
+      renderPreview();
+    });
 
     renderPreview();
     renderQueue();
@@ -328,7 +340,6 @@
       <div class="preview-block">
         ${productCard(state.product, "preview")}
         <button class="btn add" id="addQueue" type="button">Agregar a cola</button>
-        <button class="btn clear-queue" id="clearQueue" type="button" ${state.queue.length ? "" : "disabled"}>Borrar toda la cola</button>
       </div>
     `;
 
@@ -352,29 +363,23 @@
       renderQueue();
     });
 
-    const clearQueueBtn = document.getElementById("clearQueue");
-    if (clearQueueBtn) {
-      clearQueueBtn.addEventListener("click", () => {
-        if (!state.queue.length) return;
-        if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
-        state.queue = [];
-        saveQueue();
-        renderQueue();
-        renderPreview();
-      });
-    }
+
   }
 
   function renderQueue() {
     const list = document.getElementById("queueList");
     const count = document.querySelector(".count");
     const printBtn = document.getElementById("printBtn");
+    const clearQueueBtn = document.getElementById("clearQueue");
     if (!list) return;
 
     if (count) count.textContent = state.queue.length;
     if (printBtn) {
       printBtn.disabled = !state.queue.length;
       printBtn.textContent = "Imprimir cola";
+    }
+    if (clearQueueBtn) {
+      clearQueueBtn.disabled = !state.queue.length;
     }
 
     if (!state.queue.length) {

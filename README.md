@@ -52,3 +52,12 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - “Borrar toda la cola” reemplaza a “Buscar otro ítem” y pide confirmación.
 - Al agregar un cartel, el campo de ítem, el resultado y la previsualización se limpian automáticamente y el cursor vuelve al campo de ingreso.
 - Recursos cacheados con versión v13.
+
+
+## v14 — Borrar toda la cola al final
+- Se quitó “Borrar toda la cola” de la previsualización del producto.
+- El botón ahora aparece al final de todos los carteles de la cola de impresión.
+- Ocupa todo el ancho, en rojo con letras blancas.
+- Mantiene confirmación antes de vaciar la cola.
+- El botón verde “Imprimir cola” permanece arriba junto al título.
+- Caché actualizado a v14.
