@@ -98,7 +98,7 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
   .print-page.page-break{page-break-after:always;break-after:page}
   .print-cell{position:relative;width:105mm;height:148.5mm;overflow:hidden;background:#fff;margin:0;padding:0}
   .poster.print{position:absolute;inset:0;width:105mm;height:148.5mm;background:#fff;overflow:hidden}
-  .poster.print .poster-inner{position:absolute;inset:0;width:105mm;height:148.5mm;margin:0;padding:0}
+  .poster.print .poster-inner{position:absolute;inset:0;width:105mm;height:148.5mm;margin:0;padding:0;transform:translateY(-10mm)}
 
   .poster.print .price-block{position:absolute;left:8mm;right:11mm;top:64mm;text-align:right}
   .print-cell:nth-child(3) .poster.print .price-block,.print-cell:nth-child(4) .poster.print .price-block{top:55mm}

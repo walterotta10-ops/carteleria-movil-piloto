@@ -61,3 +61,10 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Mantiene confirmación antes de vaciar la cola.
 - El botón verde “Imprimir cola” permanece arriba junto al título.
 - Caché actualizado a v14.
+
+
+## v15 — corrección vertical de impresión
+
+- Único cambio visual de impresión: el contenido completo de cada cartel se desplaza 10 mm hacia arriba dentro de su cuadrante A4.
+- No cambia tamaño, tipografía, precio, franja promocional, alineación horizontal, cola, catálogo ni navegación.
+- Se actualiza el parámetro de caché del CSS a v15 para asegurar que el navegador cargue la corrección.
