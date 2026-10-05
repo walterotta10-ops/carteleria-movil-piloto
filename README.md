@@ -86,7 +86,7 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Esta etapa prueba conectividad real App → PC → Zebra. El diseño RF se ajustará después de validar impresión física.
 
 
-## v19 - Cartel RF en 2 flejes
+## v18 - Cartel RF en 2 flejes
 - Mantiene intacta la impresion Tamano Carta.
 - RF: ancho util 58 mm.
 - Cada cartel RF se imprime como 2 flejes consecutivos de 35 mm de alto.
@@ -94,3 +94,9 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Fleje inferior: descripcion, marca, gramaje, mecanica, item/local y codigo de barras.
 - La separacion fisica sugerida entre ambos flejes al montar el cartel es 5 mm.
 - El puente local y TCP 9100 se mantienen sin cambios funcionales.
+
+
+## v20 consolidada
+- Base PC: v18 aprobada, sin cambios funcionales en escritorio.
+- Rama móvil: escaneo de ítem por cámara, búsqueda por código de barras solo en móvil, captura/ingreso manual de MAC y preparación RF móvil.
+- La conexión Android -> Zebra real queda para el siguiente paso; no se simula ni se altera la ruta PC.

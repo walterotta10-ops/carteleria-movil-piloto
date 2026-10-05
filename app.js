@@ -11,7 +11,9 @@
   };
 
   function isMobileDevice() {
-    return window.matchMedia("(max-width: 760px)").matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
+    // Rama móvil estricta: por ahora NO cambia ningún comportamiento de escritorio.
+    // Solo entra a móvil cuando el viewport realmente es de teléfono/tablet angosto.
+    return window.matchMedia("(max-width: 760px)").matches;
   }
 
   const esc = (v="") => String(v).replace(/[&<>"']/g, c => ({
@@ -127,7 +129,13 @@
     }
     document.getElementById("backHome").addEventListener("click", changeLocal);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
-    document.getElementById("printBtn").addEventListener("click", () => isMobileDevice() ? renderRFMobileSetup() : renderPrintOptions);
+    const printBtn = document.getElementById("printBtn");
+    if (isMobileDevice()) {
+      printBtn.addEventListener("click", renderRFMobileSetup);
+    } else {
+      // Escritorio conserva EXACTAMENTE la ruta v18.
+      printBtn.addEventListener("click", renderPrintOptions);
+    }
     document.getElementById("clearQueue").addEventListener("click", () => {
       if (!state.queue.length) return;
       if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
@@ -155,7 +163,7 @@
     const input = document.getElementById("itemInput");
     const code = input.value.trim();
     state.itemCode = code;
-    state.product = catalog.find(p => p.code === code || String(p.barcode || "") === code) || null;
+    state.product = catalog.find(p => p.code === code || (isMobileDevice() && String(p.barcode || "") === code)) || null;
     const status = document.getElementById("searchStatus");
 
     if (!code) {

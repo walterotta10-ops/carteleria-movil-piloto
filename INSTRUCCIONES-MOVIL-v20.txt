@@ -1,0 +1,14 @@
+V19 — RAMA MÓVIL DE PRUEBA
+
+- NO cambia el comportamiento actual de PC.
+- En móvil agrega “Escanear ítem” con cámara.
+- El escaneo busca por código de barras o por número de ítem.
+- En móvil, al pulsar “Imprimir cola”, entra directo al flujo RF móvil.
+- RF móvil NO pide IP.
+- La MAC es obligatoria y se puede:
+  1) escanear con cámara, o
+  2) escribir manualmente.
+- La MAC queda guardada en el teléfono y se puede reemplazar.
+- Mantiene el ZPL RF aprobado: 58 mm, 2 flejes de 35 mm.
+- En esta v19 NO se altera ni reemplaza el puente PC.
+- La conexión Android → Zebra es el siguiente hito después de validar cámara + captura MAC.
