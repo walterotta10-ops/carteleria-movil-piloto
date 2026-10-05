@@ -86,7 +86,7 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Esta etapa prueba conectividad real App → PC → Zebra. El diseño RF se ajustará después de validar impresión física.
 
 
-## v18 - Cartel RF en 2 flejes
+## v19 - Cartel RF en 2 flejes
 - Mantiene intacta la impresion Tamano Carta.
 - RF: ancho util 58 mm.
 - Cada cartel RF se imprime como 2 flejes consecutivos de 35 mm de alto.

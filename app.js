@@ -10,6 +10,10 @@
     queue: []
   };
 
+  function isMobileDevice() {
+    return window.matchMedia("(max-width: 760px)").matches || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
+  }
+
   const esc = (v="") => String(v).replace(/[&<>"']/g, c => ({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
   }[c]));
@@ -90,6 +94,7 @@
             <input id="itemInput" inputmode="numeric" pattern="[0-9]*" placeholder="Ingresar ítem" value="${esc(state.itemCode)}">
             <button class="btn search" type="submit">Buscar</button>
           </form>
+          ${isMobileDevice() ? `<button class="btn scan-item-btn" id="scanItemBtn" type="button">▣ Escanear ítem</button>` : ""}
           <div id="searchStatus"></div>
         </div>
 
@@ -117,9 +122,12 @@
       e.preventDefault();
       searchItem();
     });
+    if (isMobileDevice()) {
+      document.getElementById("scanItemBtn")?.addEventListener("click", () => openCameraScanner("item"));
+    }
     document.getElementById("backHome").addEventListener("click", changeLocal);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
-    document.getElementById("printBtn").addEventListener("click", renderPrintOptions);
+    document.getElementById("printBtn").addEventListener("click", () => isMobileDevice() ? renderRFMobileSetup() : renderPrintOptions);
     document.getElementById("clearQueue").addEventListener("click", () => {
       if (!state.queue.length) return;
       if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
@@ -147,7 +155,7 @@
     const input = document.getElementById("itemInput");
     const code = input.value.trim();
     state.itemCode = code;
-    state.product = catalog.find(p => p.code === code) || null;
+    state.product = catalog.find(p => p.code === code || String(p.barcode || "") === code) || null;
     const status = document.getElementById("searchStatus");
 
     if (!code) {
@@ -404,6 +412,171 @@
       saveQueue();
       renderQueue();
     }));
+  }
+
+
+  let scannerStream = null;
+  let scannerTimer = null;
+
+  function closeCameraScanner() {
+    if (scannerTimer) { clearTimeout(scannerTimer); scannerTimer = null; }
+    if (scannerStream) {
+      scannerStream.getTracks().forEach(t => t.stop());
+      scannerStream = null;
+    }
+    document.getElementById("cameraScanner")?.remove();
+  }
+
+  function normalizeMac(value="") {
+    return String(value).toUpperCase().replace(/[^0-9A-F]/g, "").slice(0, 12);
+  }
+
+  async function openCameraScanner(mode="item") {
+    closeCameraScanner();
+    const title = mode === "mac" ? "Escanear código de impresora" : "Escanear ítem";
+    const hint = mode === "mac" ? "Apunta al código de la Zebra que contiene la MAC." : "Apunta al código de barras del producto.";
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="camera-scanner" id="cameraScanner">
+        <div class="camera-card">
+          <div class="camera-head"><strong>${title}</strong><button id="closeCameraScanner" type="button">×</button></div>
+          <video id="scannerVideo" playsinline muted></video>
+          <div class="camera-target"></div>
+          <p>${hint}</p>
+          <div id="scannerStatus" class="scanner-status">Abriendo cámara…</div>
+          <button class="btn back-home" id="cancelScanner" type="button">Cancelar</button>
+        </div>
+      </div>`);
+
+    document.getElementById("closeCameraScanner").onclick = closeCameraScanner;
+    document.getElementById("cancelScanner").onclick = closeCameraScanner;
+    const status = document.getElementById("scannerStatus");
+    const video = document.getElementById("scannerVideo");
+
+    try {
+      scannerStream = await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}}, audio:false});
+      video.srcObject = scannerStream;
+      await video.play();
+      status.textContent = "Buscando código…";
+
+      if (!("BarcodeDetector" in window)) {
+        status.textContent = "Este navegador no permite lectura automática. Usa ingreso manual.";
+        return;
+      }
+
+      const supported = await BarcodeDetector.getSupportedFormats().catch(() => []);
+      const wanted = mode === "mac"
+        ? ["qr_code","code_128","data_matrix","aztec","code_39"].filter(f => supported.includes(f))
+        : ["ean_13","ean_8","upc_a","upc_e","code_128","qr_code"].filter(f => supported.includes(f));
+      const detector = new BarcodeDetector(wanted.length ? {formats:wanted} : undefined);
+
+      const scan = async () => {
+        if (!document.getElementById("cameraScanner")) return;
+        try {
+          const codes = await detector.detect(video);
+          if (codes && codes.length) {
+            const raw = String(codes[0].rawValue || "").trim();
+            if (mode === "mac") {
+              const mac = normalizeMac(raw);
+              if (mac.length !== 12) {
+                status.textContent = `Código leído (${raw}), pero no contiene una MAC válida de 12 caracteres.`;
+              } else {
+                localStorage.setItem("carteleria.rf.mobile.mac", mac);
+                closeCameraScanner();
+                renderRFMobileSetup(mac);
+                return;
+              }
+            } else {
+              closeCameraScanner();
+              const input = document.getElementById("itemInput");
+              if (input) { input.value = raw; state.itemCode = raw; searchItem(); }
+              return;
+            }
+          }
+        } catch (e) {}
+        scannerTimer = setTimeout(scan, 180);
+      };
+      scan();
+    } catch (error) {
+      status.textContent = "No se pudo abrir la cámara. Revisa el permiso de cámara de Chrome.";
+    }
+  }
+
+  function saveMobileMac() {
+    const input = document.getElementById("mobileMacInput");
+    const mac = normalizeMac(input?.value || "");
+    if (input) input.value = mac;
+    if (mac.length === 12) {
+      localStorage.setItem("carteleria.rf.mobile.mac", mac);
+      const s = document.getElementById("mobileRFStatus");
+      if (s) { s.className = "rf-status ok"; s.textContent = `✓ Impresora guardada: ${mac}`; }
+      return mac;
+    }
+    const s = document.getElementById("mobileRFStatus");
+    if (s) { s.className = "rf-status error"; s.textContent = "La MAC debe tener 12 caracteres hexadecimales."; }
+    return "";
+  }
+
+  function renderRFMobileSetup(forcedMac="") {
+    if (!state.queue.length) return renderMain();
+    const savedMac = forcedMac || localStorage.getItem("carteleria.rf.mobile.mac") || "";
+    app.innerHTML = `
+      ${header()}
+      <section class="screen print-choice-screen mobile-rf-screen">
+        <div class="print-choice-card rf-setup-card">
+          <div class="print-choice-top">
+            <div>
+              <span class="print-choice-kicker">Modo móvil · Local ${esc(state.local)}</span>
+              <h2>Impresora Portátil (RF)</h2>
+              <p>En móvil no se solicita IP. Identifica la Zebra por su código MAC.</p>
+            </div>
+            <button class="btn back-home" id="backMobileRF" type="button">Volver</button>
+          </div>
+
+          <div class="rf-form-grid">
+            <label class="rf-field">
+              <span>Cartel a imprimir</span>
+              <select id="rfItemSelect">
+                ${state.queue.map((p,i) => `<option value="${i}">Ítem ${esc(p.code)} · ${esc(p.price)} · ${esc(p.name)}</option>`).join("")}
+              </select>
+            </label>
+
+            <label class="rf-field">
+              <span>MAC de impresora Zebra</span>
+              <input id="mobileMacInput" autocomplete="off" autocapitalize="characters" maxlength="17" placeholder="Ej. 6095325D07AA" value="${esc(savedMac)}">
+            </label>
+            <div class="mobile-mac-actions">
+              <button class="btn scan-item-btn" id="scanMacBtn" type="button">▣ Escanear MAC</button>
+              <button class="btn ghost" id="saveMacBtn" type="button">Guardar MAC</button>
+            </div>
+          </div>
+
+          <div class="rf-proof-box">
+            <strong>Formato RF aprobado</strong>
+            <span>58 mm de ancho útil · 2 flejes de 35 mm por cartel.</span>
+            <span>Esta versión móvil no modifica el funcionamiento actual de PC.</span>
+          </div>
+
+          <div id="mobileRFStatus" class="rf-status ${savedMac ? "ok" : ""}">${savedMac ? `✓ Impresora guardada: ${esc(savedMac)}` : "Escanea o escribe la MAC de la impresora."}</div>
+
+          <div class="rf-actions rf-actions-main">
+            <button class="btn print" id="prepareMobileRF" type="button">Preparar impresión móvil</button>
+          </div>
+          <div id="mobilePrintInfo" class="mobile-print-info"></div>
+        </div>
+      </section>`;
+
+    document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
+    document.getElementById("backMobileRF").addEventListener("click", renderMain);
+    document.getElementById("scanMacBtn").addEventListener("click", () => openCameraScanner("mac"));
+    document.getElementById("saveMacBtn").addEventListener("click", saveMobileMac);
+    document.getElementById("mobileMacInput").addEventListener("change", saveMobileMac);
+    document.getElementById("prepareMobileRF").addEventListener("click", () => {
+      const mac = saveMobileMac();
+      if (!mac) return;
+      const product = getRFSelection();
+      const info = document.getElementById("mobilePrintInfo");
+      if (info) info.innerHTML = `<strong>Listo para conexión móvil</strong><span>Ítem ${esc(product?.code || "")} · Zebra ${esc(mac)}</span><span>El ZPL de los 2 flejes ya está preparado. El siguiente paso es enlazar el canal Android → Zebra sin tocar la versión PC.</span>`;
+    });
   }
 
 
