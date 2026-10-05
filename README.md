@@ -68,3 +68,12 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Único cambio visual de impresión: el contenido completo de cada cartel se desplaza 10 mm hacia arriba dentro de su cuadrante A4.
 - No cambia tamaño, tipografía, precio, franja promocional, alineación horizontal, cola, catálogo ni navegación.
 - Se actualiza el parámetro de caché del CSS a v15 para asegurar que el navegador cargue la corrección.
+
+
+## v16 — selección de impresora
+- “Imprimir cola” abre una pantalla intermedia con dos opciones.
+- Impresora Tamaño Carta: conserva exactamente la configuración de impresión actual.
+- Impresora Portátil (RF): ruta separada, todavía sin configuración de impresión.
+- La ruta RF no modifica la cola.
+- Se puede volver a la cola desde ambas pantallas.
+- Caché actualizado a v16.

@@ -239,3 +239,142 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
     margin-top:10px;
   }
 }
+
+
+/* v16 — selección de destino de impresión */
+.print-choice-screen{padding-top:24px}
+.print-choice-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+}
+.print-choice-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+}
+.print-choice-kicker{
+  display:block;
+  color:#69717c;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+.print-choice-card h2{
+  margin:0;
+  font-size:27px;
+  line-height:1.05;
+}
+.print-choice-card p{
+  margin:8px 0 0;
+  color:#626a75;
+  font-size:15px;
+}
+.printer-options{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:22px;
+}
+.printer-option{
+  width:100%;
+  min-height:92px;
+  display:grid;
+  grid-template-columns:52px 1fr 22px;
+  align-items:center;
+  gap:14px;
+  text-align:left;
+  background:#fff;
+  border:2px solid #e1e5e9;
+  border-radius:16px;
+  padding:14px 16px;
+  color:#111;
+}
+.printer-option:hover{
+  border-color:#c5cbd2;
+  background:#fafbfc;
+}
+.printer-option-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:#f0f2f4;
+  font-size:24px;
+  font-weight:900;
+}
+.letter-option .printer-option-icon{
+  background:#e9f8ee;
+  color:#0c9140;
+}
+.rf-option .printer-option-icon{
+  background:#fff0f2;
+  color:var(--red);
+}
+.printer-option-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.printer-option-copy strong{
+  font-size:19px;
+  line-height:1.08;
+}
+.printer-option-copy small{
+  color:#68717b;
+  font-size:13px;
+  line-height:1.25;
+}
+.printer-option-arrow{
+  font-size:34px;
+  line-height:1;
+  color:#8b929a;
+}
+.rf-setup-card{
+  max-width:650px;
+  margin:0 auto;
+}
+.rf-pending-box{
+  margin-top:22px;
+  padding:18px;
+  border:1px dashed #d6dbe0;
+  border-radius:14px;
+  background:#fafbfc;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.rf-pending-box strong{font-size:17px}
+.rf-pending-box span{
+  color:#6a727c;
+  font-size:14px;
+}
+.rf-actions{
+  display:flex;
+  gap:10px;
+  margin-top:18px;
+}
+.rf-actions .btn{flex:1}
+
+@media (max-width:620px){
+  .print-choice-screen{padding-top:14px}
+  .print-choice-card{padding:16px}
+  .print-choice-top{flex-direction:column}
+  .print-choice-top .back-home{width:100%}
+  .printer-option{
+    grid-template-columns:44px 1fr 18px;
+    gap:10px;
+    padding:13px;
+  }
+  .printer-option-icon{
+    width:42px;
+    height:42px;
+  }
+  .printer-option-copy strong{font-size:17px}
+  .rf-actions{flex-direction:column}
+}

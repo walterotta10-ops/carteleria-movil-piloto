@@ -119,7 +119,7 @@
     });
     document.getElementById("backHome").addEventListener("click", changeLocal);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
-    document.getElementById("printBtn").addEventListener("click", printQueue);
+    document.getElementById("printBtn").addEventListener("click", renderPrintOptions);
     document.getElementById("clearQueue").addEventListener("click", () => {
       if (!state.queue.length) return;
       if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
@@ -404,6 +404,82 @@
       saveQueue();
       renderQueue();
     }));
+  }
+
+
+  function renderPrintOptions() {
+    if (!state.queue.length) return;
+
+    app.innerHTML = `
+      ${header()}
+      <section class="screen print-choice-screen">
+        <div class="print-choice-card">
+          <div class="print-choice-top">
+            <div>
+              <span class="print-choice-kicker">Cola de impresión · ${state.queue.length} cartel${state.queue.length === 1 ? "" : "es"}</span>
+              <h2>Selecciona dónde imprimir</h2>
+              <p>Elige el tipo de impresora que vas a utilizar.</p>
+            </div>
+            <button class="btn back-home" id="backToQueue" type="button">Volver a la cola</button>
+          </div>
+
+          <div class="printer-options">
+            <button class="printer-option letter-option" id="printLetter" type="button">
+              <span class="printer-option-icon" aria-hidden="true">▣</span>
+              <span class="printer-option-copy">
+                <strong>Impresora Tamaño Carta</strong>
+                <small>Impresora fija · mantiene la configuración actual de impresión</small>
+              </span>
+              <span class="printer-option-arrow" aria-hidden="true">›</span>
+            </button>
+
+            <button class="printer-option rf-option" id="printRF" type="button">
+              <span class="printer-option-icon" aria-hidden="true">▤</span>
+              <span class="printer-option-copy">
+                <strong>Impresora Portátil (RF)</strong>
+                <small>Impresión desde equipo portátil · configuración RF pendiente</small>
+              </span>
+              <span class="printer-option-arrow" aria-hidden="true">›</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    `;
+
+    document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
+    document.getElementById("backToQueue").addEventListener("click", renderMain);
+    document.getElementById("printLetter").addEventListener("click", printQueue);
+    document.getElementById("printRF").addEventListener("click", renderRFSetup);
+  }
+
+  function renderRFSetup() {
+    app.innerHTML = `
+      ${header()}
+      <section class="screen print-choice-screen">
+        <div class="print-choice-card rf-setup-card">
+          <span class="print-choice-kicker">Impresora Portátil (RF)</span>
+          <h2>Configuración RF</h2>
+          <p>
+            Esta ruta ya quedó separada de la impresión Tamaño Carta.
+            La configuración específica de la impresora portátil la hacemos en el siguiente paso.
+          </p>
+
+          <div class="rf-pending-box">
+            <strong>RF todavía no configurada</strong>
+            <span>No modifica la cola ni la configuración actual de impresión.</span>
+          </div>
+
+          <div class="rf-actions">
+            <button class="btn ghost" id="backToPrintOptions" type="button">Volver a opciones de impresión</button>
+            <button class="btn back-home" id="backToQueueFromRF" type="button">Volver a la cola</button>
+          </div>
+        </div>
+      </section>
+    `;
+
+    document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
+    document.getElementById("backToPrintOptions").addEventListener("click", renderPrintOptions);
+    document.getElementById("backToQueueFromRF").addEventListener("click", renderMain);
   }
 
   function printQueue() {
