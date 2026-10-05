@@ -467,29 +467,52 @@
   }
 
   function buildRFZpl(p) {
-    const widthDots = 464; // 58 mm a 203 dpi (8 dots/mm)
+    // Formato RF v18: un cartel se compone de DOS flejes fisicos.
+    // Cada fleje usa 58 mm de ancho util x 35 mm de alto.
+    // Al instalar el cartel, se deja aprox. 5 mm de separacion entre ambos flejes.
+    const widthDots = 464;   // 58 mm a 203 dpi (~8 dots/mm)
+    const flejeDots = 280;   // 35 mm a 203 dpi
+
     const name = rfAscii(posterProductName(p)).slice(0, 30);
-    const brand = rfAscii(p.brand || "").slice(0, 24);
+    const brand = rfAscii(p.brand || "").slice(0, 18);
+    const size = rfAscii(p.size || "").slice(0, 12);
     const price = rfAscii(p.price || "");
     const code = rfAscii(p.code || "");
+    const local = rfAscii(state.local || "");
+    const note = rfAscii(p.note || p.saving || p.unitLabel || "").slice(0, 38);
     const barcode = String(p.barcode || "").replace(/\D/g, "");
 
+    // FLEJE 1: promo/precio grande. Se usa practicamente completo para impacto visual.
+    const top = `^XA
+^PW${widthDots}
+^LL${flejeDots}
+^LH0,0
+^FO16,18^GB432,2,2^FS
+^FO16,48^A0N,30,30^FB432,1,0,C,0^FDPRECIO / PROMO^FS
+^FO12,92^A0N,82,74^FB440,1,0,C,0^FD${price}^FS
+^FO16,220^A0N,19,19^FB432,1,0,C,0^FDPAGANDO CON TODO MEDIO DE PAGO^FS
+^FO16,258^GB432,2,2^FS
+^XZ`;
+
+    // FLEJE 2: descripcion, marca/gramaje, mecanica y codigo de barras.
     let barcodeZpl = "";
     if (barcode.length >= 8 && barcode.length <= 14) {
-      barcodeZpl = `^FO22,236^BY2,2,58^BCN,58,Y,N,N^FD${barcode}^FS`;
+      barcodeZpl = `^FO52,154^BY2,2,54^BCN,54,Y,N,N^FD${barcode}^FS`;
     }
 
-    return `^XA
+    const details = `^XA
 ^PW${widthDots}
-^LL340
+^LL${flejeDots}
 ^LH0,0
-^FO22,18^A0N,25,25^FDCARTEL RF^FS
-^FO22,52^A0N,28,28^FD${name}^FS
-^FO22,84^A0N,22,22^FD${brand}^FS
-^FO22,118^A0N,70,70^FD${price}^FS
-^FO22,198^A0N,22,22^FDItem ${code}   Local ${rfAscii(state.local)}^FS
+^FO16,14^A0N,26,24^FB432,1,0,L,0^FD${name}^FS
+^FO16,46^A0N,21,20^FD${brand}${size ? "  " + size : ""}^FS
+${note ? `^FO16,76^A0N,18,18^FB432,2,2,L,0^FD${note}^FS` : ""}
+^FO16,122^A0N,18,18^FDItem ${code}   Local ${local}^FS
 ${barcodeZpl}
 ^XZ`;
+
+    // Dos formatos ZPL consecutivos = dos flejes consecutivos para un solo cartel.
+    return top + "\n" + details;
   }
 
   function setRFStatus(message, kind="") {
@@ -578,7 +601,7 @@ ${barcodeZpl}
             <div>
               <span class="print-choice-kicker">Impresora Portátil (RF) · Local ${esc(state.local)}</span>
               <h2>Prueba directa Zebra</h2>
-              <p>Primera etapa: enviar un solo cartel de la cola a la impresora RF mediante el puente local.</p>
+              <p>Formato RF: cada cartel se imprime en 2 flejes consecutivos. El primero lleva la promo/precio y el segundo los datos del producto.</p>
             </div>
             <button class="btn back-home" id="backToPrintOptions" type="button">Volver</button>
           </div>
@@ -604,7 +627,7 @@ ${barcodeZpl}
 
           <div class="rf-proof-box">
             <strong>Formato piloto RF</strong>
-            <span>58 mm de ancho · 1 cartel por impresión · ZPL directo por TCP 9100.</span>
+            <span>58 mm de ancho útil · 2 flejes de 35 mm por cartel · separación física sugerida de 5 mm · ZPL por TCP 9100.</span>
             <span>La impresión Tamaño Carta no se modifica.</span>
           </div>
 
@@ -612,7 +635,7 @@ ${barcodeZpl}
 
           <div class="rf-actions rf-actions-main">
             <button class="btn ghost" id="testRFBridge" type="button">Probar puente RF</button>
-            <button class="btn print" id="sendRFPrint" type="button">Imprimir 1 cartel RF</button>
+            <button class="btn print" id="sendRFPrint" type="button">Imprimir 1 cartel RF (2 flejes)</button>
           </div>
 
           <div class="rf-actions">

@@ -84,3 +84,13 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Agrega pantalla RF para seleccionar 1 cartel, guardar IP de impresora por local y enviar ZPL de 58 mm.
 - Incluye `rf-print-bridge.ps1`, un puente local Windows que recibe la orden desde la web y la reenvía a Zebra TCP/9100.
 - Esta etapa prueba conectividad real App → PC → Zebra. El diseño RF se ajustará después de validar impresión física.
+
+
+## v18 - Cartel RF en 2 flejes
+- Mantiene intacta la impresion Tamano Carta.
+- RF: ancho util 58 mm.
+- Cada cartel RF se imprime como 2 flejes consecutivos de 35 mm de alto.
+- Fleje superior: promo/precio grande.
+- Fleje inferior: descripcion, marca, gramaje, mecanica, item/local y codigo de barras.
+- La separacion fisica sugerida entre ambos flejes al montar el cartel es 5 mm.
+- El puente local y TCP 9100 se mantienen sin cambios funcionales.

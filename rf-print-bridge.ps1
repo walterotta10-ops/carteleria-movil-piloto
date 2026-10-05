@@ -1,4 +1,4 @@
-# Carteleria RF Bridge v17
+# Carteleria RF Bridge v18
 # Puente local: navegador -> 127.0.0.1:8787 -> Zebra TCP/9100
 # No modifica la configuracion de la impresora.
 
@@ -86,7 +86,7 @@ $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopba
 $listener.Start()
 Write-Host ""
 Write-Host "==============================================" -ForegroundColor Cyan
-Write-Host " Carteleria - Puente RF v17 ACTIVO" -ForegroundColor Green
+Write-Host " Carteleria - Puente RF v18 ACTIVO" -ForegroundColor Green
 Write-Host " http://127.0.0.1:$ListenPort" -ForegroundColor White
 Write-Host " Deja esta ventana abierta mientras imprimes." -ForegroundColor Yellow
 Write-Host " Para detenerlo: Ctrl+C" -ForegroundColor DarkGray
@@ -132,7 +132,7 @@ try {
             }
 
             if ($method -eq "GET" -and $path -eq "/health") {
-                Send-HttpResponse $stream 200 "OK" '{"ok":true,"bridge":"Carteleria RF Bridge","version":17}' $origin
+                Send-HttpResponse $stream 200 "OK" '{"ok":true,"bridge":"Carteleria RF Bridge","version":18}' $origin
                 continue
             }
 

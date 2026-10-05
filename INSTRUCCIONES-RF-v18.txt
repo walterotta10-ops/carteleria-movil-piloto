@@ -1,0 +1,12 @@
+CARTELERIA - RF v18
+
+Formato de prueba aprobado para seguir desarrollando sobre el fleje actual:
+- Ancho util: 58 mm.
+- Un cartel = 2 flejes consecutivos.
+- Cada fleje: 35 mm de alto.
+- Montaje: fleje superior + 5 mm de espacio sin imprimir + fleje inferior.
+- Fleje 1: promo/precio grande.
+- Fleje 2: descripcion, marca, gramaje, datos de promo, item/local y codigo de barras.
+
+La impresion Tamano Carta NO se modifica.
+El puente RF sigue usando 127.0.0.1:8787 y Zebra TCP 9100.
