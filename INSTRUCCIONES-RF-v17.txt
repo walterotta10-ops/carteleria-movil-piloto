@@ -1,0 +1,25 @@
+CARTELERIA - PRUEBA RF v17
+==========================
+
+OBJETIVO
+Probar desde la aplicacion web un cartel real de la cola hacia una Zebra ZQ620 Plus por TCP/9100.
+Esta version NO modifica la impresion Tamano Carta.
+
+1. En el PC que ya tiene comunicacion con la Zebra, abre PowerShell.
+2. Entra a la carpeta del proyecto y ejecuta:
+
+   powershell -ExecutionPolicy Bypass -File .\rf-print-bridge.ps1
+
+3. Deja la ventana del puente abierta.
+4. Abre Carteleria -> Imprimir cola -> Impresora Portatil (RF).
+5. Pulsa "Probar puente RF". Debe indicar: Puente RF conectado.
+6. Ingresa la IP de la Zebra. Para la prueba realizada en local 541 era 23.117.226.10.
+7. El codigo/MAC es opcional en esta primera integracion. Puede guardarse como referencia.
+8. Selecciona un solo cartel y pulsa "Imprimir 1 cartel RF".
+
+NOTAS
+- El formato RF piloto usa 58 mm de ancho (464 dots a 203 dpi).
+- Solo imprime un cartel por vez en esta etapa.
+- El diseno RF es deliberadamente simple: primero validamos el flujo App -> Puente -> Zebra.
+- Despues de confirmar la impresion desde la app se ajusta el diseno visual.
+- El puente solo acepta ZPL por puerto 9100 y escucha unicamente en 127.0.0.1:8787.

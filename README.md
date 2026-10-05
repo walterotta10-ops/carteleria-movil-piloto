@@ -77,3 +77,10 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - La ruta RF no modifica la cola.
 - Se puede volver a la cola desde ambas pantallas.
 - Caché actualizado a v16.
+
+
+## v17 — Puente RF Zebra (piloto)
+- Mantiene intacta la impresión Tamaño Carta de v15/v16.
+- Agrega pantalla RF para seleccionar 1 cartel, guardar IP de impresora por local y enviar ZPL de 58 mm.
+- Incluye `rf-print-bridge.ps1`, un puente local Windows que recibe la orden desde la web y la reenvía a Zebra TCP/9100.
+- Esta etapa prueba conectividad real App → PC → Zebra. El diseño RF se ajustará después de validar impresión física.

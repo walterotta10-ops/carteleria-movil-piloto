@@ -378,3 +378,37 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
   .printer-option-copy strong{font-size:17px}
   .rf-actions{flex-direction:column}
 }
+
+/* v17 — prueba de impresión directa RF mediante puente local */
+.rf-form-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin-top:22px;
+}
+.rf-field{display:grid;gap:7px;font-weight:800;color:#30353b}
+.rf-field span{font-size:13px}
+.rf-field input,.rf-field select{
+  width:100%;min-height:48px;border:1px solid #cfd5db;border-radius:11px;background:#fff;
+  padding:0 12px;font:inherit;color:#111;
+}
+.rf-field select{padding-right:30px}
+.rf-proof-box{
+  display:grid;gap:5px;margin-top:18px;padding:14px 15px;border-radius:12px;
+  background:#f5f7f9;border:1px solid #e0e4e8;color:#4c535b;font-size:13px;
+}
+.rf-proof-box strong{color:#111;font-size:15px}
+.rf-status{
+  margin-top:14px;padding:12px 14px;border-radius:11px;background:#f5f7f9;border:1px solid #e1e5e9;
+  font-weight:700;color:#4f5963;
+}
+.rf-status.ok{background:#eaf8ef;border-color:#bde6ca;color:#147338}
+.rf-status.error{background:#fff0f2;border-color:#f2c5cb;color:#a01828}
+.rf-status.working{background:#fff8e6;border-color:#f1dda5;color:#805e00}
+.rf-actions-main{margin-top:14px}
+.rf-actions-main .print{background:var(--green);color:#fff;border:0}
+.rf-actions-main .print:hover{filter:brightness(.96)}
+@media (min-width:760px){
+  .rf-form-grid{grid-template-columns:1fr 1fr}
+  .rf-field:first-child{grid-column:1 / -1}
+}

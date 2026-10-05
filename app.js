@@ -452,25 +452,170 @@
     document.getElementById("printRF").addEventListener("click", renderRFSetup);
   }
 
+  function rfStorageKey(name) {
+    return `carteleria.rf.${name}.${state.local || "sin-local"}`;
+  }
+
+  function rfAscii(value="") {
+    return String(value)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[\^~]/g, " ")
+      .replace(/[^\x20-\x7E]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function buildRFZpl(p) {
+    const widthDots = 464; // 58 mm a 203 dpi (8 dots/mm)
+    const name = rfAscii(posterProductName(p)).slice(0, 30);
+    const brand = rfAscii(p.brand || "").slice(0, 24);
+    const price = rfAscii(p.price || "");
+    const code = rfAscii(p.code || "");
+    const barcode = String(p.barcode || "").replace(/\D/g, "");
+
+    let barcodeZpl = "";
+    if (barcode.length >= 8 && barcode.length <= 14) {
+      barcodeZpl = `^FO22,236^BY2,2,58^BCN,58,Y,N,N^FD${barcode}^FS`;
+    }
+
+    return `^XA
+^PW${widthDots}
+^LL340
+^LH0,0
+^FO22,18^A0N,25,25^FDCARTEL RF^FS
+^FO22,52^A0N,28,28^FD${name}^FS
+^FO22,84^A0N,22,22^FD${brand}^FS
+^FO22,118^A0N,70,70^FD${price}^FS
+^FO22,198^A0N,22,22^FDItem ${code}   Local ${rfAscii(state.local)}^FS
+${barcodeZpl}
+^XZ`;
+  }
+
+  function setRFStatus(message, kind="") {
+    const box = document.getElementById("rfStatus");
+    if (!box) return;
+    box.className = `rf-status ${kind}`.trim();
+    box.textContent = message;
+  }
+
+  function getRFSelection() {
+    const select = document.getElementById("rfItemSelect");
+    const index = Number(select ? select.value : 0);
+    return state.queue[index] || state.queue[0] || null;
+  }
+
+  function saveRFPrinterFields() {
+    const ip = (document.getElementById("rfPrinterIp")?.value || "").trim();
+    const id = (document.getElementById("rfPrinterId")?.value || "").trim().toUpperCase().replace(/[^0-9A-F]/g, "");
+    if (ip) localStorage.setItem(rfStorageKey("ip"), ip);
+    if (id) localStorage.setItem(rfStorageKey("id"), id);
+    return {ip, id};
+  }
+
+  async function testRFBridge() {
+    setRFStatus("Comprobando puente RF…", "working");
+    try {
+      const response = await fetch("http://127.0.0.1:8787/health", {method:"GET", cache:"no-store"});
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      setRFStatus(data && data.ok ? "✓ Puente RF conectado" : "Puente RF respondió, pero no está listo.", data && data.ok ? "ok" : "error");
+    } catch (error) {
+      setRFStatus("No se detecta el puente RF. Ejecuta rf-print-bridge.ps1 en este PC y vuelve a probar.", "error");
+    }
+  }
+
+  async function printRFSelected() {
+    const product = getRFSelection();
+    if (!product) {
+      setRFStatus("No hay un cartel seleccionado.", "error");
+      return;
+    }
+
+    const {ip, id} = saveRFPrinterFields();
+    if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) {
+      setRFStatus("Ingresa la IP de la impresora RF.", "error");
+      return;
+    }
+    if (id && !/^[0-9A-F]{12}$/.test(id)) {
+      setRFStatus("El código de impresora debe tener 12 caracteres hexadecimales.", "error");
+      return;
+    }
+
+    setRFStatus(`Enviando ítem ${product.code} a la RF…`, "working");
+    try {
+      const response = await fetch("http://127.0.0.1:8787/print", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          ip,
+          port:9100,
+          printerId:id,
+          local:state.local,
+          item:product.code,
+          zpl:buildRFZpl(product)
+        })
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
+      setRFStatus(`✓ Ítem ${product.code} enviado a ${ip}:9100`, "ok");
+    } catch (error) {
+      setRFStatus(`No se pudo imprimir por RF: ${error.message || "error de conexión"}`, "error");
+    }
+  }
+
   function renderRFSetup() {
+    if (!state.queue.length) return renderMain();
+
+    const savedIp = localStorage.getItem(rfStorageKey("ip")) || "";
+    const savedId = localStorage.getItem(rfStorageKey("id")) || "";
+
     app.innerHTML = `
       ${header()}
       <section class="screen print-choice-screen">
         <div class="print-choice-card rf-setup-card">
-          <span class="print-choice-kicker">Impresora Portátil (RF)</span>
-          <h2>Configuración RF</h2>
-          <p>
-            Esta ruta ya quedó separada de la impresión Tamaño Carta.
-            La configuración específica de la impresora portátil la hacemos en el siguiente paso.
-          </p>
+          <div class="print-choice-top">
+            <div>
+              <span class="print-choice-kicker">Impresora Portátil (RF) · Local ${esc(state.local)}</span>
+              <h2>Prueba directa Zebra</h2>
+              <p>Primera etapa: enviar un solo cartel de la cola a la impresora RF mediante el puente local.</p>
+            </div>
+            <button class="btn back-home" id="backToPrintOptions" type="button">Volver</button>
+          </div>
 
-          <div class="rf-pending-box">
-            <strong>RF todavía no configurada</strong>
-            <span>No modifica la cola ni la configuración actual de impresión.</span>
+          <div class="rf-form-grid">
+            <label class="rf-field">
+              <span>Cartel a imprimir</span>
+              <select id="rfItemSelect">
+                ${state.queue.map((p,i) => `<option value="${i}">Ítem ${esc(p.code)} · ${esc(p.price)} · ${esc(p.name)}</option>`).join("")}
+              </select>
+            </label>
+
+            <label class="rf-field">
+              <span>IP impresora RF</span>
+              <input id="rfPrinterIp" inputmode="decimal" placeholder="Ej. 23.117.226.10" value="${esc(savedIp)}">
+            </label>
+
+            <label class="rf-field">
+              <span>Código impresora / MAC (opcional para esta prueba)</span>
+              <input id="rfPrinterId" autocomplete="off" maxlength="17" placeholder="Ej. 6095325D07AA" value="${esc(savedId)}">
+            </label>
+          </div>
+
+          <div class="rf-proof-box">
+            <strong>Formato piloto RF</strong>
+            <span>58 mm de ancho · 1 cartel por impresión · ZPL directo por TCP 9100.</span>
+            <span>La impresión Tamaño Carta no se modifica.</span>
+          </div>
+
+          <div id="rfStatus" class="rf-status">Primero comprueba que el puente RF esté activo.</div>
+
+          <div class="rf-actions rf-actions-main">
+            <button class="btn ghost" id="testRFBridge" type="button">Probar puente RF</button>
+            <button class="btn print" id="sendRFPrint" type="button">Imprimir 1 cartel RF</button>
           </div>
 
           <div class="rf-actions">
-            <button class="btn ghost" id="backToPrintOptions" type="button">Volver a opciones de impresión</button>
             <button class="btn back-home" id="backToQueueFromRF" type="button">Volver a la cola</button>
           </div>
         </div>
@@ -480,6 +625,10 @@
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     document.getElementById("backToPrintOptions").addEventListener("click", renderPrintOptions);
     document.getElementById("backToQueueFromRF").addEventListener("click", renderMain);
+    document.getElementById("testRFBridge").addEventListener("click", testRFBridge);
+    document.getElementById("sendRFPrint").addEventListener("click", printRFSelected);
+    document.getElementById("rfPrinterIp").addEventListener("change", saveRFPrinterFields);
+    document.getElementById("rfPrinterId").addEventListener("change", saveRFPrinterFields);
   }
 
   function printQueue() {
