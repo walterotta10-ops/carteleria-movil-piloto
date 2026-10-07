@@ -117,3 +117,7 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Tamaño Carta en móvil usa la misma salida de impresión del navegador para permitir elegir una impresora disponible en Android.
 - RF en móvil conserva captura/escritura de MAC y persistencia de MAC.
 - Escaneo de ítem por cámara se mantiene solo en móvil.
+
+
+## v23 Carta remota
+Correccion de impresion remota: CSS embebida, cola con reclamo seguro y puente que nunca imprime JSON/HTML como texto.

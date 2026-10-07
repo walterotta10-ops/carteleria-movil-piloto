@@ -1,0 +1,22 @@
+CARTELERIA v23 - CORRECCION IMPRESION CARTA REMOTA
+
+Corrige los dos problemas observados:
+1) hojas con JSON/HTML impreso como texto;
+2) cartel deformado por no cargar styles.css a tiempo.
+
+CAMBIOS
+- La CSS de impresion viaja embebida dentro del trabajo. El PC no depende de Render para maquetar.
+- El puente v23 NUNCA imprime contenido crudo como texto.
+- Cloudflare usa /tomar para reclamar un trabajo; un solo puente puede procesarlo.
+- /siguiente queda desactivado: puentes viejos no reciben trabajos.
+- Se conserva la maqueta aprobada: 4 por hoja + desplazamiento 10 mm hacia arriba.
+- El trabajo impreso/error se elimina a los 20 minutos por el Cron ya configurado.
+
+ANTES DE PROBAR
+1. En Cloudflare > Edit code, reemplazar worker.js por CLOUDFLARE-WORKER-v23.js y Deploy.
+2. Cerrar TODOS los puentes Carta PowerShell antiguos.
+3. Reemplazar puente-carta-automatico.ps1 por el v23 de este ZIP y ejecutarlo.
+4. Subir esta version de la web/app a GitHub/Render.
+5. En móvil: Local -> cola -> Tamaño Carta -> IP impresora -> Enviar.
+
+La configuracion local guardada en puente-carta-config.json se reutiliza; no deberia pedir nuevamente el local.

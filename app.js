@@ -700,17 +700,19 @@
     `).join("");
   }
 
-  function buildRemoteLetterHtml() {
-    // Se reutiliza la misma hoja de estilos publicada por Cartelería para mantener
-    // exactamente la maqueta Carta aprobada (4 por hoja + subida de 10 mm).
+  function buildRemoteLetterHtml(printCss) {
+    // v23: la hoja de estilos viaja DENTRO del trabajo.
+    // El PC ya no depende de Render para cargar styles.css al momento de imprimir.
+    // Esto conserva exactamente la maqueta Carta aprobada: 4 por hoja + subida de 10 mm.
     const pages = buildLetterPrintPages();
+    const embeddedCss = String(printCss || "").replace(/<\/style/gi, "<\\/style");
     return `<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cartelería · Local ${esc(state.local)}</title>
-  <link rel="stylesheet" href="https://carteleria-movil-piloto.onrender.com/styles.css">
+  <style>${embeddedCss}</style>
   <style>
     html,body{margin:0!important;padding:0!important;background:#fff!important}
     #remoteInfo{display:none!important}
@@ -722,7 +724,7 @@
   <div id="printRoot">${pages}</div>
   <script>
     window.addEventListener('load', function(){
-      setTimeout(function(){ window.print(); }, 900);
+      setTimeout(function(){ window.print(); }, 350);
     });
     window.addEventListener('afterprint', function(){
       setTimeout(function(){ window.close(); }, 400);
@@ -756,16 +758,25 @@
     if (button) button.disabled = true;
     setLetterRemoteStatus(`Enviando ${state.queue.length} cartel${state.queue.length === 1 ? "" : "es"} al local ${state.local}…`, "working");
 
-    const payload = {
-      kind: "carta_html",
-      version: "v22",
-      local: String(state.local),
-      printer_ip: printerIp,
-      cantidad: state.queue.length,
-      html: buildRemoteLetterHtml()
-    };
-
     try {
+      // Se toma la CSS de la misma versión que el usuario tiene abierta en el móvil
+      // y se incrusta en el HTML. Si no puede cargarse, NO se manda un trabajo incompleto.
+      const cssResponse = await fetch("styles.css", {cache: "no-store"});
+      if (!cssResponse.ok) throw new Error(`No se pudo preparar el formato Carta (CSS ${cssResponse.status})`);
+      const printCss = await cssResponse.text();
+      if (!printCss.includes("@media print") || !printCss.includes(".print-cell")) {
+        throw new Error("La hoja de estilos de impresión no es válida");
+      }
+
+      const payload = {
+        kind: "carta_html",
+        version: "v23",
+        local: String(state.local),
+        printer_ip: printerIp,
+        cantidad: state.queue.length,
+        html: buildRemoteLetterHtml(printCss)
+      };
+
       const response = await fetch(`${CARTA_REMOTE_URL}/trabajo`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
