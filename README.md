@@ -100,3 +100,20 @@ La impresión usa ahora la misma geometría interna de la miniatura/cola; solo e
 - Base PC: v18 aprobada, sin cambios funcionales en escritorio.
 - Rama móvil: escaneo de ítem por cámara, búsqueda por código de barras solo en móvil, captura/ingreso manual de MAC y preparación RF móvil.
 - La conexión Android -> Zebra real queda para el siguiente paso; no se simula ni se altera la ruta PC.
+
+
+## v20.1 — persistencia MAC móvil
+- La MAC Zebra móvil queda guardada de forma persistente en el teléfono.
+- Volver a la cola no borra la MAC.
+- Recargar la app no borra la MAC.
+- Cambiar de local no borra la MAC.
+- Solo cambia cuando el usuario guarda o escanea otra MAC válida.
+- PC permanece sin cambios respecto de v18/v20.
+
+
+## v21 — móvil con dos opciones de impresión
+- PC queda sin cambios funcionales respecto de v18: Tamaño Carta y RF por puente local.
+- En móvil, “Imprimir cola” vuelve a mostrar dos opciones: Impresora Tamaño Carta e Impresora Portátil (RF).
+- Tamaño Carta en móvil usa la misma salida de impresión del navegador para permitir elegir una impresora disponible en Android.
+- RF en móvil conserva captura/escritura de MAC y persistencia de MAC.
+- Escaneo de ítem por cámara se mantiene solo en móvil.

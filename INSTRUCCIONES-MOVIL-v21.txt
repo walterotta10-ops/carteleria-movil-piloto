@@ -1,0 +1,9 @@
+Cartelería v21 — prueba móvil
+
+1. En móvil, agrega carteles a la cola.
+2. Pulsa “Imprimir cola”.
+3. Ahora aparecen dos opciones:
+   - Impresora Tamaño Carta: abre la impresión normal del navegador/Android.
+   - Impresora Portátil (RF): mantiene el flujo móvil por MAC.
+4. La ruta PC no fue modificada funcionalmente.
+5. La MAC RF sigue persistente en el teléfono.

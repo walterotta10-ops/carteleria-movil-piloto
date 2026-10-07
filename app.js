@@ -3,11 +3,14 @@
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
+  const MOBILE_MAC_KEY = "carteleria.rf.mobile.mac";
+
   const state = {
     local: localStorage.getItem("carteleria.local") || "",
     itemCode: "",
     product: null,
-    queue: []
+    queue: [],
+    mobileMac: localStorage.getItem(MOBILE_MAC_KEY) || ""
   };
 
   function isMobileDevice() {
@@ -130,12 +133,10 @@
     document.getElementById("backHome").addEventListener("click", changeLocal);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     const printBtn = document.getElementById("printBtn");
-    if (isMobileDevice()) {
-      printBtn.addEventListener("click", renderRFMobileSetup);
-    } else {
-      // Escritorio conserva EXACTAMENTE la ruta v18.
-      printBtn.addEventListener("click", renderPrintOptions);
-    }
+    // Tanto PC como móvil abren la selección de impresora.
+    // En PC se conserva exactamente la ruta v18.
+    // En móvil se ofrecen Tamaño Carta + RF móvil.
+    printBtn.addEventListener("click", renderPrintOptions);
     document.getElementById("clearQueue").addEventListener("click", () => {
       if (!state.queue.length) return;
       if (!window.confirm("¿Borrar todos los carteles de la cola de impresión?")) return;
@@ -488,7 +489,8 @@
               if (mac.length !== 12) {
                 status.textContent = `Código leído (${raw}), pero no contiene una MAC válida de 12 caracteres.`;
               } else {
-                localStorage.setItem("carteleria.rf.mobile.mac", mac);
+                state.mobileMac = mac;
+      localStorage.setItem(MOBILE_MAC_KEY, mac);
                 closeCameraScanner();
                 renderRFMobileSetup(mac);
                 return;
@@ -514,7 +516,8 @@
     const mac = normalizeMac(input?.value || "");
     if (input) input.value = mac;
     if (mac.length === 12) {
-      localStorage.setItem("carteleria.rf.mobile.mac", mac);
+      state.mobileMac = mac;
+      localStorage.setItem(MOBILE_MAC_KEY, mac);
       const s = document.getElementById("mobileRFStatus");
       if (s) { s.className = "rf-status ok"; s.textContent = `✓ Impresora guardada: ${mac}`; }
       return mac;
@@ -526,7 +529,11 @@
 
   function renderRFMobileSetup(forcedMac="") {
     if (!state.queue.length) return renderMain();
-    const savedMac = forcedMac || localStorage.getItem("carteleria.rf.mobile.mac") || "";
+    const savedMac = normalizeMac(forcedMac || state.mobileMac || localStorage.getItem(MOBILE_MAC_KEY) || "");
+    if (savedMac.length === 12) {
+      state.mobileMac = savedMac;
+      localStorage.setItem(MOBILE_MAC_KEY, savedMac);
+    }
     app.innerHTML = `
       ${header()}
       <section class="screen print-choice-screen mobile-rf-screen">
@@ -574,10 +581,25 @@
       </section>`;
 
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
-    document.getElementById("backMobileRF").addEventListener("click", renderMain);
+    document.getElementById("backMobileRF").addEventListener("click", () => {
+      const input = document.getElementById("mobileMacInput");
+      const mac = normalizeMac(input?.value || state.mobileMac || "");
+      if (mac.length === 12) {
+        state.mobileMac = mac;
+        localStorage.setItem(MOBILE_MAC_KEY, mac);
+      }
+      renderMain();
+    });
     document.getElementById("scanMacBtn").addEventListener("click", () => openCameraScanner("mac"));
     document.getElementById("saveMacBtn").addEventListener("click", saveMobileMac);
     document.getElementById("mobileMacInput").addEventListener("change", saveMobileMac);
+    document.getElementById("mobileMacInput").addEventListener("input", (e) => {
+      const mac = normalizeMac(e.target.value);
+      if (mac.length === 12) {
+        state.mobileMac = mac;
+        localStorage.setItem(MOBILE_MAC_KEY, mac);
+      }
+    });
     document.getElementById("prepareMobileRF").addEventListener("click", () => {
       const mac = saveMobileMac();
       if (!mac) return;
@@ -618,7 +640,7 @@
               <span class="printer-option-icon" aria-hidden="true">▤</span>
               <span class="printer-option-copy">
                 <strong>Impresora Portátil (RF)</strong>
-                <small>Impresión desde equipo portátil · configuración RF pendiente</small>
+                <small>${isMobileDevice() ? "Modo móvil · MAC Zebra · flujo RF en prueba" : "Impresión desde equipo portátil · configuración RF por puente local"}</small>
               </span>
               <span class="printer-option-arrow" aria-hidden="true">›</span>
             </button>
@@ -630,7 +652,14 @@
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     document.getElementById("backToQueue").addEventListener("click", renderMain);
     document.getElementById("printLetter").addEventListener("click", printQueue);
-    document.getElementById("printRF").addEventListener("click", renderRFSetup);
+    document.getElementById("printRF").addEventListener("click", () => {
+      if (isMobileDevice()) {
+        renderRFMobileSetup();
+      } else {
+        // Escritorio conserva exactamente la ruta RF v18 por puente local.
+        renderRFSetup();
+      }
+    });
   }
 
   function rfStorageKey(name) {
