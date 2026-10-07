@@ -4,6 +4,7 @@
   const printRoot = document.getElementById("printRoot");
 
   const MOBILE_MAC_KEY = "carteleria.rf.mobile.mac";
+  const CARTA_REMOTE_URL = "https://carteleria-puente-carta.walterotta10.workers.dev";
 
   const state = {
     local: localStorage.getItem("carteleria.local") || "",
@@ -631,7 +632,7 @@
               <span class="printer-option-icon" aria-hidden="true">▣</span>
               <span class="printer-option-copy">
                 <strong>Impresora Tamaño Carta</strong>
-                <small>Impresora fija · mantiene la configuración actual de impresión</small>
+                <small>${isMobileDevice() ? "Envío remoto al PC del local · selecciona la impresora por IP" : "Impresora fija · mantiene la configuración actual de impresión"}</small>
               </span>
               <span class="printer-option-arrow" aria-hidden="true">›</span>
             </button>
@@ -651,7 +652,14 @@
 
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     document.getElementById("backToQueue").addEventListener("click", renderMain);
-    document.getElementById("printLetter").addEventListener("click", printQueue);
+    document.getElementById("printLetter").addEventListener("click", () => {
+      if (isMobileDevice()) {
+        renderLetterMobileSetup();
+      } else {
+        // Escritorio conserva exactamente la impresión Carta local ya aprobada.
+        printQueue();
+      }
+    });
     document.getElementById("printRF").addEventListener("click", () => {
       if (isMobileDevice()) {
         renderRFMobileSetup();
@@ -659,6 +667,179 @@
         // Escritorio conserva exactamente la ruta RF v18 por puente local.
         renderRFSetup();
       }
+    });
+  }
+
+
+  function cartaIpStorageKey() {
+    return `carteleria.carta.ip.${state.local || "sin-local"}`;
+  }
+
+  function normalizePrinterIp(value="") {
+    return String(value).trim().replace(/\s+/g, "");
+  }
+
+  function isValidIpv4(value="") {
+    const ip = normalizePrinterIp(value);
+    const parts = ip.split(".");
+    return parts.length === 4 && parts.every(part => /^\d{1,3}$/.test(part) && Number(part) >= 0 && Number(part) <= 255);
+  }
+
+  function buildLetterPrintPages() {
+    const chunks = [];
+    for (let i=0; i<state.queue.length; i += 4) chunks.push(state.queue.slice(i, i+4));
+
+    return chunks.map((chunk, pageIndex) => `
+      <section class="print-page ${pageIndex < chunks.length-1 ? "page-break" : ""}">
+        ${[0,1,2,3].map(i => `
+          <div class="print-cell">
+            ${chunk[i] ? productCard(chunk[i], "print") : ""}
+          </div>
+        `).join("")}
+      </section>
+    `).join("");
+  }
+
+  function buildRemoteLetterHtml() {
+    // Se reutiliza la misma hoja de estilos publicada por Cartelería para mantener
+    // exactamente la maqueta Carta aprobada (4 por hoja + subida de 10 mm).
+    const pages = buildLetterPrintPages();
+    return `<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cartelería · Local ${esc(state.local)}</title>
+  <link rel="stylesheet" href="https://carteleria-movil-piloto.onrender.com/styles.css">
+  <style>
+    html,body{margin:0!important;padding:0!important;background:#fff!important}
+    #remoteInfo{display:none!important}
+    @media screen{#printRoot{display:block!important}}
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="printRoot">${pages}</div>
+  <script>
+    window.addEventListener('load', function(){
+      setTimeout(function(){ window.print(); }, 900);
+    });
+    window.addEventListener('afterprint', function(){
+      setTimeout(function(){ window.close(); }, 400);
+    });
+  <\/script>
+</body>
+</html>`;
+  }
+
+  function setLetterRemoteStatus(message, kind="") {
+    const box = document.getElementById("letterRemoteStatus");
+    if (!box) return;
+    box.className = `rf-status ${kind}`.trim();
+    box.textContent = message;
+  }
+
+  async function sendLetterRemoteJob() {
+    if (!state.queue.length) return renderMain();
+
+    const input = document.getElementById("letterPrinterIp");
+    const button = document.getElementById("sendLetterRemote");
+    const printerIp = normalizePrinterIp(input?.value || "");
+
+    if (!isValidIpv4(printerIp)) {
+      setLetterRemoteStatus("Ingresa una IP válida de la impresora Tamaño Carta.", "error");
+      input?.focus();
+      return;
+    }
+
+    localStorage.setItem(cartaIpStorageKey(), printerIp);
+    if (button) button.disabled = true;
+    setLetterRemoteStatus(`Enviando ${state.queue.length} cartel${state.queue.length === 1 ? "" : "es"} al local ${state.local}…`, "working");
+
+    const payload = {
+      kind: "carta_html",
+      version: "v22",
+      local: String(state.local),
+      printer_ip: printerIp,
+      cantidad: state.queue.length,
+      html: buildRemoteLetterHtml()
+    };
+
+    try {
+      const response = await fetch(`${CARTA_REMOTE_URL}/trabajo`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          local: String(state.local),
+          printer_ip: printerIp,
+          contenido: JSON.stringify(payload)
+        })
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
+
+      setLetterRemoteStatus(`✓ Trabajo ${data.id} enviado al local ${state.local} · impresora ${printerIp}`, "ok");
+      const info = document.getElementById("letterRemoteInfo");
+      if (info) {
+        info.innerHTML = `<strong>Enviado correctamente</strong><span>El PC del local ${esc(state.local)} recibirá la cola y la enviará a la impresora ${esc(printerIp)}.</span><span>La cola del teléfono se mantiene para permitir una reimpresión si fuera necesario.</span>`;
+      }
+    } catch (error) {
+      setLetterRemoteStatus(`No se pudo enviar la impresión: ${error.message || "error de conexión"}`, "error");
+    } finally {
+      if (button) button.disabled = false;
+    }
+  }
+
+  function renderLetterMobileSetup() {
+    if (!state.queue.length) return renderMain();
+
+    const savedIp = localStorage.getItem(cartaIpStorageKey()) || "";
+    app.innerHTML = `
+      ${header()}
+      <section class="screen print-choice-screen mobile-letter-screen">
+        <div class="print-choice-card rf-setup-card">
+          <div class="print-choice-top">
+            <div>
+              <span class="print-choice-kicker">Tamaño Carta · Local ${esc(state.local)}</span>
+              <h2>Enviar a impresora del local</h2>
+              <p>Indica la IP de la impresora. El teléfono envía la cola a Cloudflare y el PC del local la imprime automáticamente.</p>
+            </div>
+            <button class="btn back-home" id="backMobileLetter" type="button">Volver</button>
+          </div>
+
+          <div class="rf-form-grid letter-remote-grid">
+            <label class="rf-field">
+              <span>IP impresora Tamaño Carta</span>
+              <input id="letterPrinterIp" inputmode="decimal" autocomplete="off" placeholder="Ej. 22.117.224.123" value="${esc(savedIp)}">
+            </label>
+          </div>
+
+          <div class="rf-proof-box">
+            <strong>Destino remoto</strong>
+            <span>Local ${esc(state.local)} identifica el PC receptor. La IP identifica cuál impresora instalada en ese PC debe usar.</span>
+            <span>La última IP usada queda guardada en este teléfono para este local.</span>
+          </div>
+
+          <div id="letterRemoteStatus" class="rf-status">Listo para enviar ${state.queue.length} cartel${state.queue.length === 1 ? "" : "es"}.</div>
+
+          <div class="rf-actions rf-actions-main">
+            <button class="btn print" id="sendLetterRemote" type="button">Enviar impresión Tamaño Carta</button>
+          </div>
+
+          <div id="letterRemoteInfo" class="rf-pending-box letter-remote-info">
+            <strong>Formato conservado</strong>
+            <span>4 carteles por hoja y desplazamiento de 10 mm hacia arriba, igual a la impresión Carta ya aprobada.</span>
+          </div>
+        </div>
+      </section>`;
+
+    document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
+    document.getElementById("backMobileLetter").addEventListener("click", renderPrintOptions);
+    document.getElementById("sendLetterRemote").addEventListener("click", sendLetterRemoteJob);
+    document.getElementById("letterPrinterIp").addEventListener("change", (e) => {
+      const ip = normalizePrinterIp(e.target.value);
+      e.target.value = ip;
+      if (isValidIpv4(ip)) localStorage.setItem(cartaIpStorageKey(), ip);
     });
   }
 

@@ -1,0 +1,31 @@
+Cartelería v22 — Tamaño Carta remoto por local + IP
+
+QUÉ CAMBIA
+- En PC, la impresión Tamaño Carta del navegador se mantiene igual.
+- En móvil, "Impresora Tamaño Carta" ya no abre la configuración de impresoras Android.
+- El móvil usa el número de local ingresado al inicio y pide la IP de la impresora Carta.
+- La última IP queda guardada en el teléfono para ese local.
+- El trabajo viaja a Cloudflare y lo recoge el Puente Carta del PC del mismo local.
+- Cloudflare conserva los trabajos impresos 20 minutos y luego los elimina mediante Cron Trigger.
+- RF se mantiene sin cambios.
+
+INSTALACIÓN DEL PUENTE EN CADA LOCAL
+1. Copiar puente-carta-automatico.ps1 a una carpeta del PC que tenga instaladas las impresoras del local.
+2. En PowerShell ejecutar una vez:
+   Unblock-File "RUTA\puente-carta-automatico.ps1"
+3. Ejecutar:
+   & "RUTA\puente-carta-automatico.ps1"
+4. La primera vez pedirá el número de local. Queda guardado en puente-carta-config.json.
+5. Dejar la ventana abierta mientras se quiera recibir impresiones móviles.
+
+USO EN EL MÓVIL
+1. Entrar a Cartelería con el número de local.
+2. Agregar carteles a la cola.
+3. Imprimir cola > Impresora Tamaño Carta.
+4. Escribir la IP de la impresora instalada en el PC del local.
+5. Presionar "Enviar impresión Tamaño Carta".
+
+IMPORTANTE
+- La IP no es una conexión directa desde el teléfono: sirve para que el puente identifique cuál impresora instalada en Windows debe usar.
+- Para un mismo local con dos impresoras, basta escribir la IP de la impresora deseada.
+- El formato Carta conserva 4 carteles por hoja y el desplazamiento de 10 mm hacia arriba.

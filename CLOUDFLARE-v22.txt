@@ -1,0 +1,18 @@
+Cloudflare Cartelería v22
+
+Worker: carteleria-puente-carta
+Binding D1: DB -> carteleria-cola
+Cron trigger: * * * * *  (Every minute)
+
+Regla de limpieza:
+- El puente confirma /impreso.
+- El trabajo queda con estado "impreso".
+- El Cron revisa cada minuto.
+- Cuando han pasado 20 minutos desde la confirmación, el registro se elimina de D1.
+
+El Worker v22 acepta:
+- local
+- printer_ip
+- contenido
+
+La aplicación móvil envía contenido como JSON con kind="carta_html" y el HTML listo para impresión.

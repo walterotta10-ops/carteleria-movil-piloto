@@ -14,3 +14,9 @@ Regla visual aplicada:
 - vigencia abajo a la derecha,
 - franja negra solo en Nx$ y Ahorro,
 - estructura de cada formato separada.
+
+--- v22 ---
+Móvil Tamaño Carta: envío remoto por Cloudflare usando local + IP de impresora.
+PC Tamaño Carta: mantiene impresión local existente.
+RF: sin cambios.
+Puente nuevo: puente-carta-automatico.ps1
