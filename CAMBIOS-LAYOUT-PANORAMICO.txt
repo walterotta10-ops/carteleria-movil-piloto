@@ -1,0 +1,9 @@
+MODIFICACION LAYOUT PANORAMICO PROMOCIONES
+
+Después de ingresar local: dos opciones (ítem y layout).
+Layout tipo genérico sin nombre/número de tienda. Zonas navegables, categorías y conteos basados en el catálogo disponible.
+Vinos: Lista 22086 con 31 registros. Selección individual o todos y envío a la cola existente; impresión desde la cola.
+Zonas sin productos cargados muestran 0. No se inventan registros.
+Zoom con botones + y -.
+Puentes HP/Zebra, rutas de impresión y servidor no modificados.
+NOTA: distribución visual tipo provisional, a afinar con el usuario.

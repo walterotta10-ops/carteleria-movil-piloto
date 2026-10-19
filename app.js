@@ -11,7 +11,9 @@
     itemCode: "",
     product: null,
     queue: [],
-    mobileMac: localStorage.getItem(MOBILE_MAC_KEY) || ""
+    mobileMac: localStorage.getItem(MOBILE_MAC_KEY) || "",
+    selectedLayout: new Set(),
+    layoutZoom: 1
   };
 
   function isMobileDevice() {
@@ -81,8 +83,78 @@
       loadQueue();
       state.product = null;
       state.itemCode = "";
-      renderMain();
+      renderMenu();
     });
+  }
+
+  // Menú de dos accesos. El módulo de impresión existente permanece intacto.
+  function renderMenu() {
+    if (!state.local) return landing();
+    app.innerHTML = `${header()}<section class="screen mode-screen">
+      <h1>¿Qué deseas hacer?</h1><p>Elige cómo revisar tus promociones.</p>
+      <div class="mode-grid">
+        <button type="button" class="mode-tile" id="modeItem"><span class="mode-emoji">▣</span><strong>Ingresar o escanear ítem</strong><small>Buscar un cartel por código o escanearlo</small></button>
+        <button type="button" class="mode-tile" id="modeLayout"><span class="mode-emoji">▦</span><strong>Layout panorámico promociones</strong><small>Recorrer zonas, revisar categorías e imprimir</small></button>
+      </div></section>`;
+    document.getElementById("modeItem").onclick = renderMain;
+    document.getElementById("modeLayout").onclick = renderLayout;
+    document.getElementById("changeLocalTop").onclick = changeLocal;
+  }
+
+  const zoneDefinitions = [
+    {name:"Abarrotes", icon:"🍚", groups:["Arroz","Pastas","Aceites","Legumbres","Harinas","Conservas"]},
+    {name:"Bebestibles", icon:"🥤", groups:["Aguas","Bebidas","Jugos"]},
+    {name:"Licores", icon:"🍷", groups:["Vinos","Cervezas","Licores"]},
+    {name:"Perfumería", icon:"🧴", groups:["Champú","Acondicionador","Jabones","Tinturas","Desodorantes"]},
+    {name:"Limpieza", icon:"🧼", groups:["Detergentes","Suavizantes","Lavaloza","Limpiadores"]},
+    {name:"Frescos", icon:"🥛", groups:["Lácteos","Carnes","Panadería","Congelados"]},
+    {name:"Hogar y otros", icon:"🏠", groups:["Hogar","Mascotas","Textil"]}
+  ];
+  const categoryFor = p => {
+    const v = String(p.categoryName || "").toLowerCase();
+    const n = String(p.name || "").toLowerCase();
+    if (v.includes("vino") || n.includes("vino")) return "Vinos";
+    if (v.includes("cerveza")) return "Cervezas";
+    if (v.includes("licor")) return "Licores";
+    return p.categoryName || "Sin clasificar";
+  };
+  const groupProducts = name => catalog.filter(p => categoryFor(p) === name);
+  const zoneProducts = zone => zone.groups.flatMap(groupProducts);
+  function renderLayout(activeZone = null, activeGroup = null) {
+    if (!state.local) return landing();
+    loadQueue();
+    const total = catalog.length;
+    const zone = zoneDefinitions.find(z => z.name === activeZone);
+    const products = activeGroup ? groupProducts(activeGroup) : [];
+    const checked = products.filter(p => state.selectedLayout.has(String(p.signId || p.code))).length;
+    app.innerHTML = `${header()}<section class="screen panorama-screen">
+      <div class="panorama-head"><button class="btn back-home" id="layoutBack">← ${activeGroup ? "Categorías" : zone ? "Plano" : "Menú"}</button>
+      <div><h1>Layout panorámico promociones</h1><p>Plano tipo · ${total} carteles cargados · sin referencia a un local específico</p></div></div>
+      ${!zone ? `<div class="panorama-tools"><span>Vista superior de zonas</span><div><button class="btn" id="zoomOut">−</button><strong>${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
+      <div class="panorama-viewport"><div class="panorama-map" id="panoramaMap" style="transform:scale(${state.layoutZoom})">
+        <div class="panorama-entrance">ENTRADA · ZONAS DE PROMOCIONES</div>
+        ${zoneDefinitions.map(z=>`<button class="panorama-zone" data-zone="${esc(z.name)}"><span class="zone-icon">${z.icon}</span><strong>${esc(z.name)}</strong><span>${zoneProducts(z).length} carteles</span></button>`).join("")}
+      </div></div><p class="panorama-hint">Toca una zona para abrir sus categorías. Usa + y − para ampliar o reducir.</p>` :
+      !activeGroup ? `<div class="panorama-breadcrumb">${esc(zone.name)} · ${zoneProducts(zone).length} carteles</div>
+        <div class="category-grid">${[...zone.groups,...new Set(zoneProducts(zone).map(categoryFor).filter(n=>!zone.groups.includes(n)))].map(g=>`<button class="category-tile" data-group="${esc(g)}"><strong>${esc(g)}</strong><span>${groupProducts(g).length} carteles</span></button>`).join("")}</div>` :
+      `<div class="panorama-breadcrumb">${esc(zone.name)} › ${esc(activeGroup)} · ${products.length} carteles</div>
+       <div class="selection-tools"><label><input type="checkbox" id="selectAllLayout" ${products.length && checked===products.length ? "checked" : ""}> Seleccionar todos (${checked}/${products.length})</label><button class="btn primary" id="sendLayoutQueue" ${checked ? "" : "disabled"}>Agregar ${checked} a cola</button></div>
+       <div class="layout-product-list">${products.map(p=>`<label class="layout-product"><input type="checkbox" data-sign="${esc(String(p.signId || p.code))}" ${state.selectedLayout.has(String(p.signId || p.code)) ? "checked" : ""}><span><strong>${esc(p.name)}</strong><small>${esc(p.brand || "")} · Ítem ${esc(p.code)} · ${esc(p.listName || p.campaignName || "")}</small></span><b>${esc(p.price || "")}</b></label>`).join("") || `<p>No hay carteles cargados en esta categoría todavía.</p>`}</div>
+       <p class="panorama-hint">Puedes seleccionar carteles y agregarlos a la cola. No se imprimen automáticamente.</p>`}
+      <div class="layout-queue-bar"><span>Cola de impresión: <strong>${state.queue.length}</strong></span><button class="btn primary" id="goToQueue">Ver cola e imprimir</button></div>
+    </section>`;
+    document.getElementById("changeLocalTop").onclick = changeLocal;
+    document.getElementById("layoutBack").onclick = () => activeGroup ? renderLayout(activeZone) : zone ? renderLayout() : renderMenu();
+    document.getElementById("goToQueue").onclick = renderMain;
+    document.getElementById("zoomIn")?.addEventListener("click",()=>{state.layoutZoom=Math.min(1.8,Math.round((state.layoutZoom+.2)*10)/10);renderLayout();});
+    document.getElementById("zoomOut")?.addEventListener("click",()=>{state.layoutZoom=Math.max(.6,Math.round((state.layoutZoom-.2)*10)/10);renderLayout();});
+    document.querySelectorAll("[data-zone]").forEach(b=>b.onclick=()=>renderLayout(b.dataset.zone));
+    document.querySelectorAll("[data-group]").forEach(b=>b.onclick=()=>renderLayout(activeZone,b.dataset.group));
+    document.querySelectorAll("[data-sign]").forEach(b=>b.onchange=()=>{if(b.checked)state.selectedLayout.add(b.dataset.sign);else state.selectedLayout.delete(b.dataset.sign);renderLayout(activeZone,activeGroup);});
+    const selectAll=document.getElementById("selectAllLayout");
+    if(selectAll)selectAll.onchange=()=>{products.forEach(p=>{const id=String(p.signId||p.code);if(selectAll.checked)state.selectedLayout.add(id);else state.selectedLayout.delete(id)});renderLayout(activeZone,activeGroup);};
+    const send=document.getElementById("sendLayoutQueue");
+    if(send)send.onclick=()=>{const chosen=products.filter(p=>state.selectedLayout.has(String(p.signId||p.code)));chosen.forEach(p=>state.queue.push({...p,qid:Date.now()+Math.random()}));saveQueue();chosen.forEach(p=>state.selectedLayout.delete(String(p.signId||p.code)));renderMain();};
   }
 
   function renderMain() {
@@ -131,7 +203,7 @@
     if (isMobileDevice()) {
       document.getElementById("scanItemBtn")?.addEventListener("click", () => openCameraScanner("item"));
     }
-    document.getElementById("backHome").addEventListener("click", changeLocal);
+    document.getElementById("backHome").addEventListener("click", renderMenu);
     document.getElementById("changeLocalTop").addEventListener("click", changeLocal);
     const printBtn = document.getElementById("printBtn");
     // Tanto PC como móvil abren la selección de impresora.
@@ -1078,7 +1150,7 @@ ${barcodeZpl}
 
   if (state.local) {
     loadQueue();
-    renderMain();
+    renderMenu();
   } else {
     landing();
   }
