@@ -1,0 +1,5 @@
+Base de prueba vaciada (30 items eliminados de catalog.js, data/catalog.json y data/products.json).
+La app conserva su busqueda, diseno y funciones de impresion.
+Para cargar nuevos productos desde DevTools sera necesario convertir los datos capturados al esquema del catalogo y publicarlos en catalog.js (y sincronizar los JSON si corresponde).
+No se ha implementado una integracion automatica con DevTools.
+No se alteraron los puentes de impresion.
