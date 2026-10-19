@@ -1,0 +1,3 @@
+VERSION MENU 25
+Al ingresar local debe aparecer: 1. Ingresar o escanear item; 2. Layout panoramico promociones.
+Si aparece directamente ingresar item, verificar que se reemplazo index.html, app.js y styles.css en la raiz del repositorio, y recargar sin cache.
