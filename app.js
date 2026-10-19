@@ -225,6 +225,7 @@
   }
 
   function categoryText(p) {
+    if (p.categoryId && p.categoryName) return `${p.categoryId} - ${p.categoryName}`;
     if (p.type === "nx") return "8468 - BEBIDAS DILUIBLES";
     if (String(p.name).includes("HUEVO")) return "8479 - HUEVOS";
     if (p.brand === "NIVEA BODY") return "9267 - CUIDADO CORPORAL";
@@ -234,7 +235,7 @@
   }
 
   function campaignText(p) {
-    return p.type === "normal" ? "LISTA 3 BARATO TODOS LOS DIAS" : "LISTA 3 SBA - AHORA MAS BARATO";
+    return p.campaignName || (p.type === "normal" ? "LISTA 3 BARATO TODOS LOS DIAS" : "LISTA 3 SBA - AHORA MAS BARATO");
   }
 
   function promoLine(p) {

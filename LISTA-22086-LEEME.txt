@@ -1,0 +1,5 @@
+LISTA 22086 - VINOS 3X - SBA 622
+31 registros importados de DevTools.
+Mecanicas: 3x$6.990 y 3x$9.990.
+No se modificaron los puentes de impresion HP ni Zebra.
+Datos de prueba: verificar vigencia y precios antes de imprimir e instalar.
