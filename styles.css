@@ -465,3 +465,16 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
 .panorama-viewport {touch-action:pan-x pan-y; overscroll-behavior:contain;}
 .panorama-map {transform-origin:top left;}
 @media (pointer:coarse){.panorama-zone,.category-tile{min-height:105px}.panorama-viewport{min-height:420px}}
+
+/* v28: vigencias completas legibles, sin recortes y sin afectar el puente */
+.poster.preview .validity,.poster.mini .validity{white-space:normal;overflow-wrap:normal}
+.poster.preview .validity{font-size:7.5px;line-height:1.16}
+.poster.mini .validity{font-size:3.5px;line-height:1.16}
+@media print{
+  .poster.print .validity{white-space:normal!important;overflow-wrap:normal;font-size:1.65mm!important;line-height:1.18!important;text-align:right;padding-top:2.2mm}
+}
+.poster-blocked{display:flex;flex-direction:column;gap:5px;border:2px dashed #dc2626;background:#fff2f2;color:#991b1b;padding:10px;font-size:12px;font-weight:800}
+.poster-blocked small{font-size:10px;font-weight:500;overflow-wrap:anywhere}
+@media print {
+  .poster.print .poster-bottom{grid-template-columns:40mm 1fr;gap:1.5mm}
+}

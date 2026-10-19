@@ -1,0 +1,14 @@
+[
+  {
+    "campaignId": 22086,
+    "sourceStoreNbr": 622,
+    "total": 31,
+    "inicio": "01/01/2026",
+    "fin": "31/12/2026",
+    "registrosFechasRecuperadas": 1,
+    "preciosDeSalaDistintos": 8,
+    "registrosBloqueados": 0,
+    "excepciones": [],
+    "missingOfficialHtml": 31
+  }
+]

@@ -1,5 +1,8 @@
 (() => {
-  const catalog = window.CARTELERIA_CATALOG || [];
+  const rules = window.CARTELERIA_RULES;
+  if (!rules) throw new Error('Falta cartel-rules.js. No se habilita impresión.');
+  const catalog = (window.CARTELERIA_CATALOG || []).map(p => ({...p, ...rules.calc(p)}));
+  const VERSION = 'v28-control-campanas';
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
@@ -33,9 +36,27 @@
     try {
       state.queue = JSON.parse(localStorage.getItem(queueKey()) || "[]");
       if (!Array.isArray(state.queue)) state.queue = [];
+      // Nunca reutilizar precios/fechas guardados de versiones antiguas.
+      state.queue = state.queue.map(p => rules.canonical(p, catalog));
+      localStorage.setItem(queueKey(), JSON.stringify(state.queue));
     } catch {
       state.queue = [];
     }
+  }
+  function printErrors() {
+    return rules.auditQueue(state.queue);
+  }
+  function ensureQueuePrintable() {
+    // Vuelve a leer los ítems actuales justo antes de imprimir o enviar al puente.
+    loadQueue();
+    if (!state.queue.length) { window.alert('No hay carteles en la cola.'); return false; }
+    const errors=printErrors();
+    if (errors.length) {
+      const list=errors.slice(0,8).map(x => `Ítem ${x.code}: ${x.error}`).join('\n');
+      window.alert(`IMPRESIÓN BLOQUEADA: ${errors.length} dato(s) por revisar.\n${list}${errors.length>8?'\n...':''}\nRetira o corrige estos ítems antes de imprimir.`);
+      return false;
+    }
+    return true;
   }
   function saveQueue() {
     localStorage.setItem(queueKey(), JSON.stringify(state.queue));
@@ -51,7 +72,7 @@
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">◆</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v28</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">Local ${esc(state.local)}</button>
       </header>
@@ -102,6 +123,8 @@
   }
 
   // Categorías transcritas y normalizadas del plano Excel de referencia (sin tienda).
+  // Categorías de referencia transcritas del Excel, agrupadas en un layout genérico.
+  // Las cantidades NO salen del Excel: se calculan con las listas importadas.
   const zoneDefinitions = [
     {
         "name": "Abarrotes",
@@ -111,17 +134,32 @@
             "Pastas",
             "Aceites",
             "Puré y legumbres",
-            "Harina",
             "Dressing",
-            "Conservas de pescado",
+            "Harina",
             "Té y hierbas",
             "Leche en polvo y saborizantes",
             "Mermeladas y miel",
             "Cereales",
             "Galletas",
-            "Snack",
+            "Conservas de pescado",
+            "Conservas de mariscos",
+            "Sopas y caldos",
+            "Sal y condimentos",
+            "Platos instantáneos",
+            "Azúcar",
+            "Conservas de frutas y verduras",
+            "Salsas y queso rallado",
+            "Postres listos",
+            "Café",
+            "Endulzantes",
+            "Caramelos",
+            "Chocolates",
+            "Vinagre y sucedáneos",
+            "Sabores de América",
+            "Repostería",
+            "Colación",
             "Cóctel y frutos secos",
-            "Cumpleaños"
+            "Snacks"
         ]
     },
     {
@@ -149,53 +187,97 @@
         "icon": "🧴",
         "groups": [
             "Champú",
-            "Acondicionadores",
-            "Jabones",
             "Coloración",
+            "Afeitado y depilación",
             "Desodorantes",
-            "Higiene bucal",
-            "Depilación y afeitado",
             "Baño y spa",
-            "Pañales",
+            "Jabones",
+            "Higiene bucal",
             "Puericultura",
             "Alimentos y fórmulas para bebé",
             "Higiene femenina",
-            "Incontinencia"
+            "Incontinencia",
+            "Pañales"
         ]
     },
     {
         "name": "Limpieza",
         "icon": "🧼",
         "groups": [
-            "Detergentes",
-            "Suavizantes",
-            "Lavaloza",
-            "Limpiadores de piso",
-            "Limpiadores de baño",
             "Papel higiénico",
             "Servilletas y pañuelos",
-            "Toalla de papel",
-            "Bolsas de basura",
-            "Esponjas y virutillas",
+            "Limpiadores de piso",
             "Guantes y paños húmedos",
+            "Accesorios de piso",
             "Ambientales y plaguicidas",
-            "Pulidores, antigrasas y vidrios",
+            "Suavizantes",
+            "Detergentes",
+            "Wipes",
+            "Limpiadores de baño",
+            "Esponjas y virutillas",
+            "Toalla de papel",
+            "Pulidores y antigrasas",
+            "Limpiavidrios",
+            "Lavaloza",
+            "Bolsas de basura",
             "Blanqueamiento",
-            "Tratamiento de ropa",
             "Ceras",
-            "Accesorios de piso"
+            "Tratamiento de ropa",
+            "Lustramuebles y calzado"
         ]
     },
     {
-        "name": "Frescos y refrigerados",
+        "name": "Lácteos y refrigerados",
         "icon": "🥛",
         "groups": [
             "Lácteos",
+            "Leches blancas",
+            "Leches saborizadas",
+            "Pan industrial",
+            "Leche condensada y manjar",
+            "Hora del té",
+            "Huevos",
+            "Crema",
+            "Vegetales fríos"
+        ]
+    },
+    {
+        "name": "Fiambrería y Deli",
+        "icon": "🧀",
+        "groups": [
+            "Fiambrería",
+            "Fiambres y quesos",
+            "Deli",
+            "Quesos",
+            "Fiambres"
+        ]
+    },
+    {
+        "name": "Carnes y pollos",
+        "icon": "🥩",
+        "groups": [
             "Carnes",
-            "Congelados",
-            "Fiambrería / Deli",
             "Pollos",
-            "Panadería"
+            "Asistido carnes",
+            "Carnes congeladas"
+        ]
+    },
+    {
+        "name": "Congelados",
+        "icon": "🧊",
+        "groups": [
+            "Congelados",
+            "Congelados carnes",
+            "Congelados lácteos"
+        ]
+    },
+    {
+        "name": "Panadería",
+        "icon": "🍞",
+        "groups": [
+            "Panadería",
+            "Pan a granel",
+            "Hornos de pollo"
         ]
     },
     {
@@ -208,45 +290,108 @@
         ]
     },
     {
-        "name": "Hogar, textil y otros",
+        "name": "Hogar y cocina",
         "icon": "🏠",
         "groups": [
-            "Hogar",
-            "Accesorios hogar y fósforos",
+            "Decoración hogar",
             "Ferretería",
             "Automóvil",
             "Envolturas y protección",
-            "Lustramuebles y calzado",
             "Juguetería",
             "Librería",
+            "Cumpleaños",
+            "Sartenes",
+            "Baterías y cacerolas",
+            "Moldes",
+            "Cajas organizadoras",
+            "Accesorios baño",
+            "Accesorios lavado",
+            "Frascos",
+            "Textil mesa",
+            "Utensilios",
+            "Accesorios mesa y cocina",
+            "Herméticos",
+            "Termos y botellas",
+            "Tazones",
+            "Cristalería",
+            "Loza"
+        ]
+    },
+    {
+        "name": "Textil",
+        "icon": "👕",
+        "groups": [
+            "Mujer",
+            "Hombre",
+            "Infantil",
             "Pijamas",
+            "Ropa niña",
+            "Ropa niño",
+            "Bebé niña",
+            "Bebé niño",
+            "Bodys bebé",
+            "Ropa interior hombre",
+            "Ropa interior",
             "Calcetines",
-            "Sábanas",
-            "Plumones",
-            "Frazadas",
+            "Calzado mujer",
+            "Calzado hombre",
+            "Calzado infantil",
+            "Ropa interior niña",
+            "Ropa interior niño",
+            "Ropa interior bebé",
             "Set de cama",
-            "Almohadas",
-            "Cojines y alfombras",
-            "Toallas",
+            "Frazadas",
+            "Plumones",
+            "Sábanas",
+            "Cojines, alfombras y bajadas",
+            "Toallas a granel"
+        ]
+    },
+    {
+        "name": "Otros y electrónica",
+        "icon": "🛒",
+        "groups": [
+            "Audio",
+            "Pequeños electrodomésticos",
             "Liquidación"
         ]
     }
 ];
-  const categoryFor = p => {
-    const v = String(p.categoryName || "").toLowerCase();
-    const n = String(p.name || "").toLowerCase();
-    if (v.includes("vino") || n.includes("vino")) return "Vinos";
-    if (v.includes("cerveza")) return "Cervezas";
-    if (v.includes("licor")) return "Licores";
-    return p.categoryName || "Sin clasificar";
+  const norm = value => String(value || '').toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+  const categories = zoneDefinitions.flatMap(z => z.groups);
+  const aliases = {
+    'vino':'Vinos','vinos':'Vinos','cerveza':'Cervezas','cervezas':'Cervezas',
+    'licores':'Licores','licor':'Licores','bebida':'Bebidas','bebidas':'Bebidas',
+    'agua':'Aguas','aguamineral':'Aguas','arroz':'Arroz',
+    'jabon':'Jabones','jabonestocador':'Jabones','shampoo':'Champú',
+    'papelhigienico':'Papel higiénico','detergente':'Detergentes','lavalozas':'Lavaloza',
+    'fiambres':'Fiambres','fiambreria':'Fiambrería','quesos':'Quesos',
+    'lacteos':'Lácteos','frio':'Lácteos','mascotas':'Accesorios mascotas',
+    'textil':'Ropa interior','pae':'Pequeños electrodomésticos'
   };
-  const groupProducts = name => catalog.filter(p => categoryFor(p) === name);
+  function categoryFor(p) {
+    const raw=String(p.categoryName||'').trim();
+    const normalized=norm(raw);
+    if(aliases[normalized])return aliases[normalized];
+    const match=categories.find(g=>norm(g)===normalized);
+    if(match)return match;
+    // Las categorías no existentes en el Excel no se pierden: aparecen para clasificar.
+    return raw || 'Sin clasificar';
+  }
+  const groupProducts = name => catalog.filter(p => norm(categoryFor(p)) === norm(name));
   const zoneProducts = zone => zone.groups.flatMap(groupProducts);
+  function layoutZones() {
+    const allKnown=new Set(categories.map(norm));
+    const extras=[...new Set(catalog.map(categoryFor).filter(x=>!allKnown.has(norm(x))))];
+    return extras.length?[...zoneDefinitions,{name:'Por clasificar',icon:'📋',groups:extras}]:zoneDefinitions;
+  }
   function renderLayout(activeZone = null, activeGroup = null) {
     if (!state.local) return landing();
     loadQueue();
     const total = catalog.length;
-    const zone = zoneDefinitions.find(z => z.name === activeZone);
+    const zones = layoutZones();
+    const zone = zones.find(z => z.name === activeZone);
     const products = activeGroup ? groupProducts(activeGroup) : [];
     const checked = products.filter(p => state.selectedLayout.has(String(p.signId || p.code))).length;
     app.innerHTML = `${header()}<section class="screen panorama-screen">
@@ -255,7 +400,7 @@
       ${!zone ? `<div class="panorama-tools"><span>Vista superior de zonas</span><div><button class="btn" id="zoomOut">−</button><strong id="layoutZoomPercent">${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
       <div class="panorama-viewport"><div class="panorama-map" id="panoramaMap" style="transform:scale(${state.layoutZoom})">
         <div class="panorama-entrance">ZONAS DE PROMOCIONES</div>
-        ${zoneDefinitions.map(z=>`<button class="panorama-zone" data-zone="${esc(z.name)}"><span class="zone-icon">${z.icon}</span><strong>${esc(z.name)}</strong><span>${zoneProducts(z).length} carteles</span></button>`).join("")}
+        ${zones.map(z=>`<button class="panorama-zone" data-zone="${esc(z.name)}"><span class="zone-icon">${z.icon}</span><strong>${esc(z.name)}</strong><span>${zoneProducts(z).length} carteles</span></button>`).join("")}
       </div></div><p class="panorama-hint">Toca una zona para abrir sus categorías. En celular, usa dos dedos para ampliar o reducir; en PC, usa + y −.</p>` :
       !activeGroup ? `<div class="panorama-breadcrumb">${esc(zone.name)} · ${zoneProducts(zone).length} carteles</div>
         <div class="category-grid">${[...zone.groups,...new Set(zoneProducts(zone).map(categoryFor).filter(n=>!zone.groups.includes(n)))].map(g=>`<button class="category-tile" data-group="${esc(g)}"><strong>${esc(g)}</strong><span>${groupProducts(g).length} carteles</span></button>`).join("")}</div>` :
@@ -298,7 +443,13 @@
     const selectAll=document.getElementById("selectAllLayout");
     if(selectAll)selectAll.onchange=()=>{products.forEach(p=>{const id=String(p.signId||p.code);if(selectAll.checked)state.selectedLayout.add(id);else state.selectedLayout.delete(id)});renderLayout(activeZone,activeGroup);};
     const send=document.getElementById("sendLayoutQueue");
-    if(send)send.onclick=()=>{const chosen=products.filter(p=>state.selectedLayout.has(String(p.signId||p.code)));chosen.forEach(p=>state.queue.push({...p,qid:Date.now()+Math.random()}));saveQueue();chosen.forEach(p=>state.selectedLayout.delete(String(p.signId||p.code)));renderMain();};
+    if(send)send.onclick=()=>{
+      const chosen=products.filter(p=>state.selectedLayout.has(String(p.signId||p.code)));
+      const bad=chosen.flatMap(p=>rules.validate(p).map(error=>`Ítem ${p.code}: ${error}`));
+      if(bad.length){window.alert('No es posible agregar carteles con datos incompletos:\n'+bad.slice(0,10).join('\n'));return;}
+      chosen.forEach(p=>state.queue.push({...p,qid:Date.now()+Math.random()}));
+      saveQueue();chosen.forEach(p=>state.selectedLayout.delete(String(p.signId||p.code)));renderMain();
+    };
   }
 
   function renderMain() {
@@ -381,8 +532,14 @@
     const input = document.getElementById("itemInput");
     const code = input.value.trim();
     state.itemCode = code;
-    state.product = catalog.find(p => p.code === code || (isMobileDevice() && String(p.barcode || "") === code)) || null;
+    const matches = catalog.filter(p => p.code === code || (isMobileDevice() && String(p.barcode || "") === code));
+    state.product = matches.length === 1 ? matches[0] : null;
     const status = document.getElementById("searchStatus");
+    if (matches.length > 1) {
+      status.innerHTML = `<div class="status error">Se encontró el ítem en varias campañas. Abre «Layout panorámico promociones» para elegir la campaña.</div>`;
+      renderPreview();
+      return;
+    }
 
     if (!code) {
       status.innerHTML = "";
@@ -409,45 +566,10 @@
     return `${n} ${z}`;
   }
 
-  function unitPriceText(p) {
-    const price = Number(p.offer || String(p.price || "").replace(/[^0-9]/g, ""));
-    const size = String(p.size || "").toUpperCase().replace(/\s/g, "");
-    if (!price) return "";
-
-    if (p.type === "nx") {
-      const grams = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
-      const totalKg = (grams * Number(p.qty || 1)) / 1000;
-      return totalKg ? `${money(price / totalKg)} x KG` : "";
-    }
-    if (size.endsWith("GR")) {
-      const grams = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
-      return grams ? `${money(price / (grams / 1000))} x KG` : "";
-    }
-    if (size.endsWith("ML") || size.endsWith("CC")) {
-      const ml = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
-      if (!ml) return "";
-      if (p.brand === "NIVEA BODY") return `${money(price / (ml / 100))} x 100 ml`;
-      return `${money(price / (ml / 1000))} x LT`;
-    }
-    if (size.endsWith("LT")) {
-      const lt = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
-      return lt ? `${money(price / lt)} x LT` : "";
-    }
-    if (size.endsWith("UN")) {
-      const un = parseFloat(size.replace(/[^0-9.,]/g, "").replace(",", ".")) || 0;
-      return un ? `${money(price / un)} x UN` : "";
-    }
-    return "";
-  }
+  function unitPriceText(p) { return rules.unitMeasurePrice(p); }
 
   function categoryText(p) {
-    if (p.categoryId && p.categoryName) return `${p.categoryId} - ${p.categoryName}`;
-    if (p.type === "nx") return "8468 - BEBIDAS DILUIBLES";
-    if (String(p.name).includes("HUEVO")) return "8479 - HUEVOS";
-    if (p.brand === "NIVEA BODY") return "9267 - CUIDADO CORPORAL";
-    if (p.code === "673851") return "8471 - BEBIDAS - AGUA";
-    if (p.code === "309922") return "9369 - DESAYUNO-CEREAL-BARRA";
-    return "8475 - VINO";
+    return p.categoryId && p.categoryName ? `${p.categoryId} - ${p.categoryName}` : 'CATEGORÍA SIN CONFIRMAR';
   }
 
   function campaignText(p) {
@@ -456,40 +578,35 @@
 
   function promoLine(p) {
     if (p.type === "offer") {
-      const normal = p.before || money(p.regular);
-      const ahorro = (p.saving || "").replace(/^Ahorro\s*:?[ ]*/i, "");
+      const values=rules.calc(p);
+      const normal = values.before;
+      const ahorro = values.saving.replace(/^Ahorro\s*:?[ ]*/i, "");
       return `<div class="promo-strip offer-strip"><svg class="promo-strip-bg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100" height="20" fill="#000"/></svg><span>Normal: ${esc(normal)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
     }
     if (p.type === "nx") {
-      const unitario = (p.unitLabel || "").replace(/^P\.\s*unitario\s*:?[ ]*/i, "");
-      const ahorro = (p.saving || "").replace(/^Ahorro\s*:?[ ]*/i, "");
+      const values=rules.calc(p);
+      const unitario = values.unitLabel.replace(/^P\.\s*unitario\s*:?[ ]*/i, "");
+      const ahorro = values.saving.replace(/^Ahorro\s*:?[ ]*/i, "");
       return `<div class="promo-strip nx-strip"><svg class="promo-strip-bg" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="100" height="20" fill="#000"/></svg><span>P. unitario: ${esc(unitario)}</span><span>Ahorro: ${esc(ahorro)}</span></div>`;
     }
     return "";
   }
 
   function priceMarkup(p) {
-    const txt = String(p.price || "");
+    const txt = rules.calc(p).price;
     if (p.type === "nx") return `<div class="price nx-main-price">${esc(txt)}</div>`;
     const amount = txt.replace(/^\$/, "");
     return `<div class="price standard-main-price"><span class="currency">$</span><span class="price-amount">${esc(amount)}</span></div>`;
   }
 
   function campaignValidity(p) {
-    // Dates are shown in Chile local calendar (campaign source is UTC).
-    const from = p.campaignFromDate;
-    const to = p.campaignToDate;
-    if (!from || !to) return "Vigencia: no informada — verificar campaña";
-    const fmt = value => {
-      const date = new Date(value);
-      if (Number.isNaN(date.getTime())) return null;
-      return new Intl.DateTimeFormat("es-CL", {timeZone:"America/Santiago", day:"2-digit", month:"2-digit", year:"numeric"}).format(date);
-    };
-    const a = fmt(from), b = fmt(to);
-    return a && b ? `Vigencia: ${a} al ${b}` : "Vigencia: no informada — verificar campaña";
+    // Texto exacto acordado, con mes en español y fechas del response.
+    return rules.validity(p) || 'Vigencia: SIN DATOS — NO IMPRIMIR';
   }
 
   function productCard(p, mode="preview") {
+    const violations = rules.validate(p);
+    if (violations.length) return `<article class="poster-blocked">CARTEL BLOQUEADO · Ítem ${esc(p.code || '?')}<small>${esc(violations.join('; '))}</small></article>`;
     const unitText = unitPriceText(p);
     return `
       <article class="poster ${mode} ${p.type}">
@@ -588,11 +705,13 @@
     area.innerHTML = `
       <div class="preview-block">
         ${productCard(state.product, "preview")}
-        <button class="btn add" id="addQueue" type="button">Agregar a cola</button>
+        ${rules.validate(state.product).length ? `<div class="status error">No se puede imprimir: ${esc(rules.validate(state.product).join('; '))}</div>` : ''}
+        <button class="btn add" id="addQueue" type="button" ${rules.validate(state.product).length ? 'disabled' : ''}>Agregar a cola</button>
       </div>
     `;
 
     document.getElementById("addQueue").addEventListener("click", () => {
+      if (rules.validate(state.product).length) return window.alert('Cartel con datos por revisar.');
       state.queue.push({...state.product, qid: Date.now() + Math.random()});
       saveQueue();
 
@@ -624,8 +743,8 @@
 
     if (count) count.textContent = state.queue.length;
     if (printBtn) {
-      printBtn.disabled = !state.queue.length;
-      printBtn.textContent = "Imprimir cola";
+      printBtn.disabled = !state.queue.length || printErrors().length > 0;
+      printBtn.textContent = printErrors().length ? `Revisar ${printErrors().length} dato(s)` : 'Imprimir cola';
     }
     if (clearQueueBtn) {
       clearQueueBtn.disabled = !state.queue.length;
@@ -833,6 +952,7 @@
       }
     });
     document.getElementById("prepareMobileRF").addEventListener("click", () => {
+      if (!ensureQueuePrintable()) return;
       const mac = saveMobileMac();
       if (!mac) return;
       const product = getRFSelection();
@@ -843,7 +963,7 @@
 
 
   function renderPrintOptions() {
-    if (!state.queue.length) return;
+    if (!ensureQueuePrintable()) return;
 
     app.innerHTML = `
       ${header()}
@@ -973,7 +1093,7 @@
   }
 
   async function sendLetterRemoteJob() {
-    if (!state.queue.length) return renderMain();
+    if (!ensureQueuePrintable()) return;
 
     const input = document.getElementById("letterPrinterIp");
     const button = document.getElementById("sendLetterRemote");
@@ -1182,6 +1302,7 @@ ${barcodeZpl}
   }
 
   async function printRFSelected() {
+    if (!ensureQueuePrintable()) return;
     const product = getRFSelection();
     if (!product) {
       setRFStatus("No hay un cartel seleccionado.", "error");
@@ -1288,7 +1409,7 @@ ${barcodeZpl}
   }
 
   function printQueue() {
-    if (!state.queue.length) return;
+    if (!ensureQueuePrintable()) return;
 
     const chunks = [];
     for (let i=0; i<state.queue.length; i += 4) chunks.push(state.queue.slice(i, i+4));

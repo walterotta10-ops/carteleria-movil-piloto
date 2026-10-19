@@ -1,0 +1,16 @@
+C&D CARTELERÍA MÓVIL — CORRECCIÓN v28 (19-10-2026)
+
+1. Vigencia automática con frase aprobada: «Vigencia: del 01 de enero al 31 de Diciembre 2026» para campaña 22086. Se construye desde fechas del response, no es texto fijo.
+2. Precio por volumen: CC y ML pasan a x LT. GR y KG a x KG.
+3. Precio unitario y ahorro desde modaPrice; oferta desde offerPrice; sbPrice queda conservado separadamente. 8 diferencias informadas, no sustituidas.
+4. El local impreso es el ingresado en la app; el local de extracción no determina el destino.
+5. Cola antigua reconciliada al catálogo al cargar y antes de cada impresión; ítems no verificables bloquean impresión.
+6. Compatibilidad de cola e interfaz conservadas, dos opciones al entrar y layout táctil.
+7. Categorías del Excel extendidas; solo la campaña real Vinos trae 31 carteles. Datos de otras categorías no se inventan.
+8. Importador de campañas para nuevas listas: node tools/import-lista.cjs LISTA.json; aplicar tras informe: node tools/import-lista.cjs LISTA.json --apply.
+9. CSS/JS cache-busting v28 y etiqueta visible de versión.
+10. Los tres archivos de puente (RF, Carta y Worker) no se modificaron.
+
+IMPORTANTE: Para subir en GitHub, copia los archivos internos de la carpeta carteleria-movil-piloto-main sobre los existentes. No subas una carpeta anidada adicional si la aplicación está en la raíz del repositorio.
+
+ANTES DE IMPRIMIR MUCHOS CARTELES: verifica el encabezado «Cartelería · v28» y haz UNA prueba Carta con 1 cartel. Revisa la vigencia impresa en el papel antes de procesar los 31. No podemos comprobar tu impresora desde aquí.

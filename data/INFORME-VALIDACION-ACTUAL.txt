@@ -1,0 +1,7 @@
+INFORME DE VALIDACIÓN DE LISTAS
+El número de local de extracción NO determina el local impreso.
+Precio unitario / ahorro: modaPrice. Oferta: offerPrice. Precio sala sbPrice se conserva separado.
+
+Campaña 22086: 31 carteles; vigencia 01/01/2026 al 31/12/2026; fechas recuperadas 1; precios distintos (modaPrice/sbPrice) 8; bloqueados 0.
+
+DATOS ACTUALIZADOS — Requiere ensayo físico antes de usar en tienda.
