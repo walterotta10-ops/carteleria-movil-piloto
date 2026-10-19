@@ -1,0 +1,9 @@
+v26 – LAYOUT PANORÁMICO Y VIGENCIA CORREGIDA
+- Vinos campaña 22086: 01/01/2026 al 31/12/2026, según fechas originales.
+- Nunca se fija una vigencia inventada: se lee de cada registro; si falta, se indica.
+- Zoom táctil con dos dedos en celular; botones +/- en PC.
+- Se elimina la referencia a ENTRADA del plano tipo.
+- Categorías de referencia ampliadas y normalizadas a partir del Excel entregado; sin referencia al local.
+- Solo Vinos tiene 31 carteles cargados; demás categorías muestran cero hasta recibir listados.
+- Puentes HP y Zebra sin modificaciones.
+- Requiere prueba de impresión real antes de usar en sala.

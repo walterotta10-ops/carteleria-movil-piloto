@@ -101,15 +101,137 @@
     document.getElementById("changeLocalTop").onclick = changeLocal;
   }
 
+  // Categorías transcritas y normalizadas del plano Excel de referencia (sin tienda).
   const zoneDefinitions = [
-    {name:"Abarrotes", icon:"🍚", groups:["Arroz","Pastas","Aceites","Legumbres","Harinas","Conservas"]},
-    {name:"Bebestibles", icon:"🥤", groups:["Aguas","Bebidas","Jugos"]},
-    {name:"Licores", icon:"🍷", groups:["Vinos","Cervezas","Licores"]},
-    {name:"Perfumería", icon:"🧴", groups:["Champú","Acondicionador","Jabones","Tinturas","Desodorantes"]},
-    {name:"Limpieza", icon:"🧼", groups:["Detergentes","Suavizantes","Lavaloza","Limpiadores"]},
-    {name:"Frescos", icon:"🥛", groups:["Lácteos","Carnes","Panadería","Congelados"]},
-    {name:"Hogar y otros", icon:"🏠", groups:["Hogar","Mascotas","Textil"]}
-  ];
+    {
+        "name": "Abarrotes",
+        "icon": "🍚",
+        "groups": [
+            "Arroz",
+            "Pastas",
+            "Aceites",
+            "Puré y legumbres",
+            "Harina",
+            "Dressing",
+            "Conservas de pescado",
+            "Té y hierbas",
+            "Leche en polvo y saborizantes",
+            "Mermeladas y miel",
+            "Cereales",
+            "Galletas",
+            "Snack",
+            "Cóctel y frutos secos",
+            "Cumpleaños"
+        ]
+    },
+    {
+        "name": "Bebestibles",
+        "icon": "🥤",
+        "groups": [
+            "Aguas",
+            "Bebidas",
+            "Jugos líquidos",
+            "Jugos en polvo",
+            "Energéticas e isotónicas"
+        ]
+    },
+    {
+        "name": "Licores",
+        "icon": "🍷",
+        "groups": [
+            "Vinos",
+            "Cervezas",
+            "Licores"
+        ]
+    },
+    {
+        "name": "Perfumería",
+        "icon": "🧴",
+        "groups": [
+            "Champú",
+            "Acondicionadores",
+            "Jabones",
+            "Coloración",
+            "Desodorantes",
+            "Higiene bucal",
+            "Depilación y afeitado",
+            "Baño y spa",
+            "Pañales",
+            "Puericultura",
+            "Alimentos y fórmulas para bebé",
+            "Higiene femenina",
+            "Incontinencia"
+        ]
+    },
+    {
+        "name": "Limpieza",
+        "icon": "🧼",
+        "groups": [
+            "Detergentes",
+            "Suavizantes",
+            "Lavaloza",
+            "Limpiadores de piso",
+            "Limpiadores de baño",
+            "Papel higiénico",
+            "Servilletas y pañuelos",
+            "Toalla de papel",
+            "Bolsas de basura",
+            "Esponjas y virutillas",
+            "Guantes y paños húmedos",
+            "Ambientales y plaguicidas",
+            "Pulidores, antigrasas y vidrios",
+            "Blanqueamiento",
+            "Tratamiento de ropa",
+            "Ceras",
+            "Accesorios de piso"
+        ]
+    },
+    {
+        "name": "Frescos y refrigerados",
+        "icon": "🥛",
+        "groups": [
+            "Lácteos",
+            "Carnes",
+            "Congelados",
+            "Fiambrería / Deli",
+            "Pollos",
+            "Panadería"
+        ]
+    },
+    {
+        "name": "Mascotas",
+        "icon": "🐾",
+        "groups": [
+            "Alimento perro",
+            "Alimento gato",
+            "Accesorios mascotas"
+        ]
+    },
+    {
+        "name": "Hogar, textil y otros",
+        "icon": "🏠",
+        "groups": [
+            "Hogar",
+            "Accesorios hogar y fósforos",
+            "Ferretería",
+            "Automóvil",
+            "Envolturas y protección",
+            "Lustramuebles y calzado",
+            "Juguetería",
+            "Librería",
+            "Pijamas",
+            "Calcetines",
+            "Sábanas",
+            "Plumones",
+            "Frazadas",
+            "Set de cama",
+            "Almohadas",
+            "Cojines y alfombras",
+            "Toallas",
+            "Liquidación"
+        ]
+    }
+];
   const categoryFor = p => {
     const v = String(p.categoryName || "").toLowerCase();
     const n = String(p.name || "").toLowerCase();
@@ -130,11 +252,11 @@
     app.innerHTML = `${header()}<section class="screen panorama-screen">
       <div class="panorama-head"><button class="btn back-home" id="layoutBack">← ${activeGroup ? "Categorías" : zone ? "Plano" : "Menú"}</button>
       <div><h1>Layout panorámico promociones</h1><p>Plano tipo · ${total} carteles cargados · sin referencia a un local específico</p></div></div>
-      ${!zone ? `<div class="panorama-tools"><span>Vista superior de zonas</span><div><button class="btn" id="zoomOut">−</button><strong>${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
+      ${!zone ? `<div class="panorama-tools"><span>Vista superior de zonas</span><div><button class="btn" id="zoomOut">−</button><strong id="layoutZoomPercent">${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
       <div class="panorama-viewport"><div class="panorama-map" id="panoramaMap" style="transform:scale(${state.layoutZoom})">
-        <div class="panorama-entrance">ENTRADA · ZONAS DE PROMOCIONES</div>
+        <div class="panorama-entrance">ZONAS DE PROMOCIONES</div>
         ${zoneDefinitions.map(z=>`<button class="panorama-zone" data-zone="${esc(z.name)}"><span class="zone-icon">${z.icon}</span><strong>${esc(z.name)}</strong><span>${zoneProducts(z).length} carteles</span></button>`).join("")}
-      </div></div><p class="panorama-hint">Toca una zona para abrir sus categorías. Usa + y − para ampliar o reducir.</p>` :
+      </div></div><p class="panorama-hint">Toca una zona para abrir sus categorías. En celular, usa dos dedos para ampliar o reducir; en PC, usa + y −.</p>` :
       !activeGroup ? `<div class="panorama-breadcrumb">${esc(zone.name)} · ${zoneProducts(zone).length} carteles</div>
         <div class="category-grid">${[...zone.groups,...new Set(zoneProducts(zone).map(categoryFor).filter(n=>!zone.groups.includes(n)))].map(g=>`<button class="category-tile" data-group="${esc(g)}"><strong>${esc(g)}</strong><span>${groupProducts(g).length} carteles</span></button>`).join("")}</div>` :
       `<div class="panorama-breadcrumb">${esc(zone.name)} › ${esc(activeGroup)} · ${products.length} carteles</div>
@@ -146,7 +268,29 @@
     document.getElementById("changeLocalTop").onclick = changeLocal;
     document.getElementById("layoutBack").onclick = () => activeGroup ? renderLayout(activeZone) : zone ? renderLayout() : renderMenu();
     document.getElementById("goToQueue").onclick = renderMain;
-    document.getElementById("zoomIn")?.addEventListener("click",()=>{state.layoutZoom=Math.min(1.8,Math.round((state.layoutZoom+.2)*10)/10);renderLayout();});
+    const viewport = document.querySelector(".panorama-viewport");
+    if (viewport) {
+      let startDistance = 0, startZoom = state.layoutZoom;
+      const distance = touches => Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+      viewport.addEventListener("touchstart", e => {
+        if (e.touches.length === 2) {
+          startDistance = distance(e.touches);
+          startZoom = state.layoutZoom;
+        }
+      }, {passive:true});
+      viewport.addEventListener("touchmove", e => {
+        if (e.touches.length === 2 && startDistance > 0) {
+          e.preventDefault();
+          state.layoutZoom = Math.max(.6, Math.min(2.8, startZoom * distance(e.touches) / startDistance));
+          const map = document.getElementById("panoramaMap");
+          if (map) map.style.transform = `scale(${state.layoutZoom})`;
+          const pct = document.getElementById("layoutZoomPercent");
+          if (pct) pct.textContent = `${Math.round(state.layoutZoom*100)}%`;
+        }
+      }, {passive:false});
+      viewport.addEventListener("touchend", e => { if (e.touches.length < 2) startDistance = 0; }, {passive:true});
+    }
+    document.getElementById("zoomIn")?.addEventListener("click",()=>{state.layoutZoom=Math.min(2.8,Math.round((state.layoutZoom+.2)*10)/10);renderLayout();});
     document.getElementById("zoomOut")?.addEventListener("click",()=>{state.layoutZoom=Math.max(.6,Math.round((state.layoutZoom-.2)*10)/10);renderLayout();});
     document.querySelectorAll("[data-zone]").forEach(b=>b.onclick=()=>renderLayout(b.dataset.zone));
     document.querySelectorAll("[data-group]").forEach(b=>b.onclick=()=>renderLayout(activeZone,b.dataset.group));
@@ -331,6 +475,20 @@
     return `<div class="price standard-main-price"><span class="currency">$</span><span class="price-amount">${esc(amount)}</span></div>`;
   }
 
+  function campaignValidity(p) {
+    // Dates are shown in Chile local calendar (campaign source is UTC).
+    const from = p.campaignFromDate;
+    const to = p.campaignToDate;
+    if (!from || !to) return "Vigencia: no informada — verificar campaña";
+    const fmt = value => {
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return null;
+      return new Intl.DateTimeFormat("es-CL", {timeZone:"America/Santiago", day:"2-digit", month:"2-digit", year:"numeric"}).format(date);
+    };
+    const a = fmt(from), b = fmt(to);
+    return a && b ? `Vigencia: ${a} al ${b}` : "Vigencia: no informada — verificar campaña";
+  }
+
   function productCard(p, mode="preview") {
     const unitText = unitPriceText(p);
     return `
@@ -356,7 +514,7 @@
               <div class="footer-info">Categoría: ${esc(categoryText(p))}</div>
               <div class="footer-info local-line">Local: ${esc(state.local)}</div>
             </div>
-            <div class="validity">Vigencia: del 23 de julio al 8 de octubre</div>
+            <div class="validity">${esc(campaignValidity(p))}</div>
           </div>
         </div>
       </article>

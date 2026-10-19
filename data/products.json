@@ -27,7 +27,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 9105377
+      "signId": 9105377,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "269052",
@@ -48,7 +50,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588873
+      "signId": 3588873,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "278896",
@@ -69,7 +73,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588871
+      "signId": 3588871,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "445265",
@@ -90,7 +96,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588860
+      "signId": 3588860,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "704911",
@@ -111,7 +119,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588849
+      "signId": 3588849,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "704904",
@@ -132,7 +142,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588838
+      "signId": 3588838,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "704910",
@@ -153,7 +165,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588831
+      "signId": 3588831,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "294720",
@@ -174,7 +188,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588810
+      "signId": 3588810,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "647513",
@@ -195,7 +211,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588802
+      "signId": 3588802,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "681123",
@@ -216,7 +234,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588796
+      "signId": 3588796,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "445244",
@@ -237,7 +257,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588776
+      "signId": 3588776,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "437816",
@@ -258,7 +280,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588773
+      "signId": 3588773,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "413815",
@@ -279,7 +303,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588741
+      "signId": 3588741,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "647510",
@@ -300,7 +326,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588720
+      "signId": 3588720,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "817202",
@@ -321,7 +349,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588695
+      "signId": 3588695,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "413812",
@@ -342,7 +372,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588687
+      "signId": 3588687,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "413813",
@@ -363,7 +395,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588679
+      "signId": 3588679,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "647509",
@@ -384,7 +418,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588668
+      "signId": 3588668,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "5014894",
@@ -405,7 +441,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588242
+      "signId": 3588242,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "648855",
@@ -426,7 +464,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588205
+      "signId": 3588205,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "672885",
@@ -447,7 +487,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3588085
+      "signId": 3588085,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "672886",
@@ -468,7 +510,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587979
+      "signId": 3587979,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "672887",
@@ -489,7 +533,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587865
+      "signId": 3587865,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "704912",
@@ -510,7 +556,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587789
+      "signId": 3587789,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "269059",
@@ -531,7 +579,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587751
+      "signId": 3587751,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "647512",
@@ -552,7 +602,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587707
+      "signId": 3587707,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "648854",
@@ -573,7 +625,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587583
+      "signId": 3587583,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "257828",
@@ -594,7 +648,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587545
+      "signId": 3587545,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "278916",
@@ -615,7 +671,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587511
+      "signId": 3587511,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "363782",
@@ -636,7 +694,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587432
+      "signId": 3587432,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     },
     {
       "code": "647511",
@@ -657,7 +717,9 @@
       "listName": "Vinos 3X LISTA 22086",
       "categoryId": 8475,
       "categoryName": "VINO",
-      "signId": 3587341
+      "signId": 3587341,
+      "campaignFromDate": "2026-01-01T03:00:00.000Z",
+      "campaignToDate": "2027-01-01T02:59:59.000Z"
     }
   ]
 }
