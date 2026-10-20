@@ -2,7 +2,7 @@
   const rules = window.CARTELERIA_RULES;
   if (!rules) throw new Error('Falta cartel-rules.js. No se habilita impresión.');
   const catalog = (window.CARTELERIA_CATALOG || []).map(p => ({...p, ...rules.calc(p)}));
-  const VERSION = 'v28-control-campanas';
+  const VERSION = 'v29-campana-22607-parcial';
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
@@ -72,7 +72,7 @@
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">◆</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v28</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v29 revisión</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">Local ${esc(state.local)}</button>
       </header>

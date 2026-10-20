@@ -1,0 +1,5 @@
+CAMPANA 22607: 330 PRODUCTOS VISIBLES, PERO 130 CON DATOS TÉCNICOS INCOMPLETOS.
+El bloqueo de impresión de esos 130 es INTENCIONAL: la hoja de revisión no trae EAN, signId, tamaño, departamento o categoria originales.
+NO CONSIDERAR ESTA VERSIÓN FINAL PARA IMPRIMIR LOS 330.
+Los cinco vencidos indicados por el usuario se mantienen y no son excluidos por su estado.
+La campaña 22086 (31 vinos) se conserva intacta.
