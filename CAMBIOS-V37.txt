@@ -1,0 +1,18 @@
+V37 - AUDITORÍA DE AHORRO DE LOS 1.203 REGISTROS SBA
+Fuente: OCCAM Consolidado Lista 4-OP, fichas generadas en V36.
+
+Clasificación comprobada:
+- 185 Antes/Ahora con precio normal igual al promocional -> corregidos a cartel normal sin ahorro.
+- 769 Antes/Ahora con descuento positivo -> conservan la franja de ahorro.
+- 249 mecánica Nx$ -> conservan su mecánica promocional.
+- No hay casos Antes/Ahora cuyo precio oferta supere al normal según los campos importados.
+
+Cambios realizados en los 185:
+- type=normal para evitar mostrar franja «Normal/Ahorro: $0» en el cartel.
+- Texto de mecánica en la tarjeta = «Precio normal · sin ahorro».
+- Texto de campaña para impresión = «Precio normal (sin ahorro)».
+- Se guardan sourceMechanicOriginal y sourceCampaignNameOriginal; no se altera ningún precio, UPC, tamaño ni fecha.
+
+Registros con dataIssues previos: 43; mantienen bloqueo de impresión hasta resolverlos.
+
+Nota: la clasificación refleja los precios del OCCAM y no sustituye verificar vigencia/precios en caja. Tampoco se altera la mecánica Nx$ ni los 361 carteles anteriores.

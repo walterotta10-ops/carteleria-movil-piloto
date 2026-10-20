@@ -1,0 +1,4 @@
+V38 — OCCAM SBA
+1) 31 carteles con UPC original ausente o inválido: se creó EAN-13 INTERNO DE REFERENCIA a partir del número de ítem rellenado a 12 cifras con ceros a la izquierda y dígito verificador calculado. NO representa un UPC oficial GS1. La RF corporativa solo podrá resolverlo si admite consulta por ítem o tabla interna de equivalencia; probar antes de utilizar operativamente.
+2) En impresión remota tamaño carta se oculta el ID incremental: Trabajo enviado al local <local> · impresora <IP>. Local e IP se mantienen dinámicos.
+3) No se alteran otros precios, promociones, categorías ni bloqueos de fichas.

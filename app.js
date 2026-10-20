@@ -2,7 +2,7 @@
   const rules = window.CARTELERIA_RULES;
   if (!rules) throw new Error('Falta cartel-rules.js. No se habilita impresión.');
   const catalog = (window.CARTELERIA_CATALOG || []).map(p => ({...p, ...rules.calc(p)}));
-  const VERSION = 'v36-layout-grupos-sba';
+  const VERSION = 'v38-ean-interno-y-envio-carta';
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
@@ -72,7 +72,7 @@
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">◆</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v36 SBA</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v37 SBA</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">Local ${esc(state.local)}</button>
       </header>
@@ -754,6 +754,7 @@
             <div class="barcode-zone">
               ${ean13Svg(p.barcode || p.code)}
               <div class="barcode-number">${esc(p.barcode || p.code)}</div>
+              ${p.barcodeOrigin === "ITEM_INTERNAL" ? `<div class="footer-info">EAN interno de referencia · Ítem ${esc(p.code)}</div>` : ""}
               <div class="footer-info">Destacado: ${esc(campaignText(p))} &nbsp; Item: ${esc(p.code)}</div>
               <div class="footer-info">Categoría: ${esc(categoryText(p))}</div>
               <div class="footer-info local-line">Local: ${esc(state.local)}</div>
@@ -1267,7 +1268,7 @@
       const data = await response.json().catch(() => ({}));
       if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
 
-      setLetterRemoteStatus(`✓ Trabajo ${data.id} enviado al local ${state.local} · impresora ${printerIp}`, "ok");
+      setLetterRemoteStatus(`✓ Trabajo enviado al local ${state.local} · impresora ${printerIp}`, "ok");
       const info = document.getElementById("letterRemoteInfo");
       if (info) {
         info.innerHTML = `<strong>Enviado correctamente</strong><span>El PC del local ${esc(state.local)} recibirá la cola y la enviará a la impresora ${esc(printerIp)}.</span><span>La cola del teléfono se mantiene para permitir una reimpresión si fuera necesario.</span>`;
