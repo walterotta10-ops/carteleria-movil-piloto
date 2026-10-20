@@ -1,0 +1,1 @@
+V35: selección e impresión para todos los registros SBA con ficha validada, desde todos los subgrupos/categorías. Las tarjetas muestran cantidad imprimible. Los 43 registros con campos inválidos o fechas vencidas quedan señalados y no se imprimen hasta verificar. No se alteran datos originales ni diseños.

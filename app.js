@@ -2,7 +2,7 @@
   const rules = window.CARTELERIA_RULES;
   if (!rules) throw new Error('Falta cartel-rules.js. No se habilita impresión.');
   const catalog = (window.CARTELERIA_CATALOG || []).map(p => ({...p, ...rules.calc(p)}));
-  const VERSION = 'v34-occam-sba-fichas';
+  const VERSION = 'v35-layout-impresion-global';
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
@@ -72,7 +72,7 @@
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">◆</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v34 SBA</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v35 SBA</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">Local ${esc(state.local)}</button>
       </header>
@@ -454,11 +454,16 @@
 
 
   // V31: vista exclusivamente basada en el OCCAM SBA. G=Subgrupo, I=Categoría.
-  // Los artículos OCCAM no se envían a imprimir sin match inequívoco con el response técnico.
+  // Cada artículo OCCAM apunta a su propia ficha construida desde la fuente y validada antes de imprimir.
   const occamSba = (window.CARTELERIA_OCCAM_SBA || []).filter(p => p.formato === 'SBA');
   const occamSelected = new Set();
   const groupLabel = text => String(text || '').trim() || 'Sin clasificar';
   const occamGroups = [...new Set(occamSba.map(p=>groupLabel(p.subgrupo)))].sort((a,b)=>a.localeCompare(b,'es'));
+  // Índice 1:1 para todas las tarjetas, evitando depender de coincidencias por descripción o precio.
+  const occamFicha = new Map(catalog.filter(c=>c.importVersion===34).map(c=>[`${c.campaignId}:${c.signId}`,c]));
+  const fichaDe = p => occamFicha.get(`${p.matchCampaignId}:${p.matchSignId}`);
+  const erroresDe = p => {const ficha=fichaDe(p);return ficha?rules.validate(ficha):['Ficha técnica no encontrada'];};
+  const imprimiblesEn = rows => rows.filter(p=>erroresDe(p).length===0).length;
   const same = (a,b)=>groupLabel(a)===groupLabel(b);
   function renderLayout(activeGroup=null,activeCategory=null) {
     if (!state.local) return landing();
@@ -476,13 +481,13 @@
       ${!activeGroup?`<div class="panorama-tools"><span>Agrupadores por subgrupo (columna G)</span><div><button class="btn" id="zoomOut">−</button><strong id="layoutZoomPercent">${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
       <div class="panorama-viewport" id="occamViewport" tabindex="0" aria-label="Mapa desplazable de subgrupos"><div class="panorama-map" id="panoramaMap" style="zoom:${state.layoutZoom}">
       <div class="panorama-entrance">SUBGRUPOS DE PROMOCIONES SBA</div>
-      ${occamGroups.map(g=>`<button class="panorama-zone" data-subgroup="${esc(g)}"><strong>${esc(g)}</strong><span>${occamSba.filter(p=>same(p.subgrupo,g)).length} productos</span></button>`).join('')}</div></div>
+      ${occamGroups.map(g=>`<button class="panorama-zone" data-subgroup="${esc(g)}"><strong>${esc(g)}</strong><span>${occamSba.filter(p=>same(p.subgrupo,g)).length} productos · ${imprimiblesEn(occamSba.filter(p=>same(p.subgrupo,g)))} imprimibles</span></button>`).join('')}</div></div>
       `:
       listing===null ? `<div class="panorama-breadcrumb">${groupTitle} › Categorías</div>
-      <div class="category-grid">${cats.map(c=>`<button class="category-tile" data-category="${esc(c)}"><strong>${esc(c)}</strong><span>${items.filter(p=>same(p.categoria,c)).length} productos</span></button>`).join('')}</div>`:
+      <div class="category-grid">${cats.map(c=>`<button class="category-tile" data-category="${esc(c)}"><strong>${esc(c)}</strong><span>${items.filter(p=>same(p.categoria,c)).length} productos · ${imprimiblesEn(items.filter(p=>same(p.categoria,c)))} imprimibles</span></button>`).join('')}</div>`:
       `<div class="panorama-breadcrumb">${groupTitle}${activeCategory?' › '+esc(activeCategory):''} · ${listing.length} productos</div>
       <div class="selection-tools"><label><input type="checkbox" id="selectAllOccam" ${listing.length&&checked===listing.length?'checked':''}> Seleccionar todos (${checked}/${listing.length})</label><button class="btn primary" id="sendOccam" ${checked?'':'disabled'}>Enviar ${checked} a cola</button></div>
-      <div class="layout-product-list">${listing.map(p=>`<label class="layout-product"><input type="checkbox" data-occam="${esc(p.layoutId)}" ${occamSelected.has(p.layoutId)?'checked':''}><span><strong>${esc(p.nombre||'Sin descripción')}</strong><small>${esc(p.marca)} · ${esc(p.contenido)} · Producto ${esc(p.codigo)} · ${esc(p.mecanica)} · ${esc(p.categoria)}</small><small>${(catalog.find(c=>String(c.signId)===String(p.matchSignId)&&String(c.campaignId)===String(p.matchCampaignId))?.dataIssues||[]).length ? 'Revisar datos antes de imprimir' : 'Ficha generada desde OCCAM SBA'}</small></span><b>${fmt(p.precioPromo)}</b></label>`).join('')}</div>
+      <div class="layout-product-list">${listing.map(p=>`<label class="layout-product"><input type="checkbox" data-occam="${esc(p.layoutId)}" ${occamSelected.has(p.layoutId)?'checked':''}><span><strong>${esc(p.nombre||'Sin descripción')}</strong><small>${esc(p.marca)} · ${esc(p.contenido)} · Producto ${esc(p.codigo)} · ${esc(p.mecanica)} · ${esc(p.categoria)}</small><small>${erroresDe(p).length ? 'Pendiente: '+esc(erroresDe(p).join('; ')) : '✓ Listo para enviar a imprimir'}</small></span><b>${fmt(p.precioPromo)}</b></label>`).join('')}</div>
       <p class="panorama-hint">Fichas construidas con OCCAM SBA. Los registros con datos inconsistentes se bloquean para evitar errores de impresión.</p>`}
       <div class="layout-queue-bar"><span>Cola existente: <strong>${state.queue.length}</strong></span><button class="btn primary" id="goToQueue">Ver cola e imprimir</button></div></section>`;
     document.getElementById('changeLocalTop').onclick=changeLocal;
@@ -559,14 +564,17 @@
     });
     document.getElementById('sendOccam')?.addEventListener('click',()=>{
       const selected=listing.filter(p=>occamSelected.has(p.layoutId));
-      const resolved=selected.map(p=>({row:p,sign:catalog.find(c=>String(c.signId)===String(p.matchSignId)&&String(c.campaignId)===String(p.matchCampaignId))}));
+      const resolved=selected.map(p=>({row:p,sign:fichaDe(p)}));
       const invalid=resolved.filter(({sign})=>!sign||rules.validate(sign).length);
       const printable=resolved.filter(({sign})=>sign && rules.validate(sign).length===0);
-      if(!printable.length){window.alert('Ninguno de los carteles seleccionados puede imprimirse todavía: faltan o contradicen datos de OCCAM.');return;}
+      if(!printable.length){
+        window.alert('No se agregaron carteles: '+invalid.slice(0,5).map(({row,sign})=>'Ítem '+row.codigo+': '+(sign?rules.validate(sign).join('; '):'Ficha no encontrada')).join('\n'));
+        return;
+      }
       printable.forEach(({sign})=>state.queue.push({...sign,qid:Date.now()+Math.random()}));
       printable.forEach(({row})=>occamSelected.delete(row.layoutId));
       saveQueue();
-      if(invalid.length)window.alert(`${printable.length} carteles válidos agregados a la cola. ${invalid.length} requieren revisión y NO se agregaron.`);
+      if(invalid.length)window.alert(`${printable.length} carteles agregados a la cola. ${invalid.length} pendientes (NO agregados):\n`+invalid.slice(0,8).map(({row,sign})=>'Ítem '+row.codigo+': '+(sign?rules.validate(sign).join('; '):'Ficha no encontrada')).join('\n'));
       renderMain();
     });
   }
