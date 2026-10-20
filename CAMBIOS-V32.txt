@@ -1,0 +1,1 @@
+V32: El botón de Layout ya no pasa PointerEvent como agrupador. Tarjetas SBA visibles inmediatamente. Zoom con dimensiones reales, deslizamiento táctil nativo, pinch, controles +/-, rueda Ctrl/Command y arrastre en escritorio. Datos e impresión conservados desde V31.

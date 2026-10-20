@@ -2,7 +2,7 @@
   const rules = window.CARTELERIA_RULES;
   if (!rules) throw new Error('Falta cartel-rules.js. No se habilita impresión.');
   const catalog = (window.CARTELERIA_CATALOG || []).map(p => ({...p, ...rules.calc(p)}));
-  const VERSION = 'v31-layout-occam-sba';
+  const VERSION = 'v32-layout-touch-navegacion';
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
@@ -72,7 +72,7 @@
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">◆</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v31 SBA</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v32 SBA</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">Local ${esc(state.local)}</button>
       </header>
@@ -118,7 +118,7 @@
         <button type="button" class="mode-tile" id="modeLayout"><span class="mode-emoji">▦</span><strong>Layout panorámico promociones</strong><small>Recorrer zonas, revisar categorías e imprimir</small></button>
       </div></section>`;
     document.getElementById("modeItem").onclick = renderMain;
-    document.getElementById("modeLayout").onclick = renderLayout;
+    document.getElementById("modeLayout").onclick = () => renderLayout();
     document.getElementById("changeLocalTop").onclick = changeLocal;
   }
 
@@ -398,7 +398,7 @@
       <div class="panorama-head"><button class="btn back-home" id="layoutBack">← ${activeGroup ? "Categorías" : zone ? "Plano" : "Menú"}</button>
       <div><h1>Layout panorámico promociones</h1><p>Plano tipo · ${total} carteles cargados · sin referencia a un local específico</p></div></div>
       ${!zone ? `<div class="panorama-tools"><span>Vista superior de zonas</span><div><button class="btn" id="zoomOut">−</button><strong id="layoutZoomPercent">${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
-      <div class="panorama-viewport"><div class="panorama-map" id="panoramaMap" style="transform:scale(${state.layoutZoom})">
+      <div class="panorama-viewport" id="occamViewport" tabindex="0" aria-label="Mapa desplazable de subgrupos"><div class="panorama-map" id="panoramaMap" style="zoom:${state.layoutZoom}">
         <div class="panorama-entrance">ZONAS DE PROMOCIONES</div>
         ${zones.map(z=>`<button class="panorama-zone" data-zone="${esc(z.name)}"><span class="zone-icon">${z.icon}</span><strong>${esc(z.name)}</strong><span>${zoneProducts(z).length} carteles</span></button>`).join("")}
       </div></div><p class="panorama-hint">Toca una zona para abrir sus categorías. En celular, usa dos dedos para ampliar o reducir; en PC, usa + y −.</p>` :
@@ -473,11 +473,11 @@
     app.innerHTML=`${header()}<section class="screen panorama-screen">
       <div class="panorama-head"><button class="btn back-home" id="layoutBack">← ${listing?'Volver':activeGroup?'Subgrupos':'Menú'}</button>
         <div><h1>Layout panorámico promociones</h1><p>OCCAM · Solo SBA · ${occamSba.length} registros · Subgrupo (G) y Categoría (I)</p></div></div>
-      ${!activeGroup?`<div class="panorama-tools"><span>Agrupadores por subgrupo (columna G)</span><div><button class="btn" id="zoomOut">−</button><strong>${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
-      <div class="panorama-viewport"><div class="panorama-map" id="panoramaMap" style="transform:scale(${state.layoutZoom})">
+      ${!activeGroup?`<div class="panorama-tools"><span>Agrupadores por subgrupo (columna G)</span><div><button class="btn" id="zoomOut">−</button><strong id="layoutZoomPercent">${Math.round(state.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
+      <div class="panorama-viewport" id="occamViewport" tabindex="0" aria-label="Mapa desplazable de subgrupos"><div class="panorama-map" id="panoramaMap" style="zoom:${state.layoutZoom}">
       <div class="panorama-entrance">SUBGRUPOS DE PROMOCIONES SBA</div>
       ${occamGroups.map(g=>`<button class="panorama-zone" data-subgroup="${esc(g)}"><strong>${esc(g)}</strong><span>${occamSba.filter(p=>same(p.subgrupo,g)).length} productos</span></button>`).join('')}</div></div>
-      <p class="panorama-hint">Abre un subgrupo para ver sus categorías o directamente sus productos.</p>
+      <p class="panorama-hint">En celular: desliza con un dedo para recorrer el mapa y usa dos dedos para acercar o alejar. En PC: desplaza con la rueda o arrastra el fondo; usa + y − para el zoom.</p>
       <button type="button" class="btn" id="priorCampaigns">Ver carteles anteriores (361)</button>`:
       listing===null ? `<div class="panorama-breadcrumb">${groupTitle} › Categorías</div>
       <div class="category-grid">${cats.map(c=>`<button class="category-tile" data-category="${esc(c)}"><strong>${esc(c)}</strong><span>${items.filter(p=>same(p.categoria,c)).length} productos</span></button>`).join('')}</div>`:
@@ -488,15 +488,72 @@
       <div class="layout-queue-bar"><span>Cola existente: <strong>${state.queue.length}</strong></span><button class="btn primary" id="goToQueue">Ver cola e imprimir</button></div></section>`;
     document.getElementById('changeLocalTop').onclick=changeLocal;
     document.getElementById('layoutBack').onclick=()=>{
-      if(listing)renderLayout(activeGroup&&hasCategoryStep?activeGroup:null);
+      if(listing)hasCategoryStep&&activeCategory?renderLayout(activeGroup):renderLayout();
       else if(activeGroup)renderLayout();else renderMenu();
     };
     document.getElementById('goToQueue').onclick=renderMain;
     document.querySelectorAll('[data-subgroup]').forEach(b=>b.onclick=()=>renderLayout(b.dataset.subgroup));
     document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>renderLayout(activeGroup,b.dataset.category));
     document.getElementById('priorCampaigns')?.addEventListener('click',()=>renderLayoutLegacy());
-    document.getElementById('zoomIn')?.addEventListener('click',()=>{state.layoutZoom=Math.min(2.8,state.layoutZoom+.2);renderLayout();});
-    document.getElementById('zoomOut')?.addEventListener('click',()=>{state.layoutZoom=Math.max(.6,state.layoutZoom-.2);renderLayout();});
+    // Zoom que cambia también el tamaño desplazable: no usar transform:scale.
+    const viewport=document.getElementById('occamViewport');
+    const map=document.getElementById('panoramaMap');
+    function zoomLayout(next,clientX,clientY){
+      const bounded=Math.max(.65,Math.min(2.6,Math.round(next*100)/100));
+      if(!viewport||!map||bounded===state.layoutZoom)return;
+      const old=state.layoutZoom;
+      const bounds=viewport.getBoundingClientRect();
+      const px=(clientX===undefined?bounds.left+bounds.width/2:clientX)-bounds.left;
+      const py=(clientY===undefined?bounds.top+bounds.height/2:clientY)-bounds.top;
+      const contentX=(viewport.scrollLeft+px)/old;
+      const contentY=(viewport.scrollTop+py)/old;
+      state.layoutZoom=bounded;
+      map.style.zoom=String(bounded);
+      document.getElementById('layoutZoomPercent').textContent=Math.round(bounded*100)+'%';
+      viewport.scrollLeft=contentX*bounded-px;
+      viewport.scrollTop=contentY*bounded-py;
+    }
+    document.getElementById('zoomIn')?.addEventListener('click',()=>zoomLayout(state.layoutZoom+.2));
+    document.getElementById('zoomOut')?.addEventListener('click',()=>zoomLayout(state.layoutZoom-.2));
+    if(viewport){
+      // El desplazamiento táctil con un dedo permanece nativo y fluido.
+      let pinchStart=0,zoomStart=1;
+      const touchDistance=ts=>Math.hypot(ts[0].clientX-ts[1].clientX,ts[0].clientY-ts[1].clientY);
+      viewport.addEventListener('touchstart',e=>{
+        if(e.touches.length===2){pinchStart=touchDistance(e.touches);zoomStart=state.layoutZoom;}
+      },{passive:true});
+      viewport.addEventListener('touchmove',e=>{
+        if(e.touches.length===2&&pinchStart){
+          e.preventDefault();
+          const midX=(e.touches[0].clientX+e.touches[1].clientX)/2;
+          const midY=(e.touches[0].clientY+e.touches[1].clientY)/2;
+          zoomLayout(zoomStart*touchDistance(e.touches)/pinchStart,midX,midY);
+        }
+      },{passive:false});
+      viewport.addEventListener('touchend',e=>{if(e.touches.length<2)pinchStart=0;},{passive:true});
+      viewport.addEventListener('wheel',e=>{
+        if(e.ctrlKey||e.metaKey){e.preventDefault();zoomLayout(state.layoutZoom*(e.deltaY>0?.9:1.1),e.clientX,e.clientY);}
+      },{passive:false});
+      // Desktop: arrastrar el fondo, sin bloquear clics sobre las tarjetas.
+      let drag=null;
+      viewport.addEventListener('pointerdown',e=>{
+        if(e.pointerType==='mouse'&&e.button===0&&!e.target.closest('button')){
+          drag={x:e.clientX,y:e.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};
+          viewport.setPointerCapture(e.pointerId);
+          viewport.classList.add('is-dragging');
+        }
+      });
+      viewport.addEventListener('pointermove',e=>{
+        if(drag){viewport.scrollLeft=drag.left-(e.clientX-drag.x);viewport.scrollTop=drag.top-(e.clientY-drag.y);}
+      });
+      const endDrag=()=>{drag=null;viewport.classList.remove('is-dragging');};
+      viewport.addEventListener('pointerup',endDrag);
+      viewport.addEventListener('pointercancel',endDrag);
+      viewport.addEventListener('keydown',e=>{
+        const steps={ArrowLeft:[-90,0],ArrowRight:[90,0],ArrowUp:[0,-90],ArrowDown:[0,90]};
+        if(steps[e.key]){e.preventDefault();viewport.scrollBy({left:steps[e.key][0],top:steps[e.key][1],behavior:'smooth'});}
+      });
+    }
     document.querySelectorAll('[data-occam]').forEach(b=>b.onchange=()=>{if(b.checked)occamSelected.add(b.dataset.occam);else occamSelected.delete(b.dataset.occam);renderLayout(activeGroup,activeCategory);});
     document.getElementById('selectAllOccam')?.addEventListener('change',e=>{
       listing.forEach(p=>{if(e.target.checked)occamSelected.add(p.layoutId);else occamSelected.delete(p.layoutId)});

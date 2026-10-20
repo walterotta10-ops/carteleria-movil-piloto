@@ -478,3 +478,24 @@ button,input{font:inherit}button{cursor:pointer}#app{min-height:100vh}
 @media print {
   .poster.print .poster-bottom{grid-template-columns:40mm 1fr;gap:1.5mm}
 }
+
+/* V32: navegación táctil y escritorio del panorámico SBA */
+#occamViewport{overflow:auto;max-height:min(72vh,780px);min-height:350px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;scrollbar-gutter:stable;cursor:grab}
+#occamViewport.is-dragging{cursor:grabbing;user-select:none}
+#occamViewport .panorama-map{width:max(100%,950px);min-width:950px;transform:none!important;grid-template-columns:repeat(4,minmax(190px,1fr));gap:14px}
+#occamViewport .panorama-zone{padding:15px 8px;min-height:115px;touch-action:manipulation;overflow-wrap:anywhere}
+#occamViewport .panorama-zone strong{text-align:center;font-size:16px}
+.panorama-tools .btn{min-width:45px;min-height:45px;font-size:23px}
+.panorama-tools>div{display:flex;align-items:center;gap:10px}
+.category-grid{grid-template-columns:repeat(auto-fit,minmax(195px,1fr))}
+@media(max-width:760px){
+  #occamViewport{height:60vh;min-height:360px;padding:8px;scrollbar-gutter:auto}
+  #occamViewport .panorama-map{width:740px;min-width:740px;grid-template-columns:repeat(3,minmax(180px,1fr));gap:9px}
+  #occamViewport .panorama-zone{min-height:100px;padding:9px 6px}
+  .panorama-screen .panorama-tools{flex-wrap:wrap;align-items:center}
+  .panorama-screen .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .panorama-screen .category-tile{min-height:105px;padding:8px;overflow-wrap:anywhere}
+  .panorama-screen .category-tile strong{font-size:14px}
+  .panorama-screen .layout-queue-bar{position:static}
+  .panorama-screen .layout-queue-bar .btn{width:100%}
+}
