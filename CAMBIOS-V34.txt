@@ -1,0 +1,1 @@
+V34: Incorporadas 1203 fichas SBA de OCCAM al catálogo de impresión. Los productos enlazan por ID interno de fila con sus fichas importadas. Se mantienen controles de precios, UPC, fechas, categorías y cantidades. Los ítems inconsistentes permanecen bloqueados. La aplicación no garantiza validez comercial de promociones una vez vencidas.

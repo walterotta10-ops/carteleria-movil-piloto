@@ -2,7 +2,7 @@
   const rules = window.CARTELERIA_RULES;
   if (!rules) throw new Error('Falta cartel-rules.js. No se habilita impresión.');
   const catalog = (window.CARTELERIA_CATALOG || []).map(p => ({...p, ...rules.calc(p)}));
-  const VERSION = 'v32-layout-touch-navegacion';
+  const VERSION = 'v34-occam-sba-fichas';
   const app = document.getElementById("app");
   const printRoot = document.getElementById("printRoot");
 
@@ -72,7 +72,7 @@
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">◆</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v32 SBA</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Cartelería · v34 SBA</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">Local ${esc(state.local)}</button>
       </header>
@@ -477,14 +477,13 @@
       <div class="panorama-viewport" id="occamViewport" tabindex="0" aria-label="Mapa desplazable de subgrupos"><div class="panorama-map" id="panoramaMap" style="zoom:${state.layoutZoom}">
       <div class="panorama-entrance">SUBGRUPOS DE PROMOCIONES SBA</div>
       ${occamGroups.map(g=>`<button class="panorama-zone" data-subgroup="${esc(g)}"><strong>${esc(g)}</strong><span>${occamSba.filter(p=>same(p.subgrupo,g)).length} productos</span></button>`).join('')}</div></div>
-      <p class="panorama-hint">En celular: desliza con un dedo para recorrer el mapa y usa dos dedos para acercar o alejar. En PC: desplaza con la rueda o arrastra el fondo; usa + y − para el zoom.</p>
-      <button type="button" class="btn" id="priorCampaigns">Ver carteles anteriores (361)</button>`:
+      `:
       listing===null ? `<div class="panorama-breadcrumb">${groupTitle} › Categorías</div>
       <div class="category-grid">${cats.map(c=>`<button class="category-tile" data-category="${esc(c)}"><strong>${esc(c)}</strong><span>${items.filter(p=>same(p.categoria,c)).length} productos</span></button>`).join('')}</div>`:
       `<div class="panorama-breadcrumb">${groupTitle}${activeCategory?' › '+esc(activeCategory):''} · ${listing.length} productos</div>
       <div class="selection-tools"><label><input type="checkbox" id="selectAllOccam" ${listing.length&&checked===listing.length?'checked':''}> Seleccionar todos (${checked}/${listing.length})</label><button class="btn primary" id="sendOccam" ${checked?'':'disabled'}>Enviar ${checked} a cola</button></div>
-      <div class="layout-product-list">${listing.map(p=>`<label class="layout-product"><input type="checkbox" data-occam="${esc(p.layoutId)}" ${occamSelected.has(p.layoutId)?'checked':''}><span><strong>${esc(p.nombre||'Sin descripción')}</strong><small>${esc(p.marca)} · ${esc(p.contenido)} · Producto ${esc(p.codigo)} · ${esc(p.mecanica)} · ${esc(p.categoria)}</small><small>${p.matchSignId ? 'Con referencia técnica':'Pendiente de validación técnica para impresión'}</small></span><b>${fmt(p.precioPromo)}</b></label>`).join('')}</div>
-      <p class="panorama-hint">Los productos OCCAM sin correspondencia verificada no pueden pasar a impresión; sus precios y códigos se muestran únicamente para revisión.</p>`}
+      <div class="layout-product-list">${listing.map(p=>`<label class="layout-product"><input type="checkbox" data-occam="${esc(p.layoutId)}" ${occamSelected.has(p.layoutId)?'checked':''}><span><strong>${esc(p.nombre||'Sin descripción')}</strong><small>${esc(p.marca)} · ${esc(p.contenido)} · Producto ${esc(p.codigo)} · ${esc(p.mecanica)} · ${esc(p.categoria)}</small><small>${(catalog.find(c=>String(c.signId)===String(p.matchSignId)&&String(c.campaignId)===String(p.matchCampaignId))?.dataIssues||[]).length ? 'Revisar datos antes de imprimir' : 'Ficha generada desde OCCAM SBA'}</small></span><b>${fmt(p.precioPromo)}</b></label>`).join('')}</div>
+      <p class="panorama-hint">Fichas construidas con OCCAM SBA. Los registros con datos inconsistentes se bloquean para evitar errores de impresión.</p>`}
       <div class="layout-queue-bar"><span>Cola existente: <strong>${state.queue.length}</strong></span><button class="btn primary" id="goToQueue">Ver cola e imprimir</button></div></section>`;
     document.getElementById('changeLocalTop').onclick=changeLocal;
     document.getElementById('layoutBack').onclick=()=>{
@@ -494,7 +493,6 @@
     document.getElementById('goToQueue').onclick=renderMain;
     document.querySelectorAll('[data-subgroup]').forEach(b=>b.onclick=()=>renderLayout(b.dataset.subgroup));
     document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>renderLayout(activeGroup,b.dataset.category));
-    document.getElementById('priorCampaigns')?.addEventListener('click',()=>renderLayoutLegacy());
     // Zoom que cambia también el tamaño desplazable: no usar transform:scale.
     const viewport=document.getElementById('occamViewport');
     const map=document.getElementById('panoramaMap');
@@ -563,9 +561,13 @@
       const selected=listing.filter(p=>occamSelected.has(p.layoutId));
       const resolved=selected.map(p=>({row:p,sign:catalog.find(c=>String(c.signId)===String(p.matchSignId)&&String(c.campaignId)===String(p.matchCampaignId))}));
       const invalid=resolved.filter(({sign})=>!sign||rules.validate(sign).length);
-      if(invalid.length){window.alert(`${invalid.length} de ${selected.length} artículos seleccionados carecen de ficha técnica de cartel validada. No se enviaron a imprimir. Requieren cruce con los response originales.`);return;}
-      resolved.forEach(({sign})=>state.queue.push({...sign,qid:Date.now()+Math.random()}));
-      selected.forEach(p=>occamSelected.delete(p.layoutId));saveQueue();renderMain();
+      const printable=resolved.filter(({sign})=>sign && rules.validate(sign).length===0);
+      if(!printable.length){window.alert('Ninguno de los carteles seleccionados puede imprimirse todavía: faltan o contradicen datos de OCCAM.');return;}
+      printable.forEach(({sign})=>state.queue.push({...sign,qid:Date.now()+Math.random()}));
+      printable.forEach(({row})=>occamSelected.delete(row.layoutId));
+      saveQueue();
+      if(invalid.length)window.alert(`${printable.length} carteles válidos agregados a la cola. ${invalid.length} requieren revisión y NO se agregaron.`);
+      renderMain();
     });
   }
 

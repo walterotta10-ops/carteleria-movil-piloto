@@ -1,0 +1,1 @@
+V33: Se eliminan las instrucciones de gestos y el botón Ver carteles anteriores (361) de la entrada al layout panorámico de promociones. Se mantienen las tarjetas SBA, controles táctiles, zoom y la cola de impresión.
