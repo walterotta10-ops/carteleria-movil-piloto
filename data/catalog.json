@@ -28,7 +28,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "269052",
@@ -59,7 +63,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "278896",
@@ -90,7 +98,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "445265",
@@ -121,7 +133,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "704911",
@@ -152,7 +168,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "704904",
@@ -183,7 +203,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "704910",
@@ -214,7 +238,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "294720",
@@ -245,7 +273,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "647513",
@@ -276,7 +308,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "681123",
@@ -307,7 +343,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "445244",
@@ -338,7 +378,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "437816",
@@ -369,7 +413,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "413815",
@@ -400,7 +448,11 @@
     "sourceItemType": "internalSign",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "647510",
@@ -431,7 +483,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "817202",
@@ -462,7 +518,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "413812",
@@ -493,7 +553,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "413813",
@@ -524,7 +588,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "647509",
@@ -555,7 +623,11 @@
     "sourceItemType": "parent",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5014894",
@@ -586,7 +658,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "648855",
@@ -617,7 +693,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "672885",
@@ -648,7 +728,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "672886",
@@ -679,7 +763,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "672887",
@@ -710,7 +798,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "704912",
@@ -741,7 +833,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "269059",
@@ -772,7 +868,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "647512",
@@ -803,7 +903,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "648854",
@@ -834,7 +938,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "257828",
@@ -865,7 +973,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "278916",
@@ -896,7 +1008,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "363782",
@@ -927,7 +1043,11 @@
     "sourceItemType": "associated",
     "sourceDateInferred": false,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "647511",
@@ -944,7 +1064,7 @@
     "campaignName": "3X VINOS - SBA",
     "listName": "3X VINOS - SBA – Lista 22086",
     "categoryId": 8475,
-    "categoryName": "VINO",
+    "categoryName": "VINOS",
     "signId": 3587341,
     "campaignFromDate": "2026-01-01T03:00:00.000Z",
     "campaignToDate": "2027-01-01T02:59:59.000Z",
@@ -958,7 +1078,11 @@
     "sourceItemType": null,
     "sourceDateInferred": true,
     "dataIssues": [],
-    "importVersion": 28
+    "importVersion": 28,
+    "masterCategory": "VINOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "286711",
@@ -991,7 +1115,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ARROZ",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "MANTENER",
+    "requiresCategoryReview": false
   },
   {
     "code": "5096285",
@@ -1024,7 +1152,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CEPILLOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "103441",
@@ -1057,7 +1189,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "AFEITADO MUJER",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "127351",
@@ -1090,7 +1226,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "AFEITADO HOMBRE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "288340",
@@ -1123,7 +1263,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DESODORANTE-ANTITRANSPIRANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "579078",
@@ -1156,7 +1300,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "AFEITADO HOMBRE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5043079",
@@ -1189,7 +1337,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DESODORANTE-ANTITRANSPIRANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5043081",
@@ -1222,7 +1374,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DESODORANTE-ANTITRANSPIRANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5061797",
@@ -1255,7 +1411,11 @@
     "sourceStatusName": "Eliminado",
     "reviewDecision": "REVISAR",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CERVEZA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "415027",
@@ -1288,7 +1448,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SERVILLETAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "262776",
@@ -1321,7 +1485,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO BEBE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "271077",
@@ -1354,7 +1522,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO BEBE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5027932",
@@ -1387,7 +1559,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO BEBE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "654854",
@@ -1420,7 +1596,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO BEBE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "654853",
@@ -1453,7 +1633,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO BEBE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5048449",
@@ -1486,7 +1670,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BEBIDAS - AGUA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5048447",
@@ -1519,7 +1707,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BEBIDAS - AGUA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "111723",
@@ -1552,7 +1744,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "115129",
@@ -1585,7 +1781,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAPEL HIGIÉNICO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122045",
@@ -1618,7 +1818,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO TELAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122044",
@@ -1651,7 +1855,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO TELAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "637453",
@@ -1684,7 +1892,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAPEL HIGIÉNICO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "502946",
@@ -1717,7 +1929,11 @@
     "sourceStatusName": "No Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CANDY - CHOCOLATES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "719890",
@@ -1750,7 +1966,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "100383",
@@ -1783,7 +2003,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "557831",
@@ -1816,7 +2040,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "557835",
@@ -1849,7 +2077,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5075300",
@@ -1882,7 +2114,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "TOALLAS DE PAPEL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5069661",
@@ -1915,7 +2151,11 @@
     "sourceStatusName": "Vencido",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DETERGENTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "MANTENER",
+    "requiresCategoryReview": false
   },
   {
     "code": "5135767",
@@ -1948,7 +2188,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CERDO - FRESCO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5105812",
@@ -1981,7 +2225,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5091871",
@@ -2014,7 +2262,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "VERDURAS CONGELADAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5074684",
@@ -2047,7 +2299,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POLLO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5105813",
@@ -2080,7 +2336,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5107665",
@@ -2113,7 +2373,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PESCADERIA CONGELADA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5072405",
@@ -2146,7 +2410,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5093559",
@@ -2179,7 +2447,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5042844",
@@ -2212,7 +2484,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5135769",
@@ -2245,7 +2521,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CERDO - FRESCO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "441821",
@@ -2278,7 +2558,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "VERDURAS CONGELADAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "698657",
@@ -2311,7 +2595,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "557832",
@@ -2344,7 +2632,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "671579",
@@ -2377,7 +2669,11 @@
     "sourceStatusName": "No Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5054341",
@@ -2410,7 +2706,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "YOGURT",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5133647",
@@ -2443,7 +2743,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "469406",
@@ -2476,7 +2780,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CREMAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "449019",
@@ -2509,7 +2817,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "YOGURT",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5089826",
@@ -2542,7 +2854,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POLLO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "675941",
@@ -2575,7 +2891,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "856229",
@@ -2608,7 +2928,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SALCHICHAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5074686",
@@ -2641,7 +2965,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POLLO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5068275",
@@ -2674,7 +3002,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CERDO - FRESCO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "441823",
@@ -2707,7 +3039,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "VERDURAS CONGELADAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "628678",
@@ -2740,7 +3076,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5074685",
@@ -2773,7 +3113,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POLLO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "449021",
@@ -2806,7 +3150,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "YOGURT",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "345260",
@@ -2839,7 +3187,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "VERDURAS CONGELADAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5072403",
@@ -2872,7 +3224,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5020095",
@@ -2905,7 +3261,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PREFOR & CORTES FRIOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "646584",
@@ -2938,7 +3298,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "YOGURT",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5042845",
@@ -2971,7 +3335,11 @@
     "sourceStatusName": "No Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "111722",
@@ -3004,7 +3372,11 @@
     "sourceStatusName": "No Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "671580",
@@ -3037,7 +3409,11 @@
     "sourceStatusName": "No Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "730334",
@@ -3070,7 +3446,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAN  - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5005117",
@@ -3103,7 +3483,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5054342",
@@ -3136,7 +3520,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "YOGURT",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5133655",
@@ -3169,7 +3557,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5044851",
@@ -3202,7 +3594,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SALCHICHAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "774006",
@@ -3235,7 +3631,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5026458",
@@ -3268,7 +3668,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SALCHICHAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "725983",
@@ -3301,7 +3705,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LECHE-CREMA-SUBSTITUTOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5044850",
@@ -3334,7 +3742,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SALCHICHAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "774005",
@@ -3367,7 +3779,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "816530",
@@ -3400,7 +3816,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LECHE-CREMA-SUBSTITUTOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "261776",
@@ -3433,7 +3853,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5133648",
@@ -3466,7 +3890,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "274831",
@@ -3499,7 +3927,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5093459",
@@ -3532,7 +3964,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5133643",
@@ -3565,7 +4001,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "320855",
@@ -3598,7 +4038,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LECHE-CREMA-SUBSTITUTOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "816531",
@@ -3631,7 +4075,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LECHE-CREMA-SUBSTITUTOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "299148",
@@ -3664,7 +4112,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "MANTEQUILLA-MANTECA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122546",
@@ -3697,7 +4149,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "656196",
@@ -3730,7 +4186,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "103719",
@@ -3763,7 +4223,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5002083",
@@ -3796,7 +4260,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LECHE-CREMA-SUBSTITUTOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "294801",
@@ -3829,7 +4297,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LECHE-CREMA-SUBSTITUTOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5133644",
@@ -3862,7 +4334,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5034475",
@@ -3895,7 +4371,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5068689",
@@ -3928,7 +4408,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESO FRESCO - QUESILLO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5133640",
@@ -3961,7 +4445,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "261789",
@@ -3994,7 +4482,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CECINAS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5024145",
@@ -4027,7 +4519,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5146465",
@@ -4060,7 +4556,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "TOALLAS DE PAPEL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5084637",
@@ -4093,7 +4593,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DETERGENTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5134670",
@@ -4126,7 +4630,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5107250",
@@ -4159,7 +4667,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BLANQUEAMIENTO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5093399",
@@ -4192,7 +4704,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LAVALOZAS Y ACCESORIOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5078805",
@@ -4225,7 +4741,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "103606",
@@ -4258,7 +4778,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BOLSOS & ENVOLTORIOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5100060",
@@ -4291,7 +4815,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5140803",
@@ -4324,7 +4852,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5064329",
@@ -4357,7 +4889,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5107249",
@@ -4390,7 +4926,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BLANQUEAMIENTO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "738602",
@@ -4423,7 +4963,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5134667",
@@ -4456,7 +5000,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5095660",
@@ -4489,7 +5037,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "838947",
@@ -4522,7 +5074,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5134665",
@@ -4555,7 +5111,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5145811",
@@ -4588,7 +5148,11 @@
     "sourceStatusName": "Vencido",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "TOALLAS DE PAPEL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "MANTENER",
+    "requiresCategoryReview": false
   },
   {
     "code": "5064300",
@@ -4621,7 +5185,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5059281",
@@ -4654,7 +5222,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5134666",
@@ -4687,7 +5259,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5095661",
@@ -4720,7 +5296,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "591858",
@@ -4753,7 +5333,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5119983",
@@ -4786,7 +5370,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAPEL HIGIÉNICO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5146467",
@@ -4819,7 +5407,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SERVILLETAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "263311",
@@ -4852,7 +5444,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO TELAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "797267",
@@ -4885,7 +5481,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "109182",
@@ -4918,7 +5518,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "672162",
@@ -4951,7 +5555,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PLAGUICIDAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "600083",
@@ -4984,7 +5592,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - PISO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "797266",
@@ -5017,7 +5629,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "410001",
@@ -5050,7 +5666,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "TOALLAS DE PAPEL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "672163",
@@ -5083,7 +5703,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PLAGUICIDAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5033114",
@@ -5116,7 +5740,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - HOGAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "600082",
@@ -5149,7 +5777,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - PISO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5055413",
@@ -5182,7 +5814,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "399902",
@@ -5215,7 +5851,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BOLSA DE BASURA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5004624",
@@ -5248,7 +5888,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BOLSOS & ENVOLTORIOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "672164",
@@ -5281,7 +5925,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PLAGUICIDAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "600085",
@@ -5314,7 +5962,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "LIMPIADORES - PISO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "109184",
@@ -5347,7 +5999,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5048789",
@@ -5380,7 +6036,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DETERGENTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5008176",
@@ -5413,7 +6073,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PLAGUICIDAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5049572",
@@ -5446,7 +6110,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "WIPES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "293669",
@@ -5479,7 +6147,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAPELES FACIAL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "626660",
@@ -5512,7 +6184,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "AMBIENTADOR & DESODORANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "676066",
@@ -5545,7 +6221,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAPELES FACIAL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "109533",
@@ -5578,7 +6258,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO TELAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "626662",
@@ -5611,7 +6295,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "AMBIENTADOR & DESODORANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "258811",
@@ -5644,7 +6332,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SERVILLETAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "270512",
@@ -5677,7 +6369,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BLANQUEAMIENTO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "115133",
@@ -5710,7 +6406,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "PAPEL HIGIÉNICO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "626661",
@@ -5743,7 +6443,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "AMBIENTADOR & DESODORANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "854497",
@@ -5776,7 +6480,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SUAVIZANTES",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5075297",
@@ -5809,7 +6517,11 @@
     "sourceStatusName": "No Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "TOALLAS DE PAPEL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "109541",
@@ -5842,7 +6554,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO TELAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5073748",
@@ -5875,7 +6591,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "JABON",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5020434",
@@ -5908,7 +6628,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BEBIDAS - AGUA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5126488",
@@ -5941,7 +6665,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5084981",
@@ -5974,7 +6702,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5120238",
@@ -6007,7 +6739,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BEBIDAS - HIDRATACION",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5138453",
@@ -6040,7 +6776,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5081382",
@@ -6073,7 +6813,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "646843",
@@ -6106,7 +6850,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "JUGOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5080784",
@@ -6139,7 +6887,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "GALLETAS - SALADA-SALVIA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5138451",
@@ -6172,7 +6924,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5015550",
@@ -6205,7 +6961,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "646846",
@@ -6238,7 +6998,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "JUGOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5066347",
@@ -6271,7 +7035,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SEMILLAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5050284",
@@ -6304,7 +7072,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "646844",
@@ -6337,7 +7109,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "JUGOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5138452",
@@ -6370,7 +7146,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5015549",
@@ -6403,7 +7183,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "646847",
@@ -6436,7 +7220,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "JUGOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5066348",
@@ -6469,7 +7257,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SEMILLAS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5078104",
@@ -6502,7 +7294,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5064765",
@@ -6535,7 +7331,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BEBIDAS - AGUA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122298",
@@ -6568,7 +7368,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5078106",
@@ -6601,7 +7405,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5145466",
@@ -6634,7 +7442,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "VINO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "646848",
@@ -6667,7 +7479,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "JUGOS",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5120241",
@@ -6700,7 +7516,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "BEBIDAS - HIDRATACION",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5078108",
@@ -6733,7 +7553,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5125252",
@@ -6766,7 +7590,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "COCKTAIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5096690",
@@ -6799,7 +7627,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5059476",
@@ -6832,7 +7664,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122501",
@@ -6865,7 +7701,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5116056",
@@ -6898,7 +7738,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "DESODORANTE-ANTITRANSPIRANTE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5235565",
@@ -6933,7 +7777,11 @@
     "dataIssues": [
       "Precio modaPrice ausente en la respuesta: verificar"
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "595099",
@@ -6966,7 +7814,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "595101",
@@ -6999,7 +7851,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5057965",
@@ -7032,7 +7888,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5057964",
@@ -7065,7 +7925,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "668211",
@@ -7098,7 +7962,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122323",
@@ -7131,7 +7999,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "288435",
@@ -7164,7 +8036,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122320",
@@ -7197,7 +8073,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "809729",
@@ -7230,7 +8110,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "288449",
@@ -7263,7 +8147,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "668208",
@@ -7296,7 +8184,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "288401",
@@ -7329,7 +8221,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "SHAMPOO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "256861",
@@ -7362,7 +8258,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "FRUTAS - GONDOLA",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5070068",
@@ -7395,7 +8295,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "APARIENCIA AUTOMOVIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "629484",
@@ -7428,7 +8332,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "APARIENCIA AUTOMOVIL",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5140434",
@@ -7461,7 +8369,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5122505",
@@ -7494,7 +8406,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ACONDICIONADOR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5040302",
@@ -7527,7 +8443,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "QUESOS AUTOSERVICIO",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "856479",
@@ -7560,7 +8480,11 @@
     "sourceStatusName": "Impreso",
     "reviewDecision": "MANTENER",
     "dataIssues": [],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "CUIDADO BEBE",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": false
   },
   {
     "code": "5123971",
@@ -7577,7 +8501,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5123971",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7595,7 +8519,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5087759",
@@ -7612,7 +8540,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5087759",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7630,7 +8558,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5080984",
@@ -7647,7 +8579,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5080984",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7665,7 +8597,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5059470",
@@ -7682,7 +8618,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5059470",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7700,7 +8636,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5089023",
@@ -7717,7 +8657,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5089023",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7735,7 +8675,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5093250",
@@ -7752,7 +8696,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5093250",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7770,7 +8714,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5128247",
@@ -7787,7 +8735,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5128247",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7805,7 +8753,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5123972",
@@ -7822,7 +8774,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5123972",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7840,7 +8792,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5096689",
@@ -7857,7 +8813,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5096689",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7875,7 +8831,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5122500",
@@ -7892,7 +8852,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5122500",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7910,7 +8870,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5120900",
@@ -7927,7 +8891,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5120900",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7945,7 +8909,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5135289",
@@ -7962,7 +8930,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5135289",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -7980,7 +8948,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5096700",
@@ -7997,7 +8969,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5096700",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8015,7 +8987,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5087760",
@@ -8032,7 +9008,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5087760",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8050,7 +9026,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "250940",
@@ -8067,7 +9047,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-250940",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8085,7 +9065,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5121639",
@@ -8102,7 +9086,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5121639",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8120,7 +9104,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5123970",
@@ -8137,7 +9125,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5123970",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8155,7 +9143,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5087761",
@@ -8172,7 +9164,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5087761",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8190,7 +9182,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5059466",
@@ -8207,7 +9203,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5059466",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8225,7 +9221,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5123568",
@@ -8242,7 +9242,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5123568",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8260,7 +9260,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5135288",
@@ -8277,7 +9281,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5135288",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8295,7 +9299,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5096699",
@@ -8312,7 +9320,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5096699",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8330,7 +9338,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5094809",
@@ -8347,7 +9359,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5094809",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8365,7 +9377,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "242421",
@@ -8382,7 +9398,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-242421",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8400,7 +9416,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5144745",
@@ -8417,7 +9437,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5144745",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8435,7 +9455,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5094811",
@@ -8452,7 +9476,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5094811",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8470,7 +9494,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5099481",
@@ -8487,7 +9515,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5099481",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8505,7 +9533,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5096694",
@@ -8522,7 +9554,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5096694",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8540,7 +9572,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5094810",
@@ -8557,7 +9593,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5094810",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8575,7 +9611,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "251500",
@@ -8592,7 +9632,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-251500",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8610,7 +9650,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5096693",
@@ -8627,7 +9671,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5096693",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8645,7 +9689,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5059478",
@@ -8662,7 +9710,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5059478",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8680,7 +9728,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "753383",
@@ -8697,7 +9749,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-753383",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8715,7 +9767,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "708608",
@@ -8732,7 +9788,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-708608",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8750,7 +9806,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "709503",
@@ -8767,7 +9827,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-709503",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8785,7 +9845,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5080918",
@@ -8802,7 +9866,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5080918",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8820,7 +9884,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "698627",
@@ -8837,7 +9905,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-698627",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8855,7 +9923,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5010973",
@@ -8872,7 +9944,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5010973",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8890,7 +9962,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "694961",
@@ -8907,7 +9983,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-694961",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8925,7 +10001,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "658277",
@@ -8942,7 +10022,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-658277",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8960,7 +10040,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5017279",
@@ -8977,7 +10061,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5017279",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -8995,7 +10079,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "753382",
@@ -9012,7 +10100,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-753382",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9030,7 +10118,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "708606",
@@ -9047,7 +10139,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-708606",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9065,7 +10157,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "547050",
@@ -9082,7 +10178,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-547050",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9100,7 +10196,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "692208",
@@ -9117,7 +10217,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-692208",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9135,7 +10235,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "694960",
@@ -9152,7 +10256,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-694960",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9170,7 +10274,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "658272",
@@ -9187,7 +10295,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-658272",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9205,7 +10313,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "689996",
@@ -9222,7 +10334,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-689996",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9240,7 +10352,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "121862",
@@ -9257,7 +10373,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-121862",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9275,7 +10391,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "255347",
@@ -9292,7 +10412,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-255347",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9310,7 +10430,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "640211",
@@ -9327,7 +10451,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-640211",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9345,7 +10469,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "680977",
@@ -9362,7 +10490,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-680977",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9380,7 +10508,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5017278",
@@ -9397,7 +10529,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5017278",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9415,7 +10547,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "753381",
@@ -9432,7 +10568,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-753381",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9450,7 +10586,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "689970",
@@ -9467,7 +10607,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-689970",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9485,7 +10625,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "293677",
@@ -9502,7 +10646,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-293677",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9520,7 +10664,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "692598",
@@ -9537,7 +10685,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-692598",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9555,7 +10703,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "675154",
@@ -9572,7 +10724,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-675154",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9590,7 +10742,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "847608",
@@ -9607,7 +10763,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-847608",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9625,7 +10781,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "644331",
@@ -9642,7 +10802,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-644331",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9660,7 +10820,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "263370",
@@ -9677,7 +10841,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-263370",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9695,7 +10859,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "693376",
@@ -9712,7 +10880,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-693376",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9730,7 +10898,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "382029",
@@ -9747,7 +10919,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-382029",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9765,7 +10937,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "675153",
@@ -9782,7 +10958,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-675153",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9800,7 +10976,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "689967",
@@ -9817,7 +10997,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-689967",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9835,7 +11015,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "127693",
@@ -9852,7 +11036,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-127693",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9870,7 +11054,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "117683",
@@ -9887,7 +11075,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-117683",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9905,7 +11093,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "753414",
@@ -9922,7 +11114,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-753414",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9940,7 +11132,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5026858",
@@ -9957,7 +11153,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5026858",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -9975,7 +11171,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "338203",
@@ -9992,7 +11192,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-338203",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10010,7 +11210,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5027981",
@@ -10027,7 +11231,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5027981",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10045,7 +11249,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "708609",
@@ -10062,7 +11270,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-708609",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10080,7 +11288,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "654060",
@@ -10097,7 +11309,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-654060",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10115,7 +11327,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "262233",
@@ -10132,7 +11348,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-262233",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10150,7 +11366,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "653986",
@@ -10167,7 +11387,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-653986",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10185,7 +11405,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "252307",
@@ -10202,7 +11426,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-252307",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10220,7 +11444,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5073749",
@@ -10237,7 +11465,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5073749",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10255,7 +11483,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "869037",
@@ -10272,7 +11504,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-869037",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10290,7 +11522,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5040414",
@@ -10307,7 +11543,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5040414",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10325,7 +11561,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "346198",
@@ -10342,7 +11582,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-346198",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10360,7 +11600,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5068156",
@@ -10377,7 +11621,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5068156",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10395,7 +11639,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5144919",
@@ -10412,7 +11660,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5144919",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10430,7 +11678,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "405192",
@@ -10447,7 +11699,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-405192",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10465,7 +11717,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "275331",
@@ -10482,7 +11738,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-275331",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10500,7 +11756,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "519038",
@@ -10517,7 +11777,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-519038",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10535,7 +11795,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "242070",
@@ -10552,7 +11816,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-242070",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10570,7 +11834,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "MANTENER",
+    "requiresCategoryReview": true
   },
   {
     "code": "724524",
@@ -10587,7 +11855,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-724524",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10605,7 +11873,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "286711",
@@ -10622,7 +11894,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "ARROZ",
     "deptName": "",
     "signId": "PENDIENTE-286711",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10640,7 +11912,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "ARROZ",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "MANTENER",
+    "requiresCategoryReview": false
   },
   {
     "code": "286741",
@@ -10657,7 +11933,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-286741",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10675,7 +11951,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5129748",
@@ -10692,7 +11972,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5129748",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10710,7 +11990,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "712670",
@@ -10727,7 +12011,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-712670",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10745,7 +12029,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "341128",
@@ -10762,7 +12050,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-341128",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10780,7 +12068,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "699448",
@@ -10797,7 +12089,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-699448",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10815,7 +12107,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5091605",
@@ -10832,7 +12128,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5091605",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10850,7 +12146,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "692756",
@@ -10867,7 +12167,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-692756",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10885,7 +12185,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "881972",
@@ -10902,7 +12206,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-881972",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10920,7 +12224,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "242004",
@@ -10937,7 +12245,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-242004",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10955,7 +12263,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "MANTENER",
+    "requiresCategoryReview": true
   },
   {
     "code": "5115503",
@@ -10972,7 +12284,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5115503",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -10990,7 +12302,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "652457",
@@ -11007,7 +12323,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-652457",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11025,7 +12341,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5068155",
@@ -11042,7 +12362,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5068155",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11060,7 +12380,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "405070",
@@ -11077,7 +12401,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-405070",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11095,7 +12419,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5061309",
@@ -11112,7 +12440,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5061309",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11130,7 +12458,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5072745",
@@ -11147,7 +12479,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5072745",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11165,7 +12497,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5105816",
@@ -11182,7 +12518,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5105816",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11200,7 +12536,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "285975",
@@ -11217,7 +12557,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-285975",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11235,7 +12575,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5065505",
@@ -11252,7 +12596,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5065505",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11270,7 +12614,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5023792",
@@ -11287,7 +12635,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5023792",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11305,7 +12653,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "285971",
@@ -11322,7 +12674,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-285971",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11340,7 +12692,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5019043",
@@ -11357,7 +12713,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5019043",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11375,7 +12731,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5019755",
@@ -11392,7 +12752,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5019755",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11410,7 +12770,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5019754",
@@ -11427,7 +12791,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5019754",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11445,7 +12809,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5023789",
@@ -11462,7 +12830,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5023789",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11480,7 +12848,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "294955",
@@ -11497,7 +12869,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-294955",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11515,7 +12887,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "766658",
@@ -11532,7 +12908,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-766658",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11550,7 +12926,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "766659",
@@ -11567,7 +12947,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-766659",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11585,7 +12965,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "399894",
@@ -11602,7 +12986,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-399894",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11620,7 +13004,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "293888",
@@ -11637,7 +13025,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-293888",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11655,7 +13043,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "294741",
@@ -11672,7 +13064,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-294741",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11690,7 +13082,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "294500",
@@ -11707,7 +13103,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-294500",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11725,7 +13121,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "293857",
@@ -11742,7 +13142,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-293857",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11760,7 +13160,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5070450",
@@ -11777,7 +13181,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5070450",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11795,7 +13199,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "286105",
@@ -11812,7 +13220,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-286105",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11830,7 +13238,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "405067",
@@ -11847,7 +13259,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-405067",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11865,7 +13277,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "294040",
@@ -11882,7 +13298,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-294040",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11900,7 +13316,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5070453",
@@ -11917,7 +13337,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5070453",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11935,7 +13355,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "294503",
@@ -11952,7 +13376,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-294503",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -11970,7 +13394,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "502700",
@@ -11987,7 +13415,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-502700",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -12005,7 +13433,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "404987",
@@ -12022,7 +13454,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-404987",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -12040,7 +13472,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "5070451",
@@ -12057,7 +13493,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-5070451",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -12075,7 +13511,11 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   },
   {
     "code": "670354",
@@ -12092,7 +13532,7 @@
     "campaignName": "LISTA B3-AHORA MAS BARATO",
     "listName": "LISTA B3-AHORA MAS BARATO – Lista 22607",
     "categoryId": null,
-    "categoryName": "SIN CLASIFICAR - DATOS PENDIENTES",
+    "categoryName": "POR CATEGORIZAR",
     "deptName": "",
     "signId": "PENDIENTE-670354",
     "campaignFromDate": "2026-08-20T04:00:00.000Z",
@@ -12110,6 +13550,10 @@
     "dataIssues": [
       "Ficha incompleta: faltan EAN-13, tamaño, categoría, signId y fuente original del response. NO IMPRIMIR."
     ],
-    "importVersion": 29
+    "importVersion": 29,
+    "masterCategory": "POR CATEGORIZAR",
+    "masterCategorySource": "CARTELERIA_MAESTRO_361_CATEGORIAS_ORIGINALES.xlsx",
+    "masterDecision": "REVISAR",
+    "requiresCategoryReview": true
   }
 ]
