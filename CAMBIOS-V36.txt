@@ -1,0 +1,35 @@
+V36: Reorganización del layout panorámico SBA (1.203 registros).
+Se unifican los grupos de panadería/pastas/deli, se separan lácteos y fiambrería, líquidos y snack, se redistribuyen artículos de bebé/perfumería y se renombra Proteínas a Carnicería.
+Registros originales conservados: la agrupación G anterior se guarda como subgrupoOriginal cuando se cambia.
+Los códigos, precios, mecánicas, cantidades, fechas, validaciones, fichas y flujo de impresión no se modifican.
+Agrupación final:
+  ABARROTES: 120
+  CARNICERÍA: 14
+  CONGELADOS: 49
+  CUIDADO BEBÉ: 80
+  DESAYUNO Y DULCES: 96
+  FIAMBRERÍA: 48
+  LIMPIEZA: 98
+  LÁCTEOS: 99
+  LÍQUIDOS: 271
+  MASCOTAS: 64
+  OTROS ARTÍCULOS: 1
+  PANADERÍA, PASTAS Y DELI: 15
+  PERFUMERÍA: 218
+  SNACK: 30
+
+Movimientos:
+  CUIDADO BEBE -> CUIDADO BEBÉ: 73
+  LACTEOS Y FIAMBRERIA -> FIAMBRERÍA: 48
+  LACTEOS Y FIAMBRERIA -> LÁCTEOS: 99
+  LIQUIDOS Y SNACK -> LIMPIEZA: 3
+  LIQUIDOS Y SNACK -> LÍQUIDOS: 271
+  LIQUIDOS Y SNACK -> OTROS ARTÍCULOS: 1
+  LIQUIDOS Y SNACK -> SNACK: 30
+  PAN PAST Y DELI -> PANADERÍA, PASTAS Y DELI: 13
+  PAN,PASTA & DELI -> PANADERÍA, PASTAS Y DELI: 2
+  PERFUMERIA -> CUIDADO BEBÉ: 5
+  PERFUMERIA -> PERFUMERÍA: 214
+  PERFUMERIA Y BEBE -> CUIDADO BEBÉ: 2
+  PERFUMERIA Y BEBE -> PERFUMERÍA: 4
+  PROTEINAS -> CARNICERÍA: 14
