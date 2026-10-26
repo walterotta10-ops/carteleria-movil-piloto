@@ -1,0 +1,26 @@
+C&D V52 — Mercados oficiales (sobre V51)
+
+Origen: Codigos Mercado.xlsx (entregado por el usuario).
+128 locales válidos, 11 mercados. 514 NO está en la nómina y queda fuera de los informes.
+814 = Santiago Norte: 12 locales.
+
+INCLUYE:
+- Pantalla de acceso valida local o código de mercado oficial.
+- Cada código de mercado abre Uso por local y solo obtiene registros de sus locales desde el servidor.
+- Los locales sin movimientos siguen apareciendo con cero.
+- Los registros antiguos de locales no reconocidos no se eliminan de D1; solo dejan de mostrarse.
+- La impresión, cartelería manual, promociones y cola existentes no cambian.
+- Título actualizado a v52 SBA.
+
+IMPORTANTE SOBRE CONTROL DE ACCESO:
+Los códigos de mercado actuales son identificadores, NO contraseñas. Esta versión restringe
+qué datos devuelve la vista por código, pero una persona que conozca otro código podría
+consultar ese mercado. Una restricción de seguridad real requiere autenticar al jefe
+de mercado con credenciales individuales validadas en servidor (fase independiente).
+
+IMPLEMENTACIÓN:
+1. Respaldar el Worker V51.
+2. Reemplazar por CLOUDFLARE-CYD-V52-MERCADOS-OFICIALES.js.
+3. Desplegar y recargar sin caché.
+4. Probar 814 (12 locales), otro código (solo su mercado) y 514 (rechazado).
+5. Confirmar impresión y cola antes de retirar el respaldo.

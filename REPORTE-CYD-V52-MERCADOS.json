@@ -1,0 +1,71 @@
+{
+  "version": "V52",
+  "stores": 128,
+  "markets": 11,
+  "market814": [
+    "170",
+    "171",
+    "186",
+    "198",
+    "504",
+    "507",
+    "511",
+    "538",
+    "540",
+    "541",
+    "579",
+    "622"
+  ],
+  "invalid_514": true,
+  "marketCodes": {
+    "867": {
+      "name": "VI y VII",
+      "stores": 12
+    },
+    "870": {
+      "name": "Biobio",
+      "stores": 12
+    },
+    "869": {
+      "name": "Biobio Alrededores",
+      "stores": 11
+    },
+    "868": {
+      "name": "Maule",
+      "stores": 12
+    },
+    "810": {
+      "name": "Norte",
+      "stores": 11
+    },
+    "814": {
+      "name": "Santiago Norte",
+      "stores": 12
+    },
+    "816": {
+      "name": "Santiago Sur",
+      "stores": 12
+    },
+    "873": {
+      "name": "Sur",
+      "stores": 13
+    },
+    "872": {
+      "name": "Sur IX",
+      "stores": 14
+    },
+    "813": {
+      "name": "V Costa",
+      "stores": 10
+    },
+    "812": {
+      "name": "V Interior",
+      "stores": 9
+    }
+  },
+  "tests": [
+    "node --check Worker",
+    "embedded app.js compile",
+    "embedded usage.js compile"
+  ]
+}
