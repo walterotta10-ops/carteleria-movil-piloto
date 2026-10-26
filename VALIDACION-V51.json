@@ -1,0 +1,22 @@
+{
+  "base": "V50",
+  "newVersion": "V51",
+  "countAssets": 11,
+  "assets": [
+    "/styles.css",
+    "/queue-sync.js",
+    "/occam-layout.js",
+    "/manifest.webmanifest",
+    "/index.html",
+    "/usage.js",
+    "/catalog.js",
+    "/app.js",
+    "/cartel-rules.js",
+    "/manual-items.json",
+    "/assets/acuenta-logo.png"
+  ],
+  "masterEntries": 12003,
+  "workerTailUnchanged": true,
+  "cssOnlyPrint": true,
+  "versionLabel": "v51 SBA"
+}
