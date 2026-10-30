@@ -2,6 +2,17 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+// Activa la web V53 únicamente cuando el puente ya responde con esa versión.
+const cyd53Bundle=require('./cyd-v53-bundle.cjs');
+const cyd53VM=require('node:vm');
+function cyd53AssetMap(source){let depth=0,quoted=false,escape=false,start=source.indexOf('{');for(let i=start;i<source.length;i++){const c=source[i];if(quoted){if(escape)escape=false;else if(c==='\\')escape=true;else if(c==='"')quoted=false;}else if(c==='"')quoted=true;else if(c==='{')depth++;else if(c==='}'&&--depth===0)return cyd53VM.runInNewContext('('+source.slice(start,i+1)+')',Object.create(null),{timeout:3000});}throw new Error('Paquete de interfaz inválido.');}
+const cyd53FallbackPath=path.join(__dirname,'CLOUDFLARE-CYD-V52-MERCADOS-OFICIALES.js');
+const cyd53Fallback=fs.existsSync(cyd53FallbackPath)?cyd53AssetMap(fs.readFileSync(cyd53FallbackPath,'utf8')):null;
+let cyd53Status={checked:0,active:false},cyd53Probe=null;
+async function cyd53Ready(){if(Date.now()-cyd53Status.checked<30000)return cyd53Status.active;if(cyd53Probe)return cyd53Probe;cyd53Probe=(async()=>{try{const r=await fetch('https://carteleria-puente-carta.walterotta10.workers.dev/health',{signal:AbortSignal.timeout(4000)}),data=await r.json(),m=/^v(\d+)/i.exec(data.version||'');cyd53Status={checked:Date.now(),active:!!(r.ok&&data.ok&&m&&Number(m[1])>=53)};}catch{cyd53Status.checked=Date.now();}return cyd53Status.active;})().finally(()=>{cyd53Probe=null;});return cyd53Probe;}
+async function cyd53Serve(req,res,pathname){if(!['GET','HEAD'].includes(req.method))return false;const key=pathname==='/'?'/index.html':pathname;if(!cyd53Bundle.assets[key]&&!cyd53Fallback?.[key])return false;const active=await cyd53Ready(),assets=active||!cyd53Fallback?cyd53Bundle.assets:cyd53Fallback,asset=assets[key];if(!asset){res.statusCode=404;res.end('Not found');return true;}let body=asset.binary?Buffer.from(asset.body,'base64'):asset.body;if(asset.binary&&asset.type==='image/png'&&body.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'&&body.toString('utf8').startsWith('iVBOR'))body=Buffer.from(body.toString('utf8'),'base64');if(!active&&key==='/app.js')body=body.replace('src="assets/acuenta-logo.png"','src="assets/acuenta-logo.png?v=v53-logo-fix"');res.statusCode=200;res.setHeader('Content-Type',asset.type);res.setHeader('Cache-Control','no-store');res.setHeader('X-CYD-Version',active?'v53':'v52');res.end(req.method==='HEAD'?'':body);return true;}
+async function cyd53Proxy(req,res,url){const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>3500000){return json(res,413,{ok:false,error:'Archivo demasiado grande.'});}chunks.push(chunk);}const headers={'Content-Type':'application/json','Authorization':req.headers.authorization||'','X-Carteleria-Access':req.headers['x-carteleria-access']||'','X-CYD-Desktop':req.headers['x-cyd-desktop']||'','User-Agent':req.headers['user-agent']||'C&D PC'};try{const r=await fetch('https://carteleria-puente-carta.walterotta10.workers.dev'+url.pathname+url.search,{method:req.method,headers,body:['GET','HEAD'].includes(req.method)?undefined:Buffer.concat(chunks),signal:AbortSignal.timeout(30000)});res.statusCode=r.status;res.setHeader('Content-Type',r.headers.get('Content-Type')||'application/json');res.setHeader('Cache-Control','no-store');res.end(Buffer.from(await r.arrayBuffer()));}catch{return json(res,503,{ok:false,error:'No se pudo contactar el puente de promociones.'});}}
+
 
 const PORT = Number(process.env.PORT || 3000);
 const ROOT = __dirname;
@@ -84,7 +95,7 @@ function authUser(req) {
 function cors(req, res) {
   res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
   res.setHeader('Vary', 'Origin');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Carteleria-Access, X-CYD-Desktop');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
 }
 
@@ -114,7 +125,7 @@ async function handleApi(req, res, pathname) {
   if (req.method === 'OPTIONS') { res.statusCode = 204; return res.end(); }
 
   if (pathname === '/api/health' && req.method === 'GET') {
-    return json(res, 200, { ok: true, mode: 'pilot-sync' });
+    return json(res, 200, { ok: true, mode: 'pilot-sync', version: 'v53-ready', activeVersion: await cyd53Ready() ? 'v53' : 'v52' });
   }
 
   if (pathname === '/api/login' && req.method === 'POST') {
@@ -211,8 +222,11 @@ function serveStatic(req, res, pathname) {
 const server = http.createServer(async (req, res) => {
   cors(req, res);
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  if (url.pathname.startsWith('/api/master/') || url.pathname.startsWith('/api/catalogo') || url.pathname === '/api/interacciones') return cyd53Proxy(req, res, url);
+  if (await cyd53Serve(req,res,url.pathname)) return;
   if (url.pathname.startsWith('/api/')) return handleApi(req, res, url.pathname);
   return serveStatic(req, res, url.pathname);
 });
 
 server.listen(PORT, () => console.log(`C&D Cartelería sync escuchando en puerto ${PORT}`));
+
