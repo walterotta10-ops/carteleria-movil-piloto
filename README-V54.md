@@ -1,4 +1,6 @@
-# Cartelería C&D · V54
+# Cartelería C&D · V54 R1
+
+La revisión R1 corrige la apertura del usuario maestro: los scripts y la maestra manual se cargan con la autorización de la sesión. Se mantiene la validación de acceso en el servidor. Se añadió una prueba que abre el HTML y ejecuta todos los scripts reales para local, mercado y maestro, incluyendo el ingreso y la recuperación de sesión maestra.
 
 Esta versión agrega contraseña de cuatro dígitos y Gestión de usuario. Conserva el catálogo V53 R4, las promociones, la maestra de cartelería manual, el layout panorámico y los formatos de impresión.
 
@@ -21,7 +23,7 @@ Las claves iniciales permiten comenzar la transición; pueden cambiarse desde la
 ## Cargar en Cloudflare
 
 1. Descomprime `CYD-V54-ACTUALIZACION-CLOUDFLARE.zip`.
-2. Abre el Worker actual `carteleria-puente-carta` y reemplaza su código por **CLOUDFLARE-CYD-V54-ACCESOS.js**.
+2. Abre el Worker actual `carteleria-puente-carta` y reemplaza su código por **CLOUDFLARE-CYD-V54-ACCESOS-R1.js**.
 3. Conserva la vinculación existente a la D1 con nombre `DB`. No crees otra base ni borres la existente.
 4. Guarda y publica. No hay SQL que ejecutar manualmente: las tablas nuevas se crean al primer acceso.
 5. Recarga la página de la app y prueba local **622**, contraseña **0622**.
@@ -47,6 +49,7 @@ node tools/exportar-v54.cjs
 Para ejecutar las pruebas de servidor y permisos se necesita Node 22.13 o posterior, con `node:sqlite`:
 
 ```sh
+npm install
 npm test
 ```
 

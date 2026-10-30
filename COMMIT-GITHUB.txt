@@ -1,4 +1,5 @@
-Versión V54 respaldada en main
-Commit: a7377a9b220bda102c2aece3100e6ea46f4fa58f
+Cartelería C&D V54 R1
 Repositorio: https://github.com/walterotta10-ops/carteleria-movil-piloto
-VALIDACION-V54.json y este archivo documentan el paquete entregado; los demás archivos corresponden al commit indicado.
+Rama: main
+Corrección: carga autenticada de scripts en el acceso maestro.
+El commit exacto puede consultarse en el historial de GitHub.

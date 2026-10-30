@@ -2,6 +2,7 @@
   'use strict';
   const root=document.getElementById('app'),nativeFetch=g.fetch.bind(g),BRIDGE='https://carteleria-puente-carta.walterotta10.workers.dev',RENDER='https://carteleria-movil-piloto.onrender.com';
   const jobs=new Set(['/trabajo','/tomar','/impreso','/fallo','/siguiente']);
+  const privateFiles=new Set(['/queue-aliases.js','/cartel-rules.js','/queue-sync.js','/usage.js','/interactions.js','/xlsx-reader.js','/master.js','/catalog-live.js','/app.js','/catalog.js','/occam-layout.js','/manual-items.json']);
   let profile=null,csrf='',loaded=false,reloading=false,dialog=null,accounts=[];
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   g.CYD_API_BASE=location.origin;
@@ -10,7 +11,7 @@
   function expire(){if(reloading)return;reloading=true;sessionStorage.setItem('cyd54.login.message','La sesión terminó. Ingresa con tu contraseña para continuar.');location.replace(location.pathname+location.search);}
   g.fetch=async function(input,init){
     const url=new URL(typeof input==='string'||input instanceof URL?String(input):input.url,location.href);
-    if((url.origin===location.origin||url.origin===BRIDGE||url.origin===RENDER)&&(url.pathname.startsWith('/api/')||jobs.has(url.pathname))){
+    if((url.origin===location.origin||url.origin===BRIDGE||url.origin===RENDER)&&(url.pathname.startsWith('/api/')||jobs.has(url.pathname)||privateFiles.has(url.pathname))){
       const target=location.origin+url.pathname+url.search;
       let request=input instanceof Request?new Request(target,input):new Request(target);
       if(init)request=new Request(request,init);
@@ -56,7 +57,13 @@
     });
     access.focus();
   }
-  function script(name){return new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=name+'?v=v54';el.onload=resolve;el.onerror=()=>reject(new Error('No se pudo abrir la aplicación. Recarga la página.'));document.body.appendChild(el);});}
+  async function script(name){
+    if(!privateFiles.has('/'+name)||!name.endsWith('.js'))throw new Error('Archivo de aplicación no reconocido.');
+    const path=location.origin+'/'+name+'?v=v54r1',response=await g.fetch(path,{cache:'no-store'});
+    if(!response.ok)throw new Error('No se pudo cargar '+name+' (código '+response.status+'). Vuelve a ingresar.');
+    const source=await response.text(),url=URL.createObjectURL(new Blob([source],{type:'application/javascript'}));
+    return new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=url;el.onload=()=>{URL.revokeObjectURL(url);resolve();};el.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('No se pudo abrir '+name+'. Recarga la página.'));};document.body.appendChild(el);});
+  }
   async function launch(){
     root.innerHTML='<section class="landing"><h1>Cartelería C&amp;D</h1><p class="landing-copy">Cargando tus promociones…</p></section>';
     if(profile.role==='master'){sessionStorage.setItem('cyd.master','Walter');localStorage.removeItem('carteleria.local');}
@@ -121,7 +128,7 @@
   }
   document.addEventListener('click',event=>{if(event.target.closest('[data-cyd54-users]')){event.preventDefault();event.stopPropagation();open();}},true);
   new MutationObserver(navigation).observe(root,{subtree:true,childList:true});
-  g.CYD54_ACCESS={open,logout,allowedLocal,get profile(){return profile;}};
+  g.CYD54_ACCESS={open,logout,allowedLocal,loadScript:script,get profile(){return profile;}};
   (async function boot(){
     try{
       const fragment=new URLSearchParams(location.hash.slice(1)),activation=fragment.get('cyd_walter');

@@ -1,13 +1,16 @@
 {
   "name": "carteleria-movil-piloto-sync",
-  "version": "5.4.0",
+  "version": "5.4.1",
   "private": true,
   "description": "Cartelería C&D V54: accesos por local y gestión de usuario",
   "scripts": {
     "start": "node server.js",
-    "test": "node tests/v54/test-access.cjs && node tests/v54/test-render.cjs"
+    "test": "node tests/v54/test-access.cjs && node tests/v54/test-render.cjs && node tests/v54/test-load-app.cjs"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
   }
 }

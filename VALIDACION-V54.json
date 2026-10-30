@@ -1,13 +1,12 @@
 {
-  "version": "V54",
+  "version": "V54 R1",
   "fecha": "2026-10-30",
-  "github_commit": "a7377a9b220bda102c2aece3100e6ea46f4fa58f",
-  "worker_sha256": "5df203892a13b5439068f375d946325ffab0dd7478a10875121105a053c943b7",
+  "worker_sha256": "46a1e4894843dea71040b5c7a9639a26807510f3bda6aff0d13701c097abda6e",
   "sintaxis_js": "OK",
   "typescript_checkJs": "OK - TypeScript 5.9.3; sin diagnósticos",
   "pruebas_autenticacion_y_permisos": 83,
   "pruebas_render": "OK - cookies, CSRF, cambio de clave centralizado y espera de Worker V54",
-  "pruebas_interfaz_DOM": "OK - local, mercado y maestro; claves visibles y filtros",
+  "pruebas_interfaz_DOM": "OK - ejecución completa del HTML y scripts reales en JSDOM, con red y permisos validados por el Worker",
   "regresion_catalogo": "OK - identidad, UPC, precios, mecánicas, cargas completas/parciales e importación atómica",
   "locales": 128,
   "mercados": 11,
@@ -16,5 +15,13 @@
   "logo_png": "OK - PNG binario válido",
   "formatos_de_impresion": "Conservados",
   "cloudflare_publicado_por_asistente": false,
-  "pendiente_en_local": "Publicar Worker V54 y comprobar impresión física. Puente PowerShell revisado pero no ejecutado en Windows."
+  "pendiente_en_local": "Publicar el archivo R1 en Cloudflare y recargar la página. No requiere volver a activar el PC ni modificar claves.",
+  "github_referencia": "main · corrección V54 R1",
+  "pruebas_carga_completa": {
+    "maestro_ingreso": "OK - 9 scripts reales y 139 claves",
+    "maestro_recuperar_sesion": "OK",
+    "local_ingreso": "OK - 9 scripts reales y cambio de clave propio",
+    "mercado_ingreso": "OK - 9 scripts reales y 12 locales asignados"
+  },
+  "correccion": "Scripts y maestra manual cargados con autorización. Se mantienen privados; no se eliminan validaciones."
 }
