@@ -6,6 +6,8 @@ Revisión 3: recupera las colas guardadas con los nombres anteriores de listas. 
 
 La revisión abarca todas las referencias OCCAM y todas las campañas anteriores. También corrige el ítem en campañas anteriores cuando el UPC tiene una coincidencia única en la maestra y completa barras faltantes desde un ítem con una única barra verificada. Conserva precios, mecánicas, vigencias e identificadores de las campañas.
 
+Revisión 4: adapta el motor al entorno de Cloudflare sin referencias a Node, carga los datos grandes desde JSON para evitar tipos demasiado complejos, declara el estado de los errores de forma explícita, calcula intervalos con milisegundos y respeta los dos argumentos del puente original.
+
 La V53 incorpora el usuario maestro Walter en PC, la vista de los 11 mercados y sus 128 locales, el detalle de interacciones y las cargas directas de promociones desde Excel o CSV.
 
 Las cargas de listas admiten actualización completa y parcial. La carga de jueves compara el precio por unidad y la cantidad; se aplica cuando el precio baja o cambia la mecánica y conserva el precio antes de OCCAM.
