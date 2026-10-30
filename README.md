@@ -1,123 +1,55 @@
-# Nuevo C&D Cartelería — v7 cartel maestro
+# Cartelería C&D · V54
 
-Versión estática, sin backend, sin usuario/PIN y sin servicios pagados.
+Esta versión agrega contraseña de cuatro dígitos y Gestión de usuario. Conserva el catálogo V53 R4, las promociones, la maestra de cartelería manual, el layout panorámico y los formatos de impresión.
 
-Cambios de esta versión:
-- Mantiene los 30 ítems del piloto.
-- Mantiene logo SuperBodega aCuenta en el inicio.
-- Previsualización de cada ítem reconstruida con la estructura del cartel maestro C&D: precio, medio de pago, antes/ahorro o barra Nx$, producto, marca, precio por unidad, código de barras, vigencia y datos inferiores.
-- La vista en pantalla no agrega el gran aire superior de impresión.
-- Impresión A4 2x2: cada cartel conserva el aire superior del maestro y el bloque de contenido queda desplazado hacia abajo, como en la referencia C&D.
-- Sin encabezados ni pies propios de la aplicación.
+## Acceso y permisos
 
-Nota: en Chrome, para que el navegador tampoco agregue fecha/URL/número de página, desactivar “Encabezados y pies de página” en Más ajustes.
+| Acceso | Contraseña inicial | Gestión permitida |
+| --- | --- | --- |
+| Local 622 | `0622` | Abrir la app y cambiar la contraseña de su propio local con la clave actual. |
+| Cualquier otro local | Su número completado a cuatro dígitos con ceros a la izquierda. Ejemplo: local 5 → `0005`. | Solo su local y su cola. |
+| Jefe de mercado 814 | `0814` | Ver y cambiar las claves de los locales de su mercado, y cambiar su propia contraseña. |
+| Otros jefes de mercado | Código de mercado completado a cuatro dígitos. | Solo los locales asignados a ese mercado. |
+| Usuario maestro | Conserva la activación privada del PC. | Ver y cambiar las claves de los 128 locales y 11 jefes de mercado. |
 
+Cada jefe de mercado dispone de la nueva opción **Gestión de usuario** en el inicio. Cada local dispone de **Mi contraseña**. El maestro encuentra **Gestión de usuario** en su menú lateral, con filtros por tipo de acceso, mercado y nombre o código.
 
-## v8 — alineación con hojas maestras
-- Precio y bloque de producto alineados hacia la derecha del cuadrante.
-- Texto "pagando con todo medio de pago" y vigencia ampliados.
-- Mecánica Ahora Más Barato: franja negra `Normal / Ahorro`.
-- Mecánica Nx$: franja negra `P. unitario / Ahorro`.
-- Segunda fila subida 20 mm sin mover la primera.
-- Márgenes laterales protegidos para no salir del A4.
-- La cola admite más de 4 carteles: cada grupo de 4 genera una nueva hoja A4.
+El número de local sigue identificando el acceso y sigue apareciendo en los carteles de ese local. La impresión desde el usuario maestro continúa sin número de local. No se agrega Product Number a los carteles y los productos sin ítem mantienen la identificación por UPC.
 
+Las claves iniciales permiten comenzar la transición; pueden cambiarse desde la nueva gestión. Las claves elegidas se guardan en la D1 actual y se conservan después de volver a publicar el código. Cambiar una clave cierra las sesiones anteriores de esa cuenta. El cambio de clave propia mantiene abierta la sesión del equipo que la cambió.
 
-## v10
-La impresión usa ahora la misma geometría interna de la miniatura/cola; solo escala y posiciona el cartel completo dentro del A4. No se modifica navegación ni catálogo.
+## Cargar en Cloudflare
 
+1. Descomprime `CYD-V54-ACTUALIZACION-CLOUDFLARE.zip`.
+2. Abre el Worker actual `carteleria-puente-carta` y reemplaza su código por **CLOUDFLARE-CYD-V54-ACCESOS.js**.
+3. Conserva la vinculación existente a la D1 con nombre `DB`. No crees otra base ni borres la existente.
+4. Guarda y publica. No hay SQL que ejecutar manualmente: las tablas nuevas se crean al primer acceso.
+5. Recarga la página de la app y prueba local **622**, contraseña **0622**.
 
-## v11 — impresión = misma geometría que la cola
-- La impresión utiliza el mismo lienzo maestro 228×216 px de la miniatura de la cola.
-- No se vuelven a calcular posiciones internas al imprimir; se escala el cartel completo.
-- La franja negra promocional se dibuja con SVG real para que aparezca en la vista previa de impresión.
-- Se mantiene la posición inferior de código/barra/datos que ya había quedado correcta.
-- Se agregan parámetros `?v=11` a CSS/JS para evitar caché del navegador/Render.
+El respaldo de GitHub incluye la interfaz V54 y el servidor que usa la misma D1 a través del Worker. El servidor espera que Cloudflare esté en V54 antes de permitir accesos: si muestra “Primero carga el archivo V54 en Cloudflare”, completa la publicación del paso anterior y recarga después de unos segundos. Las claves funcionan tanto al abrir la app en Cloudflare como en la web de Render.
 
+## Puente automático del PC
 
-## v12 — impresión basada en hojas maestras
-- Se deja de escalar la miniatura para imprimir.
-- Plantilla física A4 en mm, basada en las tres hojas maestras.
-- Franja promocional ancha, producto/marca/unidad más grandes y bloque inferior extendido.
-- Signo $ más pequeño que el número en precio normal/oferta.
-- Segunda fila sube 9 mm respecto de la primera.
+Si el local usa `puente-carta-automatico.ps1`, reemplázalo por el archivo V54 incluido y vuelve a abrirlo. Pedirá el local configurado y su contraseña. No guarda la contraseña en el archivo de configuración. Si la sesión termina o el jefe cambia la clave, volverá a pedirla.
 
+La impresión normal desde la cola del navegador no necesita instalar este puente. No se cambió el puente local RF ni la maqueta Carta v23.
 
-## v13 — cambios solicitados
-- Ajuste fino de las tipografías secundarias de impresión; números grandes sin cambios.
-- “Volver a inicio” pasa a la misma línea de “Ingresar ítem”.
-- Vista PC más compacta.
-- Botón verde “Imprimir cola” al lado de “Cola de impresión”.
-- La cola permite seguir agregando carteles; la impresión se pagina automáticamente de 4 en 4.
-- “Borrar toda la cola” reemplaza a “Buscar otro ítem” y pide confirmación.
-- Al agregar un cartel, el campo de ítem, el resultado y la previsualización se limpian automáticamente y el cursor vuelve al campo de ingreso.
-- Recursos cacheados con versión v13.
+## Respaldo y pruebas
 
+`cyd-v54-bundle.cjs` contiene el Worker completo y todos los recursos de la app, comprimidos. Es la fuente completa de esta versión, también para los recursos históricos que existen en la raíz del repositorio. `server.js` sirve únicamente el acceso público y envía todas las operaciones y recursos protegidos al Worker.
 
-## v14 — Borrar toda la cola al final
-- Se quitó “Borrar toda la cola” de la previsualización del producto.
-- El botón ahora aparece al final de todos los carteles de la cola de impresión.
-- Ocupa todo el ancho, en rojo con letras blancas.
-- Mantiene confirmación antes de vaciar la cola.
-- El botón verde “Imprimir cola” permanece arriba junto al título.
-- Caché actualizado a v14.
+Para reconstruir exactamente el archivo de Cloudflare:
 
+```sh
+node tools/exportar-v54.cjs
+```
 
-## v15 — corrección vertical de impresión
+Para ejecutar las pruebas de servidor y permisos se necesita Node 22.13 o posterior, con `node:sqlite`:
 
-- Único cambio visual de impresión: el contenido completo de cada cartel se desplaza 10 mm hacia arriba dentro de su cuadrante A4.
-- No cambia tamaño, tipografía, precio, franja promocional, alineación horizontal, cola, catálogo ni navegación.
-- Se actualiza el parámetro de caché del CSS a v15 para asegurar que el navegador cargue la corrección.
+```sh
+npm test
+```
 
+Se probaron: 128 locales y 11 mercados; claves con ceros iniciales; alcance por mercado; claves visibles según rol; denegación sin sesión; protección CSRF y de origen; cambio y revocación de sesiones; límite de intentos; persistencia tras recargar el Worker; catálogo completo; colas con UPC sin ítem; trabajo de impresión y proxy de Render. El archivo Worker también pasó revisión de sintaxis y `checkJs` con TypeScript 5.9.3.
 
-## v16 — selección de impresora
-- “Imprimir cola” abre una pantalla intermedia con dos opciones.
-- Impresora Tamaño Carta: conserva exactamente la configuración de impresión actual.
-- Impresora Portátil (RF): ruta separada, todavía sin configuración de impresión.
-- La ruta RF no modifica la cola.
-- Se puede volver a la cola desde ambas pantallas.
-- Caché actualizado a v16.
-
-
-## v17 — Puente RF Zebra (piloto)
-- Mantiene intacta la impresión Tamaño Carta de v15/v16.
-- Agrega pantalla RF para seleccionar 1 cartel, guardar IP de impresora por local y enviar ZPL de 58 mm.
-- Incluye `rf-print-bridge.ps1`, un puente local Windows que recibe la orden desde la web y la reenvía a Zebra TCP/9100.
-- Esta etapa prueba conectividad real App → PC → Zebra. El diseño RF se ajustará después de validar impresión física.
-
-
-## v18 - Cartel RF en 2 flejes
-- Mantiene intacta la impresion Tamano Carta.
-- RF: ancho util 58 mm.
-- Cada cartel RF se imprime como 2 flejes consecutivos de 35 mm de alto.
-- Fleje superior: promo/precio grande.
-- Fleje inferior: descripcion, marca, gramaje, mecanica, item/local y codigo de barras.
-- La separacion fisica sugerida entre ambos flejes al montar el cartel es 5 mm.
-- El puente local y TCP 9100 se mantienen sin cambios funcionales.
-
-
-## v20 consolidada
-- Base PC: v18 aprobada, sin cambios funcionales en escritorio.
-- Rama móvil: escaneo de ítem por cámara, búsqueda por código de barras solo en móvil, captura/ingreso manual de MAC y preparación RF móvil.
-- La conexión Android -> Zebra real queda para el siguiente paso; no se simula ni se altera la ruta PC.
-
-
-## v20.1 — persistencia MAC móvil
-- La MAC Zebra móvil queda guardada de forma persistente en el teléfono.
-- Volver a la cola no borra la MAC.
-- Recargar la app no borra la MAC.
-- Cambiar de local no borra la MAC.
-- Solo cambia cuando el usuario guarda o escanea otra MAC válida.
-- PC permanece sin cambios respecto de v18/v20.
-
-
-## v21 — móvil con dos opciones de impresión
-- PC queda sin cambios funcionales respecto de v18: Tamaño Carta y RF por puente local.
-- En móvil, “Imprimir cola” vuelve a mostrar dos opciones: Impresora Tamaño Carta e Impresora Portátil (RF).
-- Tamaño Carta en móvil usa la misma salida de impresión del navegador para permitir elegir una impresora disponible en Android.
-- RF en móvil conserva captura/escritura de MAC y persistencia de MAC.
-- Escaneo de ítem por cámara se mantiene solo en móvil.
-
-
-## v23 Carta remota
-Correccion de impresion remota: CSS embebida, cola con reclamo seguro y puente que nunca imprime JSON/HTML como texto.
+No se incluyen contraseñas elegidas, sesiones, bases de datos ni el archivo privado de activación del maestro en este respaldo. La prueba física de impresora y la ejecución del puente PowerShell en Windows deben comprobarse en el PC del local después de cargar la actualización.

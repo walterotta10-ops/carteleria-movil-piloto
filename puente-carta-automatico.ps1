@@ -1,4 +1,4 @@
-# Carteleria - Puente Carta Automatico v23
+﻿# Carteleria - Puente Carta Automatico V54 (maqueta Carta v23)
 # Correccion: trabajo auto-contenido (CSS embebida), reclamo seguro de cola y NO imprime JSON/HTML como texto.
 # La app movil envia local + IP de impresora + HTML listo a Cloudflare.
 
@@ -7,6 +7,8 @@ $ErrorActionPreference = "Stop"
 $BaseUrl = "https://carteleria-puente-carta.walterotta10.workers.dev"
 $IntervaloSegundos = 5
 $ConfigPath = Join-Path $PSScriptRoot "puente-carta-config.json"
+$script:CydSession = $null
+$script:CydCsrf = ""
 
 function Escribir-Estado([string]$Mensaje) {
     $hora = Get-Date -Format "HH:mm:ss"
@@ -28,6 +30,57 @@ function Cargar-Configuracion {
     $cfg | ConvertTo-Json | Set-Content $ConfigPath -Encoding UTF8
     Write-Host "Configuracion guardada en: $ConfigPath"
     return $cfg
+}
+
+# La contraseña solo se usa en memoria. El archivo de configuración conserva únicamente el local.
+function Iniciar-Sesion {
+    while ($true) {
+        $segura = Read-Host "Contraseña de 4 dígitos del local $Local" -AsSecureString
+        $puntero = [IntPtr]::Zero
+        $pin = $null
+        $body = $null
+        try {
+            $puntero = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($segura)
+            $pin = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($puntero)
+            if ($pin -notmatch '^\d{4}$') { Escribir-Estado "La contraseña debe tener 4 dígitos."; continue }
+            $body = @{ access = $Local; pin = $pin } | ConvertTo-Json -Compress
+            $respuesta = Invoke-RestMethod -Uri "$BaseUrl/api/auth/login" -Method POST -ContentType "application/json" -Body $body -SessionVariable nuevaSesion -TimeoutSec 20
+            if (-not $respuesta.ok -or $respuesta.profile.role -ne "store") { throw "Este puente necesita el acceso de un local." }
+            $script:CydSession = $nuevaSesion
+            $script:CydCsrf = [string]$respuesta.csrf
+            Escribir-Estado "Acceso confirmado para el local $Local."
+            return
+        } catch {
+            $codigo = 0
+            try { $codigo = [int]$_.Exception.Response.StatusCode } catch {}
+            if ($codigo -eq 429) {
+                Escribir-Estado "Demasiados intentos. Espera 15 minutos o pide al jefe de mercado cambiar la clave."
+            } else {
+                Escribir-Estado "No se pudo ingresar. Revisa la contraseña y la conexión."
+            }
+        } finally {
+            if ($puntero -ne [IntPtr]::Zero) { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($puntero) }
+            if ($segura) { $segura.Dispose() }
+            $pin = $null
+            $body = $null
+        }
+    }
+}
+
+function Invoke-Cyd([string]$Ruta, [hashtable]$Datos) {
+    for ($intento = 0; $intento -lt 2; $intento++) {
+        try {
+            $body = $Datos | ConvertTo-Json -Compress -Depth 6
+            return Invoke-RestMethod -Uri "$BaseUrl$Ruta" -Method POST -ContentType "application/json" -Body $body -WebSession $script:CydSession -Headers @{ "X-CYD-CSRF" = $script:CydCsrf } -TimeoutSec 20
+        } catch {
+            $codigo = 0
+            try { $codigo = [int]$_.Exception.Response.StatusCode } catch {}
+            if ($codigo -eq 401 -and $intento -eq 0) {
+                Escribir-Estado "La sesión terminó o cambió la clave. Ingresa nuevamente."
+                Iniciar-Sesion
+            } else { throw }
+        }
+    }
 }
 
 function Buscar-ImpresoraPorIp([string]$Ip) {
@@ -155,35 +208,34 @@ function Imprimir-Html([string]$Html, [string]$PrinterName, [int]$JobId) {
 }
 
 function Confirmar-Impreso([int]$Id) {
-    $body = @{ id = $Id } | ConvertTo-Json
-    return Invoke-RestMethod -Uri "$BaseUrl/impreso" -Method POST -ContentType "application/json" -Body $body -TimeoutSec 20
+    return Invoke-Cyd -Ruta "/impreso" -Datos @{ id = $Id }
 }
 
 function Marcar-Fallo([int]$Id) {
     try {
-        $body = @{ id = $Id } | ConvertTo-Json
-        Invoke-RestMethod -Uri "$BaseUrl/fallo" -Method POST -ContentType "application/json" -Body $body -TimeoutSec 20 | Out-Null
+        Invoke-Cyd -Ruta "/fallo" -Datos @{ id = $Id } | Out-Null
     } catch {}
 }
 
 $config = Cargar-Configuracion
-$Local = [string]$config.local
+$Local = [string]([int]$config.local)
 
 Write-Host ""
 Write-Host "====================================================="
-Write-Host " Carteleria - Puente Carta Automatico v23"
+Write-Host " Carteleria - Puente Carta Automatico V54"
 Write-Host " Local: $Local"
 Write-Host " Destino: impresora indicada por IP desde el movil"
 Write-Host " Seguridad: nunca imprime JSON/HTML como texto"
 Write-Host "====================================================="
 Write-Host ""
+Iniciar-Sesion
 Escribir-Estado "Puente activo. Esperando trabajos del local $Local..."
 
 while ($true) {
     $id = 0
     try {
         # /tomar reclama un trabajo de forma segura. /siguiente queda desactivado para puentes antiguos.
-        $respuesta = Invoke-RestMethod -Uri "$BaseUrl/tomar?local=$Local" -Method POST -TimeoutSec 20
+        $respuesta = Invoke-Cyd -Ruta "/tomar?local=$Local" -Datos @{}
 
         if ($respuesta.ok -and $null -ne $respuesta.trabajo) {
             $trabajo = $respuesta.trabajo
@@ -222,3 +274,4 @@ while ($true) {
 
     Start-Sleep -Seconds $IntervaloSegundos
 }
+
