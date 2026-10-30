@@ -1,5 +1,7 @@
 # Cartelería C&D V53
 
+Revisión 2: la pantalla de acceso solo menciona local y código de mercado. El ingreso maestro privado mantiene su funcionamiento.
+
 La V53 incorpora el usuario maestro Walter en PC, la vista de los 11 mercados y sus 128 locales, el detalle de interacciones y las cargas directas de promociones desde Excel o CSV.
 
 Las cargas de listas admiten actualización completa y parcial. La carga de jueves compara el precio por unidad y la cantidad; se aplica cuando el precio baja o cambia la mecánica y conserva el precio antes de OCCAM.
