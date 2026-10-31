@@ -1,0 +1,15 @@
+const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
+const dir=__dirname,base=require('../cyd-v55-bundle.cjs').workerSource;
+function boundary(source){let depth=0,quoted=false,escape=false;for(let i=source.indexOf('{');i<source.length;i++){const c=source[i];if(quoted){if(escape)escape=false;else if(c==='\\')escape=true;else if(c==='"')quoted=false;}else if(c==='"')quoted=true;else if(c==='{')depth++;else if(c==='}'&&--depth===0)return i+1;}throw new Error('Contenedor inválido.');}
+const end=boundary(base),assets=JSON.parse(base.slice(base.indexOf('{'),end));
+for(const name of fs.readdirSync(path.join(dir,'app'))){const file=path.join(dir,'app',name);if(!fs.statSync(file).isFile())continue;assets['/'+name]={type:name.endsWith('.js')?'application/javascript; charset=utf-8':name.endsWith('.css')?'text/css; charset=utf-8':name.endsWith('.html')?'text/html; charset=utf-8':assets['/'+name]?.type||'application/json',body:fs.readFileSync(file,'utf8'),binary:false};}
+const auth=base.lastIndexOf('\n// V54: acceso por local/mercado, sesiones y gestión de claves');if(auth<end)throw new Error('No se reconoce la base V54 R1.');
+const core=fs.readFileSync(path.join(dir,'app/product-core.js'),'utf8').split('// BROWSER-ONLY')[0];
+const oldManual='size:"",campaignName:"CARTELERÍA MANUAL"',engine=base.slice(end,auth+1);if(!engine.includes(oldManual))throw new Error('No se encontró el campo de contenido de la cola manual.');
+const source='const G='+JSON.stringify(assets)+engine.replace(oldManual,'size:String(a.size||"").trim().slice(0,60),campaignName:"CARTELERÍA MANUAL"')+core+fs.readFileSync(path.join(dir,'product-server.mjs'),'utf8')+fs.readFileSync(path.join(dir,'access-server.mjs'),'utf8');
+fs.writeFileSync(path.join(dir,'worker-v56.mjs'),source);fs.writeFileSync(path.join(dir,'../CLOUDFLARE-CYD-V56-MAESTRA-COLABORATIVA.js'),source);
+const packed=zlib.gzipSync(source).toString('base64');
+const bundle=`/* C&D V56: Worker completo y recursos; maestra colaborativa, lector de flejes y vista previa; sin claves privadas. */\nconst source=require('node:zlib').gunzipSync(Buffer.from(${JSON.stringify(packed)},'base64')).toString('utf8');\nfunction boundary(s){let d=0,q=false,e=false;for(let i=s.indexOf('{');i<s.length;i++){const c=s[i];if(q){if(e)e=false;else if(c==='\\\\')e=true;else if(c==='"')q=false;}else if(c==='"')q=true;else if(c==='{')d++;else if(c==='}'&&--d===0)return i+1;}throw new Error('Paquete inválido');}\nmodule.exports={workerSource:source,assets:JSON.parse(source.slice(source.indexOf('{'),boundary(source)))};\n`;
+fs.writeFileSync(path.join(dir,'../cyd-v56-bundle.cjs'),bundle);
+fs.writeFileSync(path.join(dir,'../tools/exportar-v56.cjs'),"const fs=require('node:fs'),path=require('node:path'),b=require('../cyd-v56-bundle.cjs');const output=path.join(__dirname,'..','CLOUDFLARE-CYD-V56-MAESTRA-COLABORATIVA.js');fs.writeFileSync(output,b.workerSource);console.log(output);\n");
+console.log({version:'V56',workerBytes:Buffer.byteLength(source),gzipBytes:Buffer.from(packed,'base64').length,assets:Object.keys(assets).length});

@@ -6,7 +6,7 @@ Retira o corrige estos \xEDtems antes de imprimir.`),!1}return!0}function _(){wi
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">\u25C6</span>
-          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Carteler\xEDa \xB7 v55 SBA</small></span>
+          <span class="brand-text"><strong>Nuevo C&amp;D</strong><small>Carteler\xEDa \xB7 v56 SBA</small></span>
         </div>
         <button class="local-badge" id="changeLocalTop" type="button">${CYD_IS_MARKET(a.local)?"Jefe de mercado \xB7 ${s(a.local)}":"Local "+s(a.local)}</button>
       </header>
@@ -20,30 +20,21 @@ if(a.local&&!CYD_IS_STORE(a.local)&&!CYD_IS_MARKET(a.local)){a.local="";localSto
 function x(){window.CYD54_ACCESS.logout();}
 // C&D V50 — Modalidad manual. La maestra únicamente identifica artículos, no entrega precios.
 let manualRecords=null,manualLookup=null,manualSelected=null;
-async function loadManual(){
-  if(manualLookup)return manualLookup;
-  const response=await fetch('/manual-items.json?v=v50',{cache:'force-cache'});
-  if(!response.ok)throw new Error('No se pudo abrir la maestra de artículos.');
-  const records=await response.json();
-  if(!Array.isArray(records)||!records.length)throw new Error('La maestra está vacía.');
-  const map=new Map();
-  for(const record of records){
-    for(const id of [record.item,record.upc]){
-      const key=String(id||'').trim();if(!key)continue;
-      if(!map.has(key))map.set(key,[]);
-      if(!map.get(key).includes(record))map.get(key).push(record);
-    }
-  }
-  manualRecords=records;manualLookup=map;return map;
+async function loadManual(force=false){
+ const profile=window.CYD54_ACCESS.profile,local=profile.role==='store'?profile.code:'';
+ const data=await window.CYD56_PRODUCTS.catalog(local,force);
+ manualRecords=data.records;manualLookup={get:key=>data.lookup.find(key)};return manualLookup;
 }
+window.addEventListener('cyd56-products-changed',()=>{manualLookup=null;});
 function manualMoney(n){return '$'+Math.round(n).toLocaleString('es-CL')}
 function renderManual(){
   if(!a.local)return x();N();manualSelected=null;
   I.innerHTML=`${w()}<section class="screen manual-screen">
-   <div class="search-card"><div class="search-head"><h2>Cartelería Manual</h2><button class="btn back-home" id="manualBack" type="button">Volver al inicio</button></div>
-   <p>La maestra solo entrega ítem, UPC, descripción y marca. <strong>Quien crea el cartel es responsable de ingresar el precio y la promoción.</strong></p>
+   <div class="search-card"><div class="search-head"><h2>Cartelería Manual</h2><div class="manual-head-actions"><button class="btn cyd56-yellow" id="manualNewProduct" type="button">Ingresar datos de producto</button><button class="btn back-home" id="manualBack" type="button">Volver al inicio</button></div></div>
+   <p>La maestra entrega ítem, UPC, descripción, marca y unidad de medida. <strong>Quien crea el cartel es responsable de ingresar el precio y la promoción.</strong></p>
    <label for="manualItem">Ítem o código de barras</label>
    <div class="search-row"><input id="manualItem" type="text" inputmode="numeric" autocomplete="off" placeholder="Ingresar ítem o UPC"/><button class="btn search" id="manualFind" type="button">Buscar</button></div>
+   ${q()?'<button class="btn scan-item-btn" id="manualScan" type="button">▣ Escanear ítem o UPC</button>':''}
    <div id="manualStatus" role="status"></div><div id="manualChoices"></div>
    <div id="manualForm" hidden>
     <div class="manual-product" id="manualProduct"></div>
@@ -60,10 +51,12 @@ function renderManual(){
   document.getElementById('changeLocalTop').onclick=C;
   document.getElementById('manualQueue').onclick=E;
   document.getElementById('manualFind').onclick=findManual;
+  document.getElementById('manualScan')?.addEventListener('click',()=>$e('manual'));
+  document.getElementById('manualNewProduct').onclick=()=>window.CYD56_PRODUCTS.open({local:a.local,onSaved:async result=>{manualLookup=null;await loadManual(true);const input=document.getElementById('manualItem');if(!input)return;input.value=result.product.item;await findManual();const status=document.getElementById('manualStatus');if(status)status.textContent=result.message;}});
   document.getElementById('manualItem').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();findManual()}});
   for(const id of ['manualPrice','manualBefore','manualQty'])document.getElementById(id).addEventListener('input',manualPreview);
   document.getElementById('manualAdd').onclick=addManual;
-  loadManual().then(()=>{const status=document.getElementById('manualStatus');if(status)status.textContent=`Maestra disponible: ${manualRecords.length.toLocaleString('es-CL')} artículos.`}).catch(e=>{const status=document.getElementById('manualStatus');if(status)status.textContent=e.message});
+  loadManual(true).then(()=>{const status=document.getElementById('manualStatus');if(status)status.textContent=`Maestra disponible: ${manualRecords.length.toLocaleString('es-CL')} artículos.`}).catch(e=>{const status=document.getElementById('manualStatus');if(status)status.textContent=e.message});
 }
 async function findManual(){
  const status=document.getElementById('manualStatus'),choices=document.getElementById('manualChoices'),form=document.getElementById('manualForm');
@@ -74,7 +67,7 @@ async function findManual(){
  status.textContent='Buscando artículo…';let map;
  try{map=await loadManual()}catch(e){status.textContent=e.message;return}
  const matches=map.get(key)||[];
- if(!matches.length){status.textContent='Artículo no encontrado en la maestra. No se crearán datos de otro producto.';return}
+ if(!matches.length){status.textContent='Artículo no encontrado. Usa Ingresar datos de producto y sube una foto del fleje para completar la maestra.';return}
  const distinct=[...new Map(matches.map(r=>[JSON.stringify([r.item,r.upc,r.descripcion,r.marca]),r])).values()];
  if(distinct.length===1){selectManual(distinct[0]);return}
  status.textContent=`Se encontraron ${distinct.length} registros. Selecciona el ítem y UPC correctos:`;
@@ -86,7 +79,7 @@ function selectManual(record){
  document.getElementById('manualStatus').textContent='Artículo seleccionado desde la maestra. Los precios los decides tú.';
  document.getElementById('manualChoices').innerHTML='';
  document.getElementById('manualForm').hidden=false;
- document.getElementById('manualProduct').innerHTML=`<strong>${s(record.descripcion)}</strong><span>Marca: ${s(record.marca)}</span><small>Ítem ${s(record.item)} · UPC ${s(record.upc)}</small>`;
+ document.getElementById('manualProduct').innerHTML=`<strong>${s(record.descripcion)}</strong><span>Marca: ${s(record.marca)}${record.unidad?" · "+s(record.unidad):""}</span><small>Ítem ${s(record.item)} · UPC ${s(record.upc)}</small>`;
  document.getElementById('manualPrice').value='';document.getElementById('manualBefore').value='';document.getElementById('manualQty').value='1';manualPreview();
 }
 function manualValues(){
@@ -108,7 +101,7 @@ function addManual(){
  if(!manualSelected){window.alert('Primero selecciona un artículo.');return}
  const v=manualValues();if(v.errors.length){window.alert(v.errors.join('\n'));return}
  const row=manualSelected;
- const entry={manual:true,qid:y.newId(),signId:'MANUAL-'+String(row.item)+'-'+Date.now(),campaignId:'MANUAL',code:String(row.item),barcode:String(row.upc||''),name:String(row.descripcion),brand:String(row.marca||''),offer:v.price,unit:v.before,qty:v.qty,price:v.qty>1?v.qty+'x'+manualMoney(v.price):manualMoney(v.price),campaignName:'CARTELERÍA MANUAL',size:''};
+ const entry={manual:true,qid:y.newId(),signId:'MANUAL-'+String(row.item)+'-'+Date.now(),campaignId:'MANUAL',code:String(row.item),barcode:String(row.upc||''),name:String(row.descripcion),brand:String(row.marca||''),offer:v.price,unit:v.before,qty:v.qty,price:v.qty>1?v.qty+'x'+manualMoney(v.price):manualMoney(v.price),campaignName:'CARTELERÍA MANUAL',size:String(row.unidad||'')};
  const issues=f.validate(entry);if(issues.length){window.alert('No se agregó el cartel: '+issues.join('; '));return}
  a.queue.push(entry);_();renderManual();document.getElementById('manualStatus').textContent='Cartel manual enviado a la cola compartida. Abre la cola para imprimir.';
 }
@@ -143,13 +136,13 @@ function z(){if(sessionStorage.getItem("cyd.master")==="Walter")return cyd53Mast
       ${e?d===null?`<div class="panorama-breadcrumb">${L} \u203A Categor\xEDas</div>
       <div class="category-grid">${o.map(i=>`<button class="category-tile" data-category="${s(i)}"><strong>${s(i)}</strong><span>${n.filter(m=>D(m.categoria,i)).length} productos \xB7 ${he(n.filter(m=>D(m.categoria,i)))} imprimibles</span></button>`).join("")}</div>`:`<div class="panorama-breadcrumb">${L}${t?" \u203A "+s(t):""} \xB7 ${d.length} productos</div>
       <div class="selection-tools"><label><input type="checkbox" id="selectAllOccam" ${d.length&&g===d.length?"checked":""}> Seleccionar todos (${g}/${d.length})</label><button class="btn primary" id="sendOccam" ${g?"":"disabled"}>Enviar ${g} a cola</button></div>
-      <div class="layout-product-list">${d.map(i=>`<label class="layout-product"><input type="checkbox" data-occam="${s(i.layoutId)}" ${B.has(i.layoutId)?"checked":""}><span><strong>${s(i.nombre||"Sin descripci\xF3n")}</strong><small>${s(i.marca)} \xB7 ${s(i.contenido)} \xB7 Producto ${s(i.codigo)} \xB7 ${s(i.mecanica)} \xB7 ${s(i.categoria)}</small><small>${ie(i).length?"Pendiente: "+s(ie(i).join("; ")):"\u2713 Listo para enviar a imprimir"}</small></span><b>${h(i.precioPromo)}</b></label>`).join("")}</div>
+      <div class="layout-product-list">${d.map(i=>`<label class="layout-product"><input type="checkbox" data-occam="${s(i.layoutId)}" ${B.has(i.layoutId)?"checked":""}><span><strong>${s(i.nombre||"Sin descripci\xF3n")}</strong><small>${s(i.marca)} \xB7 ${s(i.contenido)} \xB7 Producto ${s(i.codigo)} \xB7 ${s(i.mecanica)} \xB7 ${s(i.categoria)}</small><small>${ie(i).length?"Pendiente: "+s(ie(i).join("; ")):"\u2713 Listo para enviar a imprimir"}</small></span><span class="layout-row-actions"><b>${h(i.precioPromo)}</b><button class="btn ghost" type="button" data-layout-preview="${s(i.layoutId)}">Ver cartel</button></span></label>`).join("")}</div>
       <p class="panorama-hint">Fichas construidas con OCCAM SBA. Los registros con datos inconsistentes se bloquean para evitar errores de impresi\xF3n.</p>`:`<div class="panorama-tools"><span>Agrupadores por departamento</span><div><button class="btn" id="zoomOut">\u2212</button><strong id="layoutZoomPercent">${Math.round(a.layoutZoom*100)}%</strong><button class="btn" id="zoomIn">+</button></div></div>
       <div class="panorama-viewport" id="occamViewport" tabindex="0" aria-label="Mapa desplazable de departamentos"><div class="panorama-map" id="panoramaMap" style="zoom:${a.layoutZoom}">
       <div class="panorama-entrance">DEPARTAMENTOS DE PROMOCIONES SBA</div>
       ${filteredGroups.map(i=>`<button class="panorama-zone" data-subgroup="${s(i)}"><strong>${s(i)}</strong><span>${filteredRows.filter(m=>D(m.subgrupo,i)).length} productos \xB7 ${he(filteredRows.filter(m=>D(m.subgrupo,i)))} imprimibles</span></button>`).join("")}</div></div>
       `}
-      <div class="layout-queue-bar"><span>Cola existente: <strong data-queue-count>${a.queue.length}</strong></span><button class="btn primary" id="goToQueue">Ver cola e imprimir</button></div></section>`,document.getElementById("changeLocalTop").onclick=C,document.querySelectorAll("[data-layout-list-type]").forEach(button=>button.onclick=()=>{a.layoutListType=button.dataset.layoutListType;B.clear();F();}),document.getElementById("layoutBack").onclick=()=>{d?c&&t?F(e):F():e?F():z()},document.getElementById("goToQueue").onclick=E,document.querySelectorAll("[data-subgroup]").forEach(i=>i.onclick=()=>F(i.dataset.subgroup)),document.querySelectorAll("[data-category]").forEach(i=>i.onclick=()=>F(e,i.dataset.category));const u=document.getElementById("occamViewport"),r=document.getElementById("panoramaMap");function p(i,m,$){const v=Math.max(.65,Math.min(2.6,Math.round(i*100)/100));if(!u||!r||v===a.layoutZoom)return;const b=a.layoutZoom,l=u.getBoundingClientRect(),P=(m===void 0?l.left+l.width/2:m)-l.left,te=($===void 0?l.top+l.height/2:$)-l.top,Ge=(u.scrollLeft+P)/b,Ue=(u.scrollTop+te)/b;a.layoutZoom=v,r.style.zoom=String(v),document.getElementById("layoutZoomPercent").textContent=Math.round(v*100)+"%",u.scrollLeft=Ge*v-P,u.scrollTop=Ue*v-te}if(document.getElementById("zoomIn")?.addEventListener("click",()=>p(a.layoutZoom+.2)),document.getElementById("zoomOut")?.addEventListener("click",()=>p(a.layoutZoom-.2)),u){let i=0,m=1;const $=l=>Math.hypot(l[0].clientX-l[1].clientX,l[0].clientY-l[1].clientY);u.addEventListener("touchstart",l=>{l.touches.length===2&&(i=$(l.touches),m=a.layoutZoom)},{passive:!0}),u.addEventListener("touchmove",l=>{if(l.touches.length===2&&i){l.preventDefault();const P=(l.touches[0].clientX+l.touches[1].clientX)/2,te=(l.touches[0].clientY+l.touches[1].clientY)/2;p(m*$(l.touches)/i,P,te)}},{passive:!1}),u.addEventListener("touchend",l=>{l.touches.length<2&&(i=0)},{passive:!0}),u.addEventListener("wheel",l=>{(l.ctrlKey||l.metaKey)&&(l.preventDefault(),p(a.layoutZoom*(l.deltaY>0?.9:1.1),l.clientX,l.clientY))},{passive:!1});let v=null;u.addEventListener("pointerdown",l=>{l.pointerType==="mouse"&&l.button===0&&!l.target.closest("button")&&(v={x:l.clientX,y:l.clientY,left:u.scrollLeft,top:u.scrollTop},u.setPointerCapture(l.pointerId),u.classList.add("is-dragging"))}),u.addEventListener("pointermove",l=>{v&&(u.scrollLeft=v.left-(l.clientX-v.x),u.scrollTop=v.top-(l.clientY-v.y))});const b=()=>{v=null,u.classList.remove("is-dragging")};u.addEventListener("pointerup",b),u.addEventListener("pointercancel",b),u.addEventListener("keydown",l=>{const P={ArrowLeft:[-90,0],ArrowRight:[90,0],ArrowUp:[0,-90],ArrowDown:[0,90]};P[l.key]&&(l.preventDefault(),u.scrollBy({left:P[l.key][0],top:P[l.key][1],behavior:"smooth"}))})}document.querySelectorAll("[data-occam]").forEach(i=>i.onchange=()=>{i.checked?B.add(i.dataset.occam):B.delete(i.dataset.occam),F(e,t)}),document.getElementById("selectAllOccam")?.addEventListener("change",i=>{d.forEach(m=>{i.target.checked?B.add(m.layoutId):B.delete(m.layoutId)}),F(e,t)}),document.getElementById("sendOccam")?.addEventListener("click",()=>{const m=d.filter(b=>B.has(b.layoutId)).map(b=>({row:b,sign:ve(b)})),$=m.filter(({sign:b})=>!b||f.validate(b).length),v=m.filter(({sign:b})=>b&&f.validate(b).length===0);if(!v.length){window.alert("No se agregaron carteles: "+$.slice(0,5).map(({row:b,sign:l})=>"\xCDtem "+b.codigo+": "+(l?f.validate(l).join("; "):"Ficha no encontrada")).join(`
+      <div class="layout-queue-bar"><span>Cola existente: <strong data-queue-count>${a.queue.length}</strong></span><button class="btn primary" id="goToQueue">Ver cola e imprimir</button></div></section>`,document.getElementById("changeLocalTop").onclick=C,document.querySelectorAll("[data-layout-list-type]").forEach(button=>button.onclick=()=>{a.layoutListType=button.dataset.layoutListType;B.clear();F();}),document.getElementById("layoutBack").onclick=()=>{d?c&&t?F(e):F():e?F():z()},document.getElementById("goToQueue").onclick=E,document.querySelectorAll("[data-subgroup]").forEach(i=>i.onclick=()=>F(i.dataset.subgroup)),document.querySelectorAll("[data-category]").forEach(i=>i.onclick=()=>F(e,i.dataset.category));const u=document.getElementById("occamViewport"),r=document.getElementById("panoramaMap");function p(i,m,$){const v=Math.max(.65,Math.min(2.6,Math.round(i*100)/100));if(!u||!r||v===a.layoutZoom)return;const b=a.layoutZoom,l=u.getBoundingClientRect(),P=(m===void 0?l.left+l.width/2:m)-l.left,te=($===void 0?l.top+l.height/2:$)-l.top,Ge=(u.scrollLeft+P)/b,Ue=(u.scrollTop+te)/b;a.layoutZoom=v,r.style.zoom=String(v),document.getElementById("layoutZoomPercent").textContent=Math.round(v*100)+"%",u.scrollLeft=Ge*v-P,u.scrollTop=Ue*v-te}if(document.getElementById("zoomIn")?.addEventListener("click",()=>p(a.layoutZoom+.2)),document.getElementById("zoomOut")?.addEventListener("click",()=>p(a.layoutZoom-.2)),u){let i=0,m=1;const $=l=>Math.hypot(l[0].clientX-l[1].clientX,l[0].clientY-l[1].clientY);u.addEventListener("touchstart",l=>{l.touches.length===2&&(i=$(l.touches),m=a.layoutZoom)},{passive:!0}),u.addEventListener("touchmove",l=>{if(l.touches.length===2&&i){l.preventDefault();const P=(l.touches[0].clientX+l.touches[1].clientX)/2,te=(l.touches[0].clientY+l.touches[1].clientY)/2;p(m*$(l.touches)/i,P,te)}},{passive:!1}),u.addEventListener("touchend",l=>{l.touches.length<2&&(i=0)},{passive:!0}),u.addEventListener("wheel",l=>{(l.ctrlKey||l.metaKey)&&(l.preventDefault(),p(a.layoutZoom*(l.deltaY>0?.9:1.1),l.clientX,l.clientY))},{passive:!1});let v=null;u.addEventListener("pointerdown",l=>{l.pointerType==="mouse"&&l.button===0&&!l.target.closest("button")&&(v={x:l.clientX,y:l.clientY,left:u.scrollLeft,top:u.scrollTop},u.setPointerCapture(l.pointerId),u.classList.add("is-dragging"))}),u.addEventListener("pointermove",l=>{v&&(u.scrollLeft=v.left-(l.clientX-v.x),u.scrollTop=v.top-(l.clientY-v.y))});const b=()=>{v=null,u.classList.remove("is-dragging")};u.addEventListener("pointerup",b),u.addEventListener("pointercancel",b),u.addEventListener("keydown",l=>{const P={ArrowLeft:[-90,0],ArrowRight:[90,0],ArrowUp:[0,-90],ArrowDown:[0,90]};P[l.key]&&(l.preventDefault(),u.scrollBy({left:P[l.key][0],top:P[l.key][1],behavior:"smooth"}))})}document.querySelectorAll('[data-layout-preview]').forEach(button=>button.onclick=event=>{event.preventDefault();event.stopPropagation();const row=j.find(row=>row.layoutId===button.dataset.layoutPreview),sign=row&&ve(row);if(!sign){window.alert('No se encontró la ficha del cartel.');return;}window.CYD55_CATEGORIES.preview(sign,poster=>J({...poster,...(CYD_IS_MARKET(a.local)?{suppressLocal:true}:{})},'preview'),button);});document.querySelectorAll("[data-occam]").forEach(i=>i.onchange=()=>{i.checked?B.add(i.dataset.occam):B.delete(i.dataset.occam),F(e,t)}),document.getElementById("selectAllOccam")?.addEventListener("change",i=>{d.forEach(m=>{i.target.checked?B.add(m.layoutId):B.delete(m.layoutId)}),F(e,t)}),document.getElementById("sendOccam")?.addEventListener("click",()=>{const m=d.filter(b=>B.has(b.layoutId)).map(b=>({row:b,sign:ve(b)})),$=m.filter(({sign:b})=>!b||f.validate(b).length),v=m.filter(({sign:b})=>b&&f.validate(b).length===0);if(!v.length){window.alert("No se agregaron carteles: "+$.slice(0,5).map(({row:b,sign:l})=>"\xCDtem "+b.codigo+": "+(l?f.validate(l).join("; "):"Ficha no encontrada")).join(`
 `));return}v.forEach(({sign:b})=>a.queue.push({...b,qid:y.newId()})),v.forEach(({row:b})=>B.delete(b.layoutId)),_(),$.length&&window.alert(`${v.length} carteles agregados a la cola. ${$.length} pendientes (NO agregados):
 `+$.slice(0,8).map(({row:b,sign:l})=>"\xCDtem "+b.codigo+": "+(l?f.validate(l).join("; "):"Ficha no encontrada")).join(`
 `)),E()})}function E(){if(!a.local)return x();N(),I.innerHTML=`
@@ -250,17 +243,31 @@ function z(){if(sessionStorage.getItem("cyd.master")==="Walter")return cyd53Mast
         </div>
         <button class="remove" data-index="${d}" type="button" aria-label="Eliminar de la cola">\xD7</button>
       </div>
-    `).join(""),e.querySelectorAll(".remove").forEach(c=>c.addEventListener("click",()=>{a.queue.splice(Number(c.dataset.index),1),_(),V()}))}}let Q=null,K=null;function G(){K&&(clearTimeout(K),K=null),Q&&(Q.getTracks().forEach(e=>e.stop()),Q=null),document.getElementById("cameraScanner")?.remove()}function U(e=""){return String(e).toUpperCase().replace(/[^0-9A-F]/g,"").slice(0,12)}async function $e(e="item"){G();const t=e==="mac"?"Escanear c\xF3digo de impresora":"Escanear \xEDtem",n=e==="mac"?"Apunta al c\xF3digo de la Zebra que contiene la MAC.":"Apunta al c\xF3digo de barras del producto.";document.body.insertAdjacentHTML("beforeend",`
-      <div class="camera-scanner" id="cameraScanner">
-        <div class="camera-card">
-          <div class="camera-head"><strong>${t}</strong><button id="closeCameraScanner" type="button">\xD7</button></div>
-          <video id="scannerVideo" playsinline muted></video>
-          <div class="camera-target"></div>
-          <p>${n}</p>
-          <div id="scannerStatus" class="scanner-status">Abriendo c\xE1mara\u2026</div>
-          <button class="btn back-home" id="cancelScanner" type="button">Cancelar</button>
-        </div>
-      </div>`),document.getElementById("closeCameraScanner").onclick=G,document.getElementById("cancelScanner").onclick=G;const o=document.getElementById("scannerStatus"),c=document.getElementById("scannerVideo");try{if(Q=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:!1}),c.srcObject=Q,await c.play(),o.textContent="Buscando c\xF3digo\u2026",!("BarcodeDetector"in window)){o.textContent="Este navegador no permite lectura autom\xE1tica. Usa ingreso manual.";return}const d=await BarcodeDetector.getSupportedFormats().catch(()=>[]),g=e==="mac"?["qr_code","code_128","data_matrix","aztec","code_39"].filter(u=>d.includes(u)):["ean_13","ean_8","upc_a","upc_e","code_128","qr_code"].filter(u=>d.includes(u)),h=new BarcodeDetector(g.length?{formats:g}:void 0),L=async()=>{if(document.getElementById("cameraScanner")){try{const u=await h.detect(c);if(u&&u.length){const r=String(u[0].rawValue||"").trim();if(e==="mac"){const p=U(r);if(p.length!==12)o.textContent=`C\xF3digo le\xEDdo (${r}), pero no contiene una MAC v\xE1lida de 12 caracteres.`;else{a.mobileMac=p,localStorage.setItem(R,p),G(),Ee(p);return}}else{G();const p=document.getElementById("itemInput");p&&(p.value=r,a.itemCode=r,ye());return}}}catch{}K=setTimeout(L,180)}};L()}catch{o.textContent="No se pudo abrir la c\xE1mara. Revisa el permiso de c\xE1mara de Chrome."}}function ce(){const e=document.getElementById("mobileMacInput"),t=U(e?.value||"");if(e&&(e.value=t),t.length===12){a.mobileMac=t,localStorage.setItem(R,t);const o=document.getElementById("mobileRFStatus");return o&&(o.className="rf-status ok",o.textContent=`\u2713 Impresora guardada: ${t}`),t}const n=document.getElementById("mobileRFStatus");return n&&(n.className="rf-status error",n.textContent="La MAC debe tener 12 caracteres hexadecimales."),""}function Ee(e=""){if(!a.queue.length)return E();const t=U(e||a.mobileMac||localStorage.getItem(R)||"");t.length===12&&(a.mobileMac=t,localStorage.setItem(R,t)),I.innerHTML=`
+    `).join(""),e.querySelectorAll(".remove").forEach(c=>c.addEventListener("click",()=>{a.queue.splice(Number(c.dataset.index),1),_(),V()}))}}let Q=null,K=null,scanGeneration=0;
+function G(){scanGeneration++;if(K){clearTimeout(K);K=null;}if(Q){Q.getTracks().forEach(track=>track.stop());Q=null;}document.getElementById('cameraScanner')?.remove();}
+function U(value=''){return String(value).toUpperCase().replace(/[^0-9A-F]/g,'').slice(0,12);}
+async function $e(mode='item'){
+ G();const generation=scanGeneration,title=mode==='mac'?'Escanear código de impresora':'Escanear ítem o UPC';
+ document.body.insertAdjacentHTML('beforeend',`<div class="camera-scanner" id="cameraScanner"><div class="camera-card"><div class="camera-head"><strong>${title}</strong><button id="closeCameraScanner" type="button" aria-label="Cerrar cámara">×</button></div><video id="scannerVideo" playsinline muted></video><div class="camera-target"></div><p>${mode==='mac'?'Apunta al código de la Zebra que contiene la MAC.':'Apunta al código de barras del producto.'}</p><div id="scannerStatus" class="scanner-status" role="status">Abriendo cámara…</div><button class="btn back-home" id="cancelScanner" type="button">Cancelar</button></div></div>`);
+ document.getElementById('closeCameraScanner').onclick=G;document.getElementById('cancelScanner').onclick=G;
+ const status=document.getElementById('scannerStatus'),video=document.getElementById('scannerVideo');
+ try{
+  const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});
+  if(generation!==scanGeneration){stream.getTracks().forEach(track=>track.stop());return;}Q=stream;video.srcObject=stream;await video.play();if(generation!==scanGeneration)return;
+  if(!('BarcodeDetector' in window)){status.textContent='Este navegador no permite lectura automática. Usa ingreso manual.';return;}
+  const supported=await BarcodeDetector.getSupportedFormats().catch(()=>[]),formats=(mode==='mac'?['qr_code','code_128','data_matrix','aztec','code_39']:['ean_13','ean_8','upc_a','upc_e','code_128','qr_code']).filter(format=>supported.includes(format)),detector=new BarcodeDetector(formats.length?{formats}:undefined);
+  status.textContent='Buscando código…';
+  const scan=async()=>{
+   if(generation!==scanGeneration||!document.getElementById('cameraScanner'))return;
+   try{const found=await detector.detect(video);if(generation!==scanGeneration)return;if(found?.length){const value=String(found[0].rawValue||'').trim();
+    if(mode==='mac'){const mac=U(value);if(mac.length!==12)status.textContent='El código leído no contiene una MAC de 12 caracteres.';else{a.mobileMac=mac;localStorage.setItem(R,mac);G();Ee(mac);return;}}
+    else if(/^\d{1,20}$/.test(value)){G();if(mode==='manual'){const input=document.getElementById('manualItem');if(input){input.value=value;await findManual();}}else{const input=document.getElementById('itemInput');if(input){input.value=value;a.itemCode=value;ye();}}return;}
+    else status.textContent='El código leído no es un ítem o UPC. Apunta al código del producto.';
+   }}catch{}if(generation===scanGeneration)K=setTimeout(scan,180);
+  };scan();
+ }catch{if(generation===scanGeneration)status.textContent='No se pudo abrir la cámara. Revisa el permiso de cámara del navegador.';}
+}
+function ce(){const e=document.getElementById("mobileMacInput"),t=U(e?.value||"");if(e&&(e.value=t),t.length===12){a.mobileMac=t,localStorage.setItem(R,t);const o=document.getElementById("mobileRFStatus");return o&&(o.className="rf-status ok",o.textContent=`\u2713 Impresora guardada: ${t}`),t}const n=document.getElementById("mobileRFStatus");return n&&(n.className="rf-status error",n.textContent="La MAC debe tener 12 caracteres hexadecimales."),""}function Ee(e=""){if(!a.queue.length)return E();const t=U(e||a.mobileMac||localStorage.getItem(R)||"");t.length===12&&(a.mobileMac=t,localStorage.setItem(R,t)),I.innerHTML=`
       ${w()}
       <section class="screen print-choice-screen mobile-rf-screen">
         <div class="print-choice-card rf-setup-card">

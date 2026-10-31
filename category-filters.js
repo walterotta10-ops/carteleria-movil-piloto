@@ -17,6 +17,12 @@
   const card=(type,title,tag,lists,art)=>`<button type="button" class="cyd55-list-choice ${type}${selected===type?' is-selected':''}" ${attribute}="${type}" aria-pressed="${selected===type}" aria-label="${tag}: ${title}"><span class="cyd55-list-title">${title}</span><span class="cyd55-list-art ${type}" aria-hidden="true">${art}</span><span class="cyd55-list-bottom"><strong>${tag}</strong><b>${number(c[type])} productos</b></span><small>${lists}</small></button>`;
   return `<section class="cyd55-list-picker" aria-label="Selecciona la lista"><div class="cyd55-picker-head"><h2>Selecciona la lista</h2><button type="button" class="cyd55-all-lists${selected==='all'?' is-selected':''}" ${attribute}="all" aria-pressed="${selected==='all'}">Todas las listas · ${number(c.all)}</button></div><div class="cyd55-list-options">${card('red','EDLP','Cartel rojo','EDLP · EDLP Extensión · EDLP MMPP','<b>BARATO</b><em>todos los días</em>')}${card('yellow','Lista Promocional','Cartel amarillo','Bodegazo 3 · Lista 4 · Tráfico 3','<em>Ahora más</em><b>BARATO</b>')}</div></section>`;
  }
+ let currentPreview=null;
+ function showPreview(sign,renderSign,returnTo){
+  currentPreview?.remove();const panel=document.createElement('div');currentPreview=panel;panel.className='cyd55-preview';
+  panel.innerHTML='<section role="dialog" aria-modal="true" aria-label="Vista previa del cartel"><header><div><h2>'+esc(sign.name||'Cartel')+'</h2><p>'+esc(sign.occamList||sign.campaignName||'')+' · '+esc(sign.code?'Ítem '+sign.code:'UPC '+sign.barcode)+'</p></div><button class="btn ghost" type="button">Cerrar</button></header><div class="preview-card cyd55-preview-art">'+renderSign(sign)+'</div></section>';
+  document.body.appendChild(panel);const close=()=>{panel.remove();if(currentPreview===panel)currentPreview=null;returnTo?.focus();};panel.querySelector('button').onclick=close;panel.querySelector('button').focus();panel.addEventListener('keydown',event=>{if(event.key==='Escape')close();if(event.key==='Tab'){event.preventDefault();panel.querySelector('button').focus();}});return panel;
+ }
  let active=null;
  function open(bridge){
   active?.dispose();
@@ -58,7 +64,7 @@
    selection();
   }
   function changeFilter(action){action();state.page=0;state.selected.clear();render();status('');}
-  function preview(key){const r=keyMap().get(key);if(!r)return;closePreview();dialog=document.createElement('div');dialog.className='cyd55-preview';dialog.innerHTML='<section role="dialog" aria-modal="true" aria-label="Vista previa del cartel"><header><div><h2>'+esc(r.name)+'</h2><p>'+esc(r.list)+' · '+esc(r.item?'Ítem '+r.item:'UPC '+r.upc)+'</p></div><button class="btn ghost" type="button" data-cyd55-close-preview>Cerrar</button></header><div class="preview-card cyd55-preview-art">'+bridge.renderSign(r.sign)+'</div></section>';document.body.appendChild(dialog);dialog.querySelector('button').focus();dialog.querySelector('button').onclick=closePreview;dialog.addEventListener('keydown',e=>{if(e.key==='Escape')closePreview();if(e.key==='Tab'){e.preventDefault();dialog.querySelector('button').focus();}});}
+  function preview(key){const row=keyMap().get(key);if(!row)return;closePreview();dialog=showPreview(row.sign,bridge.renderSign,[...host.querySelectorAll('[data-cyd55-preview]')].find(button=>button.dataset.cyd55Preview===key));}
   panel.addEventListener('input',e=>{if(e.target.matches('[data-cyd55-search]'))changeFilter(()=>{state.query=e.target.value;});});
   panel.addEventListener('change',e=>{
    const el=e.target;
@@ -96,5 +102,5 @@
   });
   render();return controller;
  }
- g.CYD55_CATEGORIES={classify,matches,records,filter,counts,picker,open};
+ g.CYD55_CATEGORIES={classify,matches,records,filter,counts,picker,open,preview:showPreview};
 })(window);

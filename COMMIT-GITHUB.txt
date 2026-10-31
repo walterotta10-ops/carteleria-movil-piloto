@@ -1,5 +1,3 @@
-Cartelería C&D V55
-Repositorio: https://github.com/walterotta10-ops/carteleria-movil-piloto
-Rama: main
-Filtro Categorías y selección EDLP / Lista Promocional en el Layout panorámico.
-El commit exacto puede consultarse en el historial de GitHub.
+V56: agrega maestra colaborativa con lectura de flejes y cálculo EAN-13
+
+Incorpora Ver cartel en Layout panorámico, cámara en Cartelería manual, ingreso de productos, revisión del maestro y publicación deduplicada de aportes con la actualización semanal.

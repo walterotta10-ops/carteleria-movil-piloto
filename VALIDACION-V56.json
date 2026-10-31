@@ -1,0 +1,37 @@
+{
+  "version": "V56",
+  "date": "2026-10-31",
+  "workerSha256": "6f3ade32b8cbe8b88920a6d6ab100526f7c6f0d87bc7284cc63fca4692c2a4f3",
+  "workerBytes": 8140350,
+  "assets": 25,
+  "baseManualRecords": 12003,
+  "catalogPromotions": 2136,
+  "layoutPromotions": 1775,
+  "authenticationChecks": 83,
+  "productChecks": 67,
+  "appScripts": 13,
+  "workerSyntax": "passed",
+  "workerCheckJs": "passed",
+  "realFlejeOCR": {
+    "item": "412916",
+    "upc": "7802200131132",
+    "descripcion": "FRUGELE HALLOWEEN",
+    "marca": "AMBROSOLI",
+    "unidad": "360 g"
+  },
+  "eanCheckDigit": {
+    "input": "780220013113",
+    "weightedSum": 58,
+    "digit": 2,
+    "output": "7802200131132",
+    "source": "https://gs1chile.org/Codigos/Calculadora"
+  },
+  "manualFlow": "form, photo confirmation, local save, master review, global publish, queue unit verified",
+  "panoramaPreview": "no selection side effect",
+  "deduplication": "idempotent submits, grouped reviews, one item/upc record",
+  "concurrentPublication": "one success, one conflict, no partial changes",
+  "weeklyIntegration": "approved products only, idempotent",
+  "preserved": "styles.css unchanged; existing access keys, sessions, queues, promotion rules, master printing without local or Product Number",
+  "physicalDevices": "not tested; camera simulated in UI checks; no physical printer available",
+  "cloudflareDeployment": "user uploads JS"
+}

@@ -1,11 +1,11 @@
 {
   "name": "carteleria-movil-piloto-sync",
-  "version": "5.5.0",
+  "version": "5.6.0",
   "private": true,
-  "description": "Cartelería C&D V55: Filtro Categorías y selección EDLP / Lista Promocional",
+  "description": "Cartelería C&D V56: maestra colaborativa, flejes, EAN-13 y vista previa en Layout",
   "scripts": {
     "start": "node server.js",
-    "test": "node tests/v55/test-access.cjs && node tests/v55/test-load-app.cjs && node tests/v55/test-categories.cjs && node tests/v55/test-upgrade.cjs && node tests/v55/test-render.cjs"
+    "test": "node tests/v56/test-access.cjs && node tests/v56/test-load-app.cjs && node tests/v56/test-categories.cjs && node tests/v56/test-products.cjs && node tests/v56/test-products-ui.cjs && node tests/v56/test-upgrade.cjs && node tests/v56/test-render.cjs"
   },
   "engines": {
     "node": ">=20"

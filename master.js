@@ -105,7 +105,7 @@ function categoryScreen(){
    case 'open-list':S.view='signs';S.list=b.dataset.list;S.page=0;S.query='';render();break;
    case 'preview':showProduct(b.dataset.key);break;
    case 'review-upload':await showReview();break;
-   case 'confirm-upload':b.disabled=true;await api('/api/master/imports/commit',{method:'POST',body:{id:S.draft.id,revision:S.draft.revision}});selectedFile=null;close();await refreshCatalog();render();toast('Carga aplicada. Las promociones ya están disponibles para todos los locales.');break;
+   case 'confirm-upload':{b.disabled=true;const applied=await api('/api/master/imports/commit',{method:'POST',body:{id:S.draft.id,revision:S.draft.revision}});selectedFile=null;close();await refreshCatalog();render();window.CYD56_PRODUCTS?.invalidate();toast('Carga aplicada. Las promociones ya están disponibles para todos los locales.'+(applied.manualProducts?applied.manualProducts.ok?' '+applied.manualProducts.published+' productos de la maestra compartidos.':' '+applied.manualProducts.error:''));break;}
    case 'close-dialog':close();break;
    case 'close-toast':root.querySelector('[data-toast]').innerHTML='';break;
    case 'prev-page':S.page=Math.max(0,S.page-1);render();break;
