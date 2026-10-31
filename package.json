@@ -1,11 +1,11 @@
 {
   "name": "carteleria-movil-piloto-sync",
-  "version": "5.4.1",
+  "version": "5.5.0",
   "private": true,
-  "description": "Cartelería C&D V54: accesos por local y gestión de usuario",
+  "description": "Cartelería C&D V55: Filtro Categorías y selección EDLP / Lista Promocional",
   "scripts": {
     "start": "node server.js",
-    "test": "node tests/v54/test-access.cjs && node tests/v54/test-render.cjs && node tests/v54/test-load-app.cjs"
+    "test": "node tests/v55/test-access.cjs && node tests/v55/test-load-app.cjs && node tests/v55/test-categories.cjs && node tests/v55/test-upgrade.cjs && node tests/v55/test-render.cjs"
   },
   "engines": {
     "node": ">=20"

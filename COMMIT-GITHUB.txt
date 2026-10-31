@@ -1,5 +1,5 @@
-Cartelería C&D V54 R1
+Cartelería C&D V55
 Repositorio: https://github.com/walterotta10-ops/carteleria-movil-piloto
 Rama: main
-Corrección: carga autenticada de scripts en el acceso maestro.
+Filtro Categorías y selección EDLP / Lista Promocional en el Layout panorámico.
 El commit exacto puede consultarse en el historial de GitHub.

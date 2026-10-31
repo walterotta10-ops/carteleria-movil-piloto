@@ -2,7 +2,7 @@
   'use strict';
   const root=document.getElementById('app'),nativeFetch=g.fetch.bind(g),BRIDGE='https://carteleria-puente-carta.walterotta10.workers.dev',RENDER='https://carteleria-movil-piloto.onrender.com';
   const jobs=new Set(['/trabajo','/tomar','/impreso','/fallo','/siguiente']);
-  const privateFiles=new Set(['/queue-aliases.js','/cartel-rules.js','/queue-sync.js','/usage.js','/interactions.js','/xlsx-reader.js','/master.js','/catalog-live.js','/app.js','/catalog.js','/occam-layout.js','/manual-items.json']);
+  const privateFiles=new Set(['/queue-aliases.js','/cartel-rules.js','/queue-sync.js','/usage.js','/interactions.js','/xlsx-reader.js','/category-filters.js','/master.js','/catalog-live.js','/app.js','/catalog.js','/occam-layout.js','/manual-items.json']);
   let profile=null,csrf='',loaded=false,reloading=false,dialog=null,accounts=[];
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   g.CYD_API_BASE=location.origin;
@@ -59,7 +59,7 @@
   }
   async function script(name){
     if(!privateFiles.has('/'+name)||!name.endsWith('.js'))throw new Error('Archivo de aplicación no reconocido.');
-    const path=location.origin+'/'+name+'?v=v54r1',response=await g.fetch(path,{cache:'no-store'});
+    const path=location.origin+'/'+name+'?v=v55',response=await g.fetch(path,{cache:'no-store'});
     if(!response.ok)throw new Error('No se pudo cargar '+name+' (código '+response.status+'). Vuelve a ingresar.');
     const source=await response.text(),url=URL.createObjectURL(new Blob([source],{type:'application/javascript'}));
     return new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=url;el.onload=()=>{URL.revokeObjectURL(url);resolve();};el.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('No se pudo abrir '+name+'. Recarga la página.'));};document.body.appendChild(el);});
@@ -69,7 +69,7 @@
     if(profile.role==='master'){sessionStorage.setItem('cyd.master','Walter');localStorage.removeItem('carteleria.local');}
     else{sessionStorage.removeItem('cyd.master');localStorage.setItem('carteleria.local',profile.code);}
     loaded=true;
-    try{for(const file of ['queue-aliases.js','cartel-rules.js','queue-sync.js','usage.js','interactions.js','xlsx-reader.js','master.js','catalog-live.js'])await script(file);}
+    try{for(const file of ['queue-aliases.js','cartel-rules.js','queue-sync.js','usage.js','interactions.js','xlsx-reader.js','category-filters.js','master.js','catalog-live.js'])await script(file);}
     catch(error){root.innerHTML='<section class="landing"><h1>Cartelería C&amp;D</h1><p class="landing-copy"></p><button class="btn primary" data-cyd54-retry>Reintentar</button><button class="btn ghost" data-cyd54-exit>Volver al acceso</button></section>';root.querySelector('p').textContent=error.message;root.querySelector('[data-cyd54-retry]').onclick=()=>location.reload();root.querySelector('[data-cyd54-exit]').onclick=logout;}
   }
   async function logout(){
