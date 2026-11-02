@@ -1,3 +1,1 @@
-V56: agrega maestra colaborativa con lectura de flejes y cálculo EAN-13
-
-Incorpora Ver cartel en Layout panorámico, cámara en Cartelería manual, ingreso de productos, revisión del maestro y publicación deduplicada de aportes con la actualización semanal.
+V57: Seleccionar todos abarca el resultado filtrado completo y permite seleccionar el departamento en Layout panorámico.

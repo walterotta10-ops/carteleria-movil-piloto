@@ -1,6 +1,6 @@
-/* Cartelería V56: interfaz y acceso centralizado en el Worker/D1. Node >=20. */
+/* Cartelería V57: interfaz y acceso centralizado en el Worker/D1. Node >=20. */
 const http=require('node:http');
-const {assets:currentAssets}=require('./cyd-v56-bundle.cjs'),{assets:legacyAssets}=require('./cyd-v55-bundle.cjs');
+const {assets:currentAssets}=require('./cyd-v57-bundle.cjs'),{assets:previousAssets}=require('./cyd-v56-bundle.cjs'),{assets:legacyAssets}=require('./cyd-v55-bundle.cjs');
 const publicFiles=new Set(['/index.html','/styles.css','/access-v54.js','/access-v54.css','/category-filters.css','/products.css','/manifest.webmanifest']);
 const jobs=new Set(['/trabajo','/tomar','/impreso','/fallo','/siguiente']);
 function createApp({bridge='https://carteleria-puente-carta.walterotta10.workers.dev',fetchImpl=fetch,probeMs=10000}={}){
@@ -14,15 +14,15 @@ function createApp({bridge='https://carteleria-puente-carta.walterotta10.workers
   return http.createServer(async(req,res)=>{
     try{
       const url=new URL(req.url,'http://localhost'),key=url.pathname==='/'?'/index.html':url.pathname;
-      await ready();const requested=url.searchParams.get('v'),assets=requested==='v55'?legacyAssets:requested==='v56'?currentAssets:state.manualProducts?currentAssets:legacyAssets;
-      res.setHeader('X-CYD-Version',assets===currentAssets?'v56':'v55');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','same-origin');res.setHeader('Cache-Control','no-store');
+      await ready();const requested=url.searchParams.get('v'),assets=requested==='v55'?legacyAssets:requested==='v56'?previousAssets:requested==='v57'?currentAssets:state.manualProducts?currentAssets:legacyAssets;
+      res.setHeader('X-CYD-Version',assets===currentAssets?'v57':assets===previousAssets?'v56':'v55');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','same-origin');res.setHeader('Cache-Control','no-store');
       if((publicFiles.has(key)||key.startsWith('/assets/')&&assets[key]?.type?.startsWith('image/'))&&['GET','HEAD'].includes(req.method)){
         const asset=assets[key];if(!asset)return json(res,404,{ok:false,error:'Archivo no encontrado.'});
         let data=asset.binary?Buffer.from(asset.body,'base64'):Buffer.from(asset.body);
         if(asset.binary&&asset.type==='image/png'&&data.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'&&data.toString('utf8').startsWith('iVBOR'))data=Buffer.from(data.toString('utf8'),'base64');
         res.setHeader('Content-Type',asset.type);res.statusCode=200;return res.end(req.method==='HEAD'?undefined:data);
       }
-      if(url.pathname==='/health'||url.pathname==='/api/health'){const active=await ready();return json(res,active?200:503,{ok:active,version:'v56',authentication:true,workerReady:active,manualProducts:state.manualProducts,compatibleInterface:state.manualProducts?'v56':'v55',error:active?undefined:'Carga la actualización V56 en Cloudflare para habilitar los accesos con contraseña.'});}
+      if(url.pathname==='/health'||url.pathname==='/api/health'){const active=await ready();return json(res,active?200:503,{ok:active,version:'v57',authentication:true,workerReady:active,manualProducts:state.manualProducts,compatibleInterface:state.manualProducts?'v57':'v55',error:active?undefined:'Carga la actualización V56 en Cloudflare para habilitar los accesos con contraseña.'});}
       if(!url.pathname.startsWith('/api/')&&!jobs.has(url.pathname)&&!assets[key])return json(res,404,{ok:false,error:'Ruta no encontrada.'});
       if(url.pathname.startsWith('/api/manual/')||url.pathname.startsWith('/api/master/manual/')){if(!state.manualProducts)return json(res,503,{ok:false,error:'Carga el archivo V56 en Cloudflare para habilitar la maestra colaborativa.'});}
       if(!await ready())return json(res,503,{ok:false,error:'La actualización está lista. Primero carga el archivo V56 en Cloudflare y vuelve a ingresar.'});
@@ -42,5 +42,5 @@ function createApp({bridge='https://carteleria-puente-carta.walterotta10.workers
     }catch{if(!res.headersSent)return json(res,503,{ok:false,error:'No se pudo contactar el puente. Reintenta en unos segundos.'});res.end();}
   });
 }
-if(require.main===module)createApp().listen(Number(process.env.PORT)||3000,'0.0.0.0',()=>console.log('Cartelería V56: accesos protegidos y promociones en Cloudflare.'));
+if(require.main===module)createApp().listen(Number(process.env.PORT)||3000,'0.0.0.0',()=>console.log('Cartelería V57: accesos protegidos y promociones en Cloudflare.'));
 module.exports={createApp};

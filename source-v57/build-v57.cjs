@@ -1,0 +1,11 @@
+const fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
+const dir=__dirname,base=require('../cyd-v56-bundle.cjs').workerSource;
+function boundary(source){let depth=0,quoted=false,escape=false;for(let i=source.indexOf('{');i<source.length;i++){const c=source[i];if(quoted){if(escape)escape=false;else if(c==='\\')escape=true;else if(c==='"')quoted=false;}else if(c==='"')quoted=true;else if(c==='{')depth++;else if(c==='}'&&--depth===0)return i+1;}throw Error('Contenedor inválido.');}
+const end=boundary(base),assets=JSON.parse(base.slice(base.indexOf('{'),end));
+for(const name of fs.readdirSync(path.join(dir,'app'))){const file=path.join(dir,'app',name);if(name.startsWith('.')||!fs.statSync(file).isFile())continue;assets['/'+name]={...assets['/'+name],type:name.endsWith('.js')?'application/javascript; charset=utf-8':name.endsWith('.css')?'text/css; charset=utf-8':name.endsWith('.html')?'text/html; charset=utf-8':assets['/'+name]?.type||'application/json',body:fs.readFileSync(file,'utf8'),binary:false};}
+const backend=base.slice(end).replace("headers.set('X-CYD-Version','v56')","headers.set('X-CYD-Version','v57')").replace("version:'v56',servicio:","version:'v57',servicio:");
+const source='const G='+JSON.stringify(assets)+backend;fs.writeFileSync(path.join(dir,'worker-v57.mjs'),source);fs.writeFileSync(path.join(dir,'../CLOUDFLARE-CYD-V57-SELECCION-TOTAL.js'),source);
+const packed=zlib.gzipSync(source).toString('base64');const bundle=`/* C&D V57: selección completa del resultado filtrado y del departamento. Conserva backend V56. */\nconst source=require('node:zlib').gunzipSync(Buffer.from(${JSON.stringify(packed)},'base64')).toString('utf8');\n${boundary.toString()}\nmodule.exports={workerSource:source,assets:JSON.parse(source.slice(source.indexOf('{'),boundary(source)))};\n`;
+fs.writeFileSync(path.join(dir,'../cyd-v57-bundle.cjs'),bundle);
+fs.writeFileSync(path.join(dir,'../tools/exportar-v57.cjs'),"const fs=require('node:fs'),path=require('node:path'),b=require('../cyd-v57-bundle.cjs');const output=path.join(__dirname,'..','CLOUDFLARE-CYD-V57-SELECCION-TOTAL.js');fs.writeFileSync(output,b.workerSource);console.log(output);\n");
+console.log({version:'V57',workerBytes:Buffer.byteLength(source),gzipBytes:Buffer.from(packed,'base64').length,assets:Object.keys(assets).length});

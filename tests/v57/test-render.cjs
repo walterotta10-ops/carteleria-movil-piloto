@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),{createApp}=require('../../server.js'),{fixtureWorker}=require('./test-access.cjs'),{D1}=require('../test-d1.cjs');
+async function listen(server){await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));return 'http://127.0.0.1:'+server.address().port;}
+async function verify(worker,label){const env={DB:new D1()},server=createApp({probeMs:0,fetchImpl:(url,init)=>worker.fetch(new Request(url,init),env)}),base=await listen(server);try{
+ const home=await(await fetch(base+'/')).text();assert.match(home,/v=v57/);assert.equal((await(await fetch(base+'/health')).json()).compatibleInterface,'v57');assert.equal((await fetch(base+'/category-filters.js')).status,401);
+ const login=await fetch(base+'/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:'{"access":"622","pin":"0622"}'});assert.equal(login.status,200);const cookie=login.headers.get('Set-Cookie').split(';')[0];
+ for(const [version,filename]of [['v57','cyd-v57-bundle.cjs'],['v56','cyd-v56-bundle.cjs'],['v55','cyd-v55-bundle.cjs']]){const r=await fetch(base+'/category-filters.js?v='+version,{headers:{Cookie:cookie}});assert.equal(r.status,200);assert.equal(await r.text(),require('../../'+filename).assets['/category-filters.js'].body);}
+ assert.equal((await fetch(base+'/api/cola?local=622',{headers:{Cookie:cookie}})).status,200);assert.equal((await fetch(base+'/api/cola?local=541',{headers:{Cookie:cookie}})).status,403);console.log(JSON.stringify({ok:true,renderInterface:'v57',backend:label,oldPageResourcesPreserved:['v56','v55'],scopeProtected:true}));
+ }finally{await new Promise(resolve=>server.close(resolve));}}
+(async()=>{await verify(await fixtureWorker(),'V57');await verify(await require('./test-upgrade.cjs').legacyWorker(),'V56');})().catch(error=>{console.error(error);process.exitCode=1;});

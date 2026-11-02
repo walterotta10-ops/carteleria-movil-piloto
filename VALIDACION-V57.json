@@ -1,0 +1,34 @@
+{
+  "version": "V57",
+  "date": "2026-11-02",
+  "workerSha256": "cb2bf76b13e395c23007d690cde399c202e3cc45997b1bc578a512b4a78b6217",
+  "workerBytes": 8142583,
+  "selectionScope": "Todo el resultado filtrado, sin limitarlo a la página visible",
+  "filterSelectionTests": {
+    "redAcrossPages": 147,
+    "categoryEnqueuedAcrossPages": 31,
+    "mobile": true,
+    "store": true,
+    "master": true,
+    "marketAssignedStore": true,
+    "unselectWholeResult": true,
+    "partialSelection": true,
+    "filterChangeClearsSelection": true,
+    "emptyResultsDisableSelect": true
+  },
+  "departmentSelection": {
+    "department": "ABARROTES",
+    "yellowReadyRowsEnqueued": 169,
+    "scope": "Todas sus categorías, solo lista seleccionada",
+    "existingDataIssues": 1
+  },
+  "authenticationChecks": 83,
+  "workerSyntax": "passed",
+  "workerCheckJs": "passed",
+  "backend": "Idéntico a V56, salvo etiquetas de versión",
+  "printStylesUnchanged": true,
+  "migration": "V56 a V57 conserva PIN, sesión y cola",
+  "render": "V57 con backend V56 y V57; recursos antiguos V55/V56 conservados",
+  "physicalPrinter": "No probado físicamente; se verifican cola y HTML de impresión",
+  "cloudflareDeployment": "Usuario carga el JS"
+}

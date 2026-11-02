@@ -59,7 +59,7 @@
   }
   async function script(name){
     if(!privateFiles.has('/'+name)||!name.endsWith('.js'))throw new Error('Archivo de aplicación no reconocido.');
-    const path=location.origin+'/'+name+'?v=v56',response=await g.fetch(path,{cache:'no-store'});
+    const path=location.origin+'/'+name+'?v=v57',response=await g.fetch(path,{cache:'no-store'});
     if(!response.ok)throw new Error('No se pudo cargar '+name+' (código '+response.status+'). Vuelve a ingresar.');
     const source=await response.text(),url=URL.createObjectURL(new Blob([source],{type:'application/javascript'}));
     return new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=url;el.onload=()=>{URL.revokeObjectURL(url);resolve();};el.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('No se pudo abrir '+name+'. Recarga la página.'));};document.body.appendChild(el);});

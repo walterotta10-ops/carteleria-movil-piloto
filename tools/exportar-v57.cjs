@@ -1,0 +1,1 @@
+const fs=require('node:fs'),path=require('node:path'),b=require('../cyd-v57-bundle.cjs');const output=path.join(__dirname,'..','CLOUDFLARE-CYD-V57-SELECCION-TOTAL.js');fs.writeFileSync(output,b.workerSource);console.log(output);
