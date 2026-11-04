@@ -1,0 +1,8 @@
+name = "NOMBRE_DEL_WORKER_EXISTENTE"
+main = "worker-v61.mjs"
+compatibility_date = "2026-10-30"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "NOMBRE_DE_D1_EXISTENTE"
+database_id = "ID_DE_D1_EXISTENTE"
