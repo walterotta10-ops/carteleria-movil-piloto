@@ -35,7 +35,7 @@
   // Los reportes corporativos pueden tener título y filas de presentación antes de la tabla.
   // Aceptamos solo encabezados verificables y conservamos íntegros los datos de la tabla.
   function trimToHeaders(rows){
-    const key=v=>String(v??'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').trim().toUpperCase().replace(/\\s+/g,' ');
+    const key=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toUpperCase().replace(/\s+/g,' ');
     const required=[
       ['PRODUCT NUMBER','BARRA','NUEVO PRECIO','CANTIDAD'],
       ['PRODUCT NUMBER','UPC','Q','PRECIO PROMO']
