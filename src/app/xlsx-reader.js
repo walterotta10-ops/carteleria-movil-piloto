@@ -32,9 +32,24 @@
     for(let i=0;i<s.length;i++){const c=s[i];if(c==='"'){if(quoted&&s[i+1]==='"'){value+='"';i++;}else quoted=!quoted;}else if(c===separator&&!quoted){row.push(value);value='';}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&s[i+1]==='\n')i++;row.push(value);if(row.some(x=>x.trim()))rows.push(row);row=[];value='';}else value+=c;}
     row.push(value);if(row.some(x=>x.trim()))rows.push(row);if(quoted)throw new Error('CSV con comillas sin cerrar.');return rows;
   }
+  // Los reportes corporativos pueden tener título y filas de presentación antes de la tabla.
+  // Aceptamos solo encabezados verificables y conservamos íntegros los datos de la tabla.
+  function trimToHeaders(rows){
+    const key=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toUpperCase().replace(/\s+/g,' ');
+    const required=[
+      ['PRODUCT NUMBER','BARRA','NUEVO PRECIO','CANTIDAD'],
+      ['PRODUCT NUMBER','UPC','Q','PRECIO PROMO']
+    ];
+    const index=rows.findIndex(row=>Array.isArray(row)&&required.some(fields=>{
+      const keys=new Set(row.map(key));
+      return fields.every(v=>keys.has(v));
+    }));
+    if(index<0)throw new Error('No se encontraron los encabezados esperados: Product Number, Barra, Nuevo Precio y Cantidad (jueves); o Product Number, UPC, Q y Precio Promo (OCCAM).');
+    return rows.slice(index);
+  }
   async function read(file){
     if(!file||file.size>20000000)throw new Error('El archivo debe pesar hasta 20 MB.');
-    if(/\.csv$/i.test(file.name))return csv((await file.text()).replace(/^\uFEFF/,''));
+    if(/\.csv$/i.test(file.name))return trimToHeaders(csv((await file.text()).replace(/^\uFEFF/,'')));
     if(!/\.xlsx$/i.test(file.name))throw new Error('Selecciona un archivo .xlsx o .csv.');
     const get=await unzip(await file.arrayBuffer()),sharedText=await get('xl/sharedStrings.xml');
     const shared=sharedText?tags(xml(sharedText),'si').map(si=>tags(si,'t').map(n=>n.textContent).join('')):[];
@@ -44,7 +59,7 @@
     const sheetRows=tags(xml(sheetText),'row');if(sheetRows.length>20001)throw new Error('Carga hasta 20.000 filas por archivo.');
     const rows=[];
     for(const r of sheetRows){const row=[];for(const c of tags(r,'c')){const ref=c.getAttribute('r')||'',m=/^[A-Z]+/.exec(ref);if(!m)continue;let column=0;for(const ch of m[0])column=column*26+ch.charCodeAt(0)-64;column--;if(column>60)continue;const t=c.getAttribute('t'),v=first(c,'v')?.textContent||'';row[column]=t==='s'?shared[Number(v)]||'':t==='inlineStr'?tags(c,'t').map(n=>n.textContent).join(''):t==='b'?Number(v):v!==''&&Number.isFinite(Number(v))?Number(v):v;}if(row.some(v=>v!==''&&v!=null))rows.push(row);}
-    return rows;
+    return trimToHeaders(rows);
   }
   g.CYD_XLSX={read};
 })(window);
